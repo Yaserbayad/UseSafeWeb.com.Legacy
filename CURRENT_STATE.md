@@ -2,7 +2,7 @@
   "checkpoint_schema": "serial-light-checkpoint-v1",
   "project_id": "UseSafeWeb.com",
   "governance_mode": "SERIAL_LIGHT",
-  "checkpoint_revision": 33,
+  "checkpoint_revision": 34,
   "baseline": {
     "version": 1,
     "objectives": [
@@ -17813,8 +17813,16 @@
       },
       {
         "id": "TSK-0303",
-        "status": "TODO",
-        "acceptance_references": []
+        "status": "PASS",
+        "acceptance_references": [
+          {
+            "ac_id": "ACC-0303",
+            "evidence_type": "TEST_RESULT",
+            "reference": "Yaserbayad/UseSafeWeb.com merged source commit 02dc0b8939e784de563443b9668f083d1e35d388 from exact tested PR head b5621ad17c4938308afdfbff81a6ddbade28b3f5; verifier blob c9231b8277b17be94d34cf69f7af7c140e60520b; acceptance workflow blob 8b77cde0be9b09205809f053f4e28840652f3586; GitHub Actions acceptance run 33996922413 job 101388968428 artifact 9978335900; governed promotion run 33996922335 jobs 101388968271 and 101389147493",
+            "summary": "ACC-0303 satisfied: automated contrast/asset/semantic checks and representative desktop, mobile and RTL snapshots pass after correcting dark-field contrast, deterministic monochrome treatment and visible brand-name consistency.",
+            "verification_context": "Exact-head acceptance run 33996922413 passed with contrast ratios heading/page 10.621, accent/page 8.411, body/page 13.455, inverse/green 10.621 and focus/page 8.411; six desktop plus six mobile context snapshots and one RTL product snapshot were captured. Focus/error states, logo scaling, imagery/icon meaning and RTL brand isolation passed; directional icon mirroring is not applicable because the reference set contains no directional UI icons. Governed CI and promotion eligibility also passed on the exact tested head. No deployment, participant/profile, telemetry, payment, production/public activation, market activation, service removal/revocation or launch action was performed."
+          }
+        ]
       },
       {
         "id": "TSK-0304",
