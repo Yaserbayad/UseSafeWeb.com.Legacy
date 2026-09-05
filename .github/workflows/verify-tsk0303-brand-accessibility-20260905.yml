@@ -1,0 +1,105 @@
+name: TSK-0303 brand accessibility acceptance
+
+on:
+  push:
+    branches:
+      - feature/tsk-0303-brand-accessibility-20260905
+  pull_request:
+    paths:
+      - brand/**
+      - .github/scripts/verify_tsk0303_brand_accessibility_20260905.py
+      - .github/workflows/verify-tsk0303-brand-accessibility-20260905.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  brand-accessibility:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Bind exact governed baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = 'dd20a217521889f43348aab76341ae2424a4b9f0'
+          test "$(git hash-object Plans/Master/WBS/master-wbs.csv)" = '357c5e1be3b455e7efddd329d6a2468e3125b502'
+          test "$(git show origin/main:CURRENT_STATE.md | git hash-object --stdin)" = '4cbc7789badd1c3032c0837cf9967e53938e2622'
+          python3 - <<'PY'
+          import json, subprocess
+          state=json.loads(subprocess.check_output(['git','show','origin/main:CURRENT_STATE.md'], text=True))
+          assert state['checkpoint_schema']=='serial-light-checkpoint-v1'
+          assert state['project_id']=='UseSafeWeb.com'
+          assert state['governance_mode']=='SERIAL_LIGHT'
+          assert state['checkpoint_revision']==33
+          assert state['runtime']['project_status']=='ACTIVE'
+          assert state['runtime']['governance_blocker'] is None
+          base={x['id']:x for x in state['baseline']['work_items']}
+          rt={x['id']:x for x in state['runtime']['items']}
+          assert base['TSK-0303']['depends_on']==['TSK-0297']
+          assert base['TSK-0303']['gates']==[]
+          assert base['TSK-0303']['execution_context']=='ACTIVE_ONLY'
+          assert base['TSK-0303']['plan_priority']==1
+          assert rt['TSK-0297']['status']=='PASS'
+          assert rt['TSK-0303']['status']=='TODO'
+          PY
+          echo 'TSK0303_AUTHORITY_BINDING=PASS'
+
+      - name: Run deterministic contrast asset and semantic checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/tsk0303
+          python3 .github/scripts/verify_tsk0303_brand_accessibility_20260905.py artifacts/tsk0303/report.json
+
+      - name: Capture representative desktop mobile and RTL snapshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          browser="$(command -v google-chrome-stable || command -v google-chrome || command -v chromium || true)"
+          test -n "${browser}"
+          "${browser}" --version
+          mkdir -p artifacts/tsk0303/desktop artifacts/tsk0303/mobile artifacts/tsk0303/rtl
+          for context in public product help status partner social; do
+            url="file://${GITHUB_WORKSPACE}/brand/system/TSK-0300/templates/${context}.html"
+            "${browser}" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --allow-file-access-from-files --window-size=1440,1000 --screenshot="${GITHUB_WORKSPACE}/artifacts/tsk0303/desktop/${context}.png" "${url}"
+            "${browser}" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --allow-file-access-from-files --window-size=390,844 --screenshot="${GITHUB_WORKSPACE}/artifacts/tsk0303/mobile/${context}.png" "${url}"
+          done
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('brand/system/TSK-0300/templates/product.html')
+          text=p.read_text(encoding='utf-8')
+          old='<html lang="en" data-context="product">'
+          new='<html lang="ar" dir="rtl" data-context="product">'
+          assert old in text
+          Path('brand/system/TSK-0300/templates/_tsk0303-rtl.html').write_text(text.replace(old,new,1),encoding='utf-8')
+          PY
+          "${browser}" --headless=new --no-sandbox --disable-gpu --hide-scrollbars --allow-file-access-from-files --window-size=390,844 --screenshot="${GITHUB_WORKSPACE}/artifacts/tsk0303/rtl/product-rtl.png" "file://${GITHUB_WORKSPACE}/brand/system/TSK-0300/templates/_tsk0303-rtl.html"
+          rm brand/system/TSK-0300/templates/_tsk0303-rtl.html
+          test -s artifacts/tsk0303/rtl/product-rtl.png
+          test "$(find artifacts/tsk0303/desktop -name '*.png' | wc -l)" -eq 6
+          test "$(find artifacts/tsk0303/mobile -name '*.png' | wc -l)" -eq 6
+          echo 'TSK0303_REPRESENTATIVE_SNAPSHOTS=PASS'
+
+      - name: Upload acceptance evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: tsk0303-brand-accessibility-evidence
+          path: artifacts/tsk0303
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Confirm no material action
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo 'TSK0303_DEPLOYMENT_ACTION=NONE'
+          echo 'TSK0303_PARTICIPANT_PROFILE_TELEMETRY_PAYMENT_ACTION=NONE'
+          echo 'TSK0303_PRODUCTION_MARKET_LAUNCH_ACTION=NONE'
+          echo 'TSK0303_ACCEPTANCE=PASS'
