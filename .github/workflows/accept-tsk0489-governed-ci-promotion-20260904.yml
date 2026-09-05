@@ -86,6 +86,7 @@ jobs:
           set -Eeuo pipefail
           workflow='.github/workflows/accept-tsk0489-governed-ci-promotion-20260904.yml'
           python3 - "$workflow" <<'PY'
+          import json
           import sys
           from pathlib import Path
 
@@ -104,13 +105,40 @@ jobs:
 
           decisions = Path('Plans/Master/Registers/DECISIONS_TRIGGERS.md').read_text(encoding='utf-8')
           changes = Path('Plans/Master/Registers/EXCEPTIONS_CHANGE_CONTROLS.md').read_text(encoding='utf-8')
-          runtime = Path('CURRENT_STATE.md').read_text(encoding='utf-8')
+          runtime = json.loads(Path('CURRENT_STATE.md').read_text(encoding='utf-8'))
           assert 'DEC-0060' in decisions
           assert 'Separate genuine human-only, strategic, safety, security, legal, identity, contract, material-spend or irreversible-action boundaries remain unchanged.' in decisions
           assert 'CR-0013' in changes
           assert 'creates no deployment, telemetry activation, participant-facing mutation, production credential/service revocation, payment, activation, launch or other material-action authority.' in changes
-          for marker in ('No deployment', 'service removal/revocation', 'participant processing', 'telemetry activation', 'launch authority'):
-              assert marker in runtime, marker
+
+          policies = {}
+          def walk(node):
+              if isinstance(node, dict):
+                  if isinstance(node.get('id'), str) and isinstance(node.get('text'), str):
+                      policies[node['id']] = node['text']
+                  for value in node.values():
+                      walk(value)
+              elif isinstance(node, list):
+                  for value in node:
+                      walk(value)
+          walk(runtime)
+          material_fence = policies.get('POL-013', '')
+          required = (
+              'No deployment',
+              'live-device/profile/certificate action',
+              'service removal or revocation',
+              'participant processing',
+              'telemetry activation',
+              'production/public activation',
+              'geographic/market activation',
+              'payment',
+              'launch',
+              'other fenced material action',
+              'require their current independent authority and evidence boundary',
+          )
+          assert material_fence, 'POL-013'
+          for marker in required:
+              assert marker in material_fence, marker
           PY
           {
             echo 'TSK0489_DEPLOYMENT_ACTION=NONE'
