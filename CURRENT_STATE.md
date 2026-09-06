@@ -2,7 +2,7 @@
   "checkpoint_schema": "serial-light-checkpoint-v1",
   "project_id": "UseSafeWeb.com",
   "governance_mode": "SERIAL_LIGHT",
-  "checkpoint_revision": 44,
+  "checkpoint_revision": 45,
   "baseline": {
     "version": 1,
     "objectives": [
@@ -17199,7 +17199,7 @@
         "wait": {
           "condition": "Fresh bounded public preflight confirms public application/API routing and verifier wildcard DNS are present, but the deterministic 32-hex challenge host still fails TLS/SNI with alert unrecognized name and its probe endpoint remains unreachable (HTTP 000). TSK-0452 is already PASS, so the remaining TSK-0243 prerequisite is specifically the verifier challenge-host TLS/proxy functional path, not target access or general web deployment.",
           "resolution_check": "Rerun the existing bounded read-only TSK-0243 public preflight. Remain WAITING until the deterministic 32-hex challenge hostname both completes trusted TLS/SNI and reaches the approved /api/dns-verification/probes interface while the public application request/result endpoints remain healthy. Only then may separately authorized functional target proof proceed; do not infer DNS/TLS/proxy mutation authority from this WAITING state.",
-          "reference": "Fresh bounded read-only public preflight: workflow run 33900198638, rerun attempt 41, fresh job 101465633657; job completed successfully 2026-09-06T09:44:57Z; authority binding PASS; public app HTTP 200, request endpoint HTTP 405, dns endpoint HTTP 400, verifier wildcard DNS present at 52.157.109.120; deterministic challenge probe remains HTTP 000 and TLS/SNI still fails with alert unrecognized name. Current durable SERIAL LIGHT frontier recomputed from revision 43: eligible TODO count 0; project ACTIVE, governance blocker null, human constraints empty; POL-005/POL-006/POL-007 deferrals remain active. No material-action authority inferred."
+          "reference": "Fresh bounded read-only public preflight: workflow run 33900198638, rerun attempt 42, fresh job 101473486029; job completed successfully 2026-09-06T10:48:37Z; authority binding PASS; public app HTTP 200, request endpoint HTTP 405, dns endpoint HTTP 400, verifier wildcard DNS present at 52.157.109.120; deterministic challenge probe remains HTTP 000 and TLS/SNI still fails with alert unrecognized name. Current durable SERIAL LIGHT frontier recomputed from revision 44: eligible TODO count 0; project ACTIVE, governance blocker null, human constraints empty; POL-005/POL-006/POL-007 deferrals remain active. No material-action authority inferred."
         },
         "acceptance_references": []
       },
