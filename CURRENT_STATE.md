@@ -2,7 +2,7 @@
   "checkpoint_schema": "serial-light-checkpoint-v1",
   "project_id": "UseSafeWeb.com",
   "governance_mode": "SERIAL_LIGHT",
-  "checkpoint_revision": 34,
+  "checkpoint_revision": 35,
   "baseline": {
     "version": 1,
     "objectives": [
@@ -17199,7 +17199,7 @@
         "wait": {
           "condition": "Fresh bounded public preflight confirms public application/API routing and verifier wildcard DNS are present, but the deterministic 32-hex challenge host still fails TLS/SNI with alert unrecognized name and its probe endpoint remains unreachable (HTTP 000). TSK-0452 is already PASS, so the remaining TSK-0243 prerequisite is specifically the verifier challenge-host TLS/proxy functional path, not target access or general web deployment.",
           "resolution_check": "Rerun the existing bounded read-only TSK-0243 public preflight. Remain WAITING until the deterministic 32-hex challenge hostname both completes trusted TLS/SNI and reaches the approved /api/dns-verification/probes interface while the public application request/result endpoints remain healthy. Only then may separately authorized functional target proof proceed; do not infer DNS/TLS/proxy mutation authority from this WAITING state.",
-          "reference": "Fresh bounded read-only public preflight: workflow run 33900198638, fresh job 101348390683; TSK-0452 durable PASS in checkpoint revision 31; TSK-0423 durable PASS in checkpoint revision 31."
+          "reference": "Fresh bounded read-only public preflight: workflow run 33900198638, rerun attempt 32, fresh job 101399485016; condition unchanged: challenge TLS/SNI still returns unrecognized name and probe remains HTTP 000. Fresh bounded frontier diagnostic: workflow run 33998773479, job 101393798407, eligible TODO count 0. TSK-0452, TSK-0423 and TSK-0303 remain durably PASS."
         },
         "acceptance_references": []
       },
