@@ -1,0 +1,59 @@
+name: Generate revision-50 candidate for connector readback
+
+on:
+  push:
+    branches:
+      - state-migration-rev50-20260908
+    paths:
+      - .github/workflows/state-migration-rev50-v3.yml
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on:
+      - self-hosted
+      - Linux
+      - X64
+    timeout-minutes: 10
+    steps:
+      - name: Checkout isolated migration branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Assert isolated source authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(hostname)" = "adguardvm"
+          test "${GITHUB_REF_NAME}" = "state-migration-rev50-20260908"
+          test "${GITHUB_REPOSITORY}" = "Yaserbayad/UseSafeWeb.com"
+          test "$(git hash-object CURRENT_STATE.md)" = "ae203f4b55864f6c0163669dcaf853bcf225a546"
+
+      - name: Generate candidate with real connector ceiling
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf State
+          cp tools/state_migration_rev50_v2.py /tmp/state_migration_rev50.py
+          test "$(grep -c 'len(candidate_bytes) < 980_000' /tmp/state_migration_rev50.py)" = "1"
+          sed -i 's/len(candidate_bytes) < 980_000/len(candidate_bytes) < 1_000_000/' /tmp/state_migration_rev50.py
+          python3 /tmp/state_migration_rev50.py
+
+      - name: Commit only state artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add State/
+          git diff --cached --check
+          test -n "$(git diff --cached --name-only)"
+          if git diff --cached --name-only | grep -v '^State/' ; then
+            echo "Unexpected staged path" >&2
+            exit 1
+          fi
+          git commit -m "state: generate verified revision-50 split candidate"
+          git push origin HEAD:state-migration-rev50-20260908
