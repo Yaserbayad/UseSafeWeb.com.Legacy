@@ -27,30 +27,23 @@ jobs:
           echo 'MODE=READ_ONLY'
           echo 'CONTROL_PATH=AZURE_IMDS_ARM_REST'
 
-          token_json="$(curl --fail --silent --show-error --max-time 8 \
-            -H 'Metadata:true' \
-            'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F')" || {
-              echo 'MANAGED_IDENTITY_TOKEN=UNAVAILABLE'
-              exit 4
-            }
+          token_json="$(curl --fail --silent --show-error --max-time 8 -H 'Metadata:true' 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F')" || {
+            echo 'MANAGED_IDENTITY_TOKEN=UNAVAILABLE'
+            exit 4
+          }
           token="$(python3 -c 'import json,sys; print(json.load(sys.stdin).get("access_token", ""))' <<<"$token_json")"
           unset token_json
           [[ -n "$token" ]] || { echo 'MANAGED_IDENTITY_TOKEN=EMPTY'; exit 5; }
           echo 'MANAGED_IDENTITY_TOKEN=PASS'
 
-          compute_json="$(curl --fail --silent --show-error --max-time 8 \
-            -H 'Metadata:true' \
-            'http://169.254.169.254/metadata/instance/compute?api-version=2021-02-01')"
+          compute_json="$(curl --fail --silent --show-error --max-time 8 -H 'Metadata:true' 'http://169.254.169.254/metadata/instance/compute?api-version=2021-02-01')"
           current_sub="$(python3 -c 'import json,sys; print(json.load(sys.stdin).get("subscriptionId", ""))' <<<"$compute_json")"
           unset compute_json
           [[ -n "$current_sub" ]] || { echo 'CURRENT_SUBSCRIPTION=UNAVAILABLE'; exit 6; }
           echo 'CURRENT_SUBSCRIPTION=RESOLVED'
 
           arm_get() {
-            curl --fail --silent --show-error --max-time 20 \
-              -H "Authorization: Bearer ${token}" \
-              -H 'Accept: application/json' \
-              "$1"
+            curl --fail --silent --show-error --max-time 20 -H "Authorization: Bearer ${token}" -H 'Accept: application/json' "$1"
           }
 
           tmp="$(mktemp -d)"
@@ -58,15 +51,7 @@ jobs:
           printf '%s\n' "$current_sub" >"$tmp/subscriptions"
 
           if subscriptions_json="$(arm_get 'https://management.azure.com/subscriptions?api-version=2022-12-01' 2>/dev/null)"; then
-            python3 - "$tmp/subscriptions" <<'PY' <<<"$subscriptions_json"
-import json, sys
-path = sys.argv[1]
-data = json.load(sys.stdin)
-ids = [x.get('subscriptionId') for x in data.get('value', []) if x.get('subscriptionId')]
-with open(path, 'a', encoding='utf-8') as f:
-    for value in ids:
-        f.write(value + '\n')
-PY
+            SUB_FILE="$tmp/subscriptions" python3 -c 'import json,os,sys; d=json.load(sys.stdin); p=os.environ["SUB_FILE"]; vals=[x.get("subscriptionId") for x in d.get("value",[]) if x.get("subscriptionId")]; f=open(p,"a",encoding="utf-8"); [f.write(v+"\n") for v in vals]; f.close()' <<<"$subscriptions_json"
             echo 'SUBSCRIPTION_ENUMERATION=PASS'
           else
             echo 'SUBSCRIPTION_ENUMERATION=UNAVAILABLE_USING_CURRENT'
@@ -85,7 +70,6 @@ PY
                 denied=$((denied + 1))
                 break
               fi
-
               match_count="$(python3 -c 'import json,sys; d=json.load(sys.stdin); print(sum(1 for x in d.get("value",[]) if x.get("properties",{}).get("ipAddress")==sys.argv[1]))' "$TARGET_IP" <<<"$page_json")"
               if [[ "$match_count" -gt 1 ]]; then
                 echo "MATCH=AMBIGUOUS count=${match_count}"
