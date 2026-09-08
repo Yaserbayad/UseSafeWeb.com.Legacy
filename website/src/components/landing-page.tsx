@@ -12,6 +12,10 @@ type LandingSection = {
   noteBody?: string;
 };
 
+function actionClassName(action: Action) {
+  return action.secondary ? 'sw-button sw-button--secondary' : 'sw-button';
+}
+
 export function LandingPage({
   section,
   actions = [],
@@ -31,11 +35,7 @@ export function LandingPage({
               {actions.map((action) => (
                 <Link
                   key={action.href}
-                  className={
-                    action.secondary
-                      ? 'sw-button sw-button--secondary'
-                      : 'sw-button'
-                  }
+                  className={actionClassName(action)}
                   href={action.href}
                 >
                   {action.label}
