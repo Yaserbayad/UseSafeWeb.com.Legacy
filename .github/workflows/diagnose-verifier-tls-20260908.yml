@@ -1,4 +1,4 @@
-# Diagnostic revision: 2
+# Diagnostic revision: 3
 name: Diagnose verifier TLS on AdGuard VM
 
 on:
@@ -19,8 +19,10 @@ jobs:
     runs-on: [self-hosted, linux, x64]
     timeout-minutes: 5
     steps:
-      - name: Inspect verifier TLS and proxy configuration
+      - name: Inspect verifier TLS and DNS-01 capability
         shell: bash
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           set -Eeuo pipefail
           [[ "${GITHUB_EVENT_NAME}" == "push" ]]
@@ -33,25 +35,33 @@ jobs:
 
           echo "HOST=$(hostname -s)"
           echo "PUBLIC_IP=$(curl -fsS --max-time 5 https://api.ipify.org || true)"
-          echo '--- NGINX VERSION/STATUS ---'
-          nginx -v 2>&1 || true
+          echo '--- DNS AUTHORITY ---'
+          dig +short NS usesafeweb.com || true
+
+          echo '--- NGINX STATUS ---'
           systemctl is-active nginx || true
           sudo nginx -t
-
-          echo '--- NGINX RELEVANT DIRECTIVES ---'
           sudo nginx -T 2>&1 \
-            | grep -E '^[[:space:]]*(listen|server_name|ssl_certificate|ssl_certificate_key|location|proxy_pass|return)[[:space:]]' \
+            | grep -E '^[[:space:]]*(listen|server_name|ssl_certificate|ssl_certificate_key|location|proxy_pass|proxy_set_header|proxy_ssl_server_name|proxy_ssl_name|return)[[:space:]]' \
             | sed -E 's#(ssl_certificate_key[[:space:]]+).*#\1[REDACTED];#' \
-            | head -n 240
+            | head -n 260
 
-          echo '--- CERTBOT LINEAGES ---'
+          echo '--- CERTBOT LINEAGES/PLUGINS ---'
           sudo certbot certificates 2>&1 \
             | sed -E 's#(Private Key Path:).*#\1 [REDACTED]#' \
             | head -n 160
-
-          echo '--- RENEWAL CONFIG SAFE FIELDS ---'
-          sudo grep -RHE '^(authenticator|installer|webroot_path|server|renew_hook|deploy_hook|pre_hook|post_hook)[[:space:]]*=' /etc/letsencrypt/renewal 2>/dev/null \
-            | head -n 120 || true
+          sudo certbot plugins 2>&1 | head -n 200 || true
+          dpkg -l 2>/dev/null | grep -Ei 'certbot|cloudflare' | awk '{print $2" "$3}' | head -n 100 || true
+          python3 - <<'PY'
+          import importlib.util
+          for name in ('certbot_dns_cloudflare','cloudflare'):
+              print(f'{name}_PYTHON_MODULE=' + ('YES' if importlib.util.find_spec(name) else 'NO'))
+          PY
+          command -v az >/dev/null && echo 'AZ_CLI=YES' || echo 'AZ_CLI=NO'
+          command -v cloudflared >/dev/null && echo 'CLOUDFLARED=YES' || echo 'CLOUDFLARED=NO'
+          [[ -n "${CF_API_TOKEN:-}" ]] && echo 'CLOUDFLARE_API_TOKEN_SECRET=YES' || echo 'CLOUDFLARE_API_TOKEN_SECRET=NO'
+          echo '--- POTENTIAL DNS CREDENTIAL FILE NAMES ONLY ---'
+          sudo find /root /etc/letsencrypt /home/azureusr -maxdepth 4 -type f \( -iname '*cloudflare*' -o -iname '*dns*.ini' \) -print 2>/dev/null | head -n 100 || true
 
           echo '--- LOCAL TLS SNI ---'
           for sni in dns.usesafeweb.com verify.usesafeweb.com 0123456789abcdef0123456789abcdef.verify.usesafeweb.com; do
@@ -62,12 +72,6 @@ jobs:
             set -e
             echo "RC=${rc}"
             printf '%s\n' "$out" | grep -E '^(Protocol version|Ciphersuite|Peer certificate|Verification:)|alert|unrecognized name' | head -n 12 || true
-          done
-
-          echo '--- LOCAL HTTP ROUTING ---'
-          for host in dns.usesafeweb.com verify.usesafeweb.com 0123456789abcdef0123456789abcdef.verify.usesafeweb.com; do
-            code=$(curl -ksS --resolve "${host}:443:127.0.0.1" --max-time 6 -o /dev/null -w '%{http_code}' "https://${host}/api/dns-verification/probes" || true)
-            echo "${host} probes=${code:-000}"
           done
 
           echo 'DIAGNOSTIC=PASS'
