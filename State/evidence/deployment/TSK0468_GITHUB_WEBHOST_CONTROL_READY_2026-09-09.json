@@ -1,0 +1,43 @@
+{
+  "evidence_schema": "usesafeweb-deployment-control-ready-v1",
+  "project_id": "UseSafeWeb.com",
+  "work_item_id": "TSK-0468",
+  "recorded_at": "2026-09-08T22:57:50Z",
+  "release_commit": "907d3880026ca73be949cfc7ecee14eff3efb60c",
+  "transport": {
+    "type": "github-self-hosted-runner",
+    "repository": "Yaserbayad/erp.hmg.test",
+    "runner": "hmgweb",
+    "run_id": 34288429214,
+    "job_id": 102269283365,
+    "workflow": ".github/workflows/usesafeweb-webhost-upgrade-preflight-20260909.yml"
+  },
+  "target": {
+    "hostname": "hmgweb",
+    "public_ip": "20.71.90.212",
+    "os": "ubuntu-24.04",
+    "sudo_noninteractive": true
+  },
+  "current_production": {
+    "release_commit": "efe9d4d885d6057b18c5fddea5a0dd2d49d3ec25",
+    "service_active": true,
+    "service_user": "usesafeweb-web",
+    "systemd_hardening": true,
+    "runtime_env_mode_owner": "600 root:root",
+    "signing_secret_present_not_exposed": true,
+    "isolated_node": "v22.23.2",
+    "npm": "10.9.8",
+    "nginx_upstream": "127.0.0.1:3100",
+    "nginx_config_valid": true,
+    "local_health": "PASS",
+    "public_https_health": "PASS"
+  },
+  "target_release": {
+    "fetch_from_main_history": "PASS",
+    "deploy_script_present": true,
+    "runtime_validator_present": true,
+    "nvmrc": "22.23.2"
+  },
+  "result": "PASS",
+  "conclusion": "An authenticated GitHub execution path to the actual root website host is available and the existing production installation is healthy and ready for a controlled in-place release upgrade with the existing acceptance and rollback requirements unchanged."
+}
