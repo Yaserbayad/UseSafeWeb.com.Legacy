@@ -1,10 +1,12 @@
 {
   "request_schema": "usesafeweb-checkpoint-storage-request-v1",
-  "operation": "transition_tsk0468_todo_to_waiting_webhost_control",
-  "request_id": "tsk0468-webhost-control-wait-20260908",
-  "expected_checkpoint_blob": "f11330e6d7b00814cc921825dd7d77a2be9d7d71",
-  "expected_revision": 53,
+  "operation": "transition_tsk0468_waiting_to_todo_github_webhost",
+  "request_id": "tsk0468-github-webhost-ready-20260909",
+  "expected_checkpoint_blob": "7f9a7cfccd8933e451a169599c253da8cccfe037",
+  "expected_revision": 54,
   "expected_baseline": 2,
   "release_commit": "907d3880026ca73be949cfc7ecee14eff3efb60c",
-  "wait_evidence_reference": "State/evidence/deployment/TSK0468_WEBHOST_CONTROL_WAIT_2026-09-08.json; blob 438af4194ec535314c4e6b8fe1214817c13d9f84"
+  "ready_evidence_reference": "State/evidence/deployment/TSK0468_GITHUB_WEBHOST_CONTROL_READY_2026-09-09.json; blob 16a355da8963570753e31971b6efef5e9250dd95",
+  "run_id": 34288429214,
+  "job_id": 102269283365
 }
