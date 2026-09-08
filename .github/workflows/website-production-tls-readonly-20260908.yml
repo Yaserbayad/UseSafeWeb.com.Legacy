@@ -23,31 +23,48 @@ jobs:
           [[ "$(id -un)" == "azureusr" ]]
           sudo -n true
 
-      - name: Discover certificate and nginx bindings without mutation
+      - name: Discover certificate DNS and nginx bindings without mutation
         shell: bash
         run: |
           set -Eeuo pipefail
           echo 'TLS_DISCOVERY_MODE=READ_ONLY'
-          echo 'CERTIFICATE_DIRECTORIES_BEGIN'
-          if sudo -n test -d /etc/letsencrypt/live; then
-            sudo -n find /etc/letsencrypt/live -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | LC_ALL=C sort
-          fi
-          echo 'CERTIFICATE_DIRECTORIES_END'
 
-          echo 'CERTIFICATE_SANS_BEGIN'
-          if sudo -n test -d /etc/letsencrypt/live; then
-            while IFS= read -r cert; do
-              [[ -f "$cert" ]] || continue
-              printf 'CERT=%s\n' "$cert"
-              sudo -n openssl x509 -in "$cert" -noout -subject -issuer -dates -ext subjectAltName 2>/dev/null || true
-            done < <(sudo -n find -L /etc/letsencrypt/live -mindepth 2 -maxdepth 2 -name fullchain.pem -type f | LC_ALL=C sort)
+          echo 'DNS_RESOLUTION_BEGIN'
+          for host in usesafeweb.com dns.usesafeweb.com verify.usesafeweb.com; do
+            printf 'HOST=%s\n' "$host"
+            getent ahostsv4 "$host" | awk '{print $1}' | sort -u || true
+          done
+          echo 'DNS_RESOLUTION_END'
+
+          echo 'LOCAL_CERTIFICATES_BEGIN'
+          for cert in \
+            /etc/letsencrypt/live/dns.usesafeweb.com/fullchain.pem \
+            /etc/letsencrypt/live/verify.usesafeweb.com/fullchain.pem; do
+            printf 'CERT=%s\n' "$cert"
+            if sudo -n test -r "$cert"; then
+              sudo -n openssl x509 -in "$cert" -noout -subject -issuer -dates -ext subjectAltName
+            else
+              echo 'CERT_READABLE=NO'
+            fi
+          done
+          echo 'LOCAL_CERTIFICATES_END'
+
+          echo 'PUBLIC_USESAVEWEB_CERT_BEGIN'
+          if timeout 12 bash -c 'exec 3<>/dev/tcp/usesafeweb.com/443; openssl s_client -connect usesafeweb.com:443 -servername usesafeweb.com </dev/null 2>/dev/null | openssl x509 -noout -subject -issuer -dates -ext subjectAltName' 2>/dev/null; then
+            echo 'PUBLIC_CERT_READ=PASS'
+          else
+            echo 'PUBLIC_CERT_READ=FAIL'
           fi
-          echo 'CERTIFICATE_SANS_END'
+          echo 'PUBLIC_USESAVEWEB_CERT_END'
+
+          echo 'PUBLIC_RESPONSE_HEADERS_BEGIN'
+          curl --silent --show-error --fail --max-time 10 --head https://usesafeweb.com/ | sed -n '1,20p' || true
+          echo 'PUBLIC_RESPONSE_HEADERS_END'
 
           echo 'NGINX_TLS_BINDINGS_BEGIN'
           tmp="$(mktemp)"
           trap 'rm -f "$tmp"' EXIT
           sudo -n nginx -T >"$tmp" 2>&1
-          grep -E '^[[:space:]]*(server_name|ssl_certificate|ssl_certificate_key)[[:space:]]' "$tmp" || true
+          grep -E '^[[:space:]]*(listen|server_name|ssl_certificate|ssl_certificate_key|proxy_pass)[[:space:]]' "$tmp" || true
           echo 'NGINX_TLS_BINDINGS_END'
           echo 'TLS_DISCOVERY=PASS'
