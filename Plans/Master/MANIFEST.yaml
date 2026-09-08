@@ -337,19 +337,18 @@ canonicalization:
   canonical_activation_condition: TSK-0009 publication PASS plus TSK-0011 exact GitHub read-back PASS; volatile execution state is then rebaselined in repository CURRENT_STATE.md under TSK-0010
 
 post_freeze_change_control:
-  latest_change: CR-0013
-  previous_change: CR-0012
+  latest_change: CR-0015
+  previous_change: CR-0014
   date: '2026-09-04'
-  status: owner-approved removal of mandatory human/Code Owner merge approval from TSK-0453 in favor of deterministic automated critical-path quality/change-policy verification
-  authority: explicit current Project Owner instruction 2026-09-04; DEC-0060/CR-0013; actual law/safety/security/platform/technical reality remains higher authority
+  status: owner-approved additional Version-1 / controlled Release-1 deferrals applied; no task PASS or material-action authority created
+  authority: explicit Project Owner instruction 2026-09-04; DEC-0062/CR-0015; actual law/safety/security/platform/technical reality remains higher authority
   affected_scope:
-  - TSK-0453 Acceptance_Criteria and synchronized acceptance register
-  - DEC-0060 and CR-0013 change-control metadata
-  - repository review/CI policy, pull-request review wording, focused TSK-0453 contract/workflow, generated reconstruction and checksums
-  - CURRENT_STATE reconciliation after complete verification; no dependency edge, action authority, gate, requirement, interface, risk, TSK-0455 contract or material-action fence change
-  semantic_delta: critical-path human/Code Owner approval is advisory/not mandatory for ordinary governed AUTO_ALLOWED work; deterministic automated local/CI quality and change-policy verification remains mandatory; genuine separate human-authority boundaries remain unchanged
+  - exactly TSK-0630, TSK-0421, TSK-0415, TSK-0416, TSK-0370, TSK-0499 and TSK-0242 sequencing fields (Plan_Status, Trigger, Relative_Timing, Notes)
+  - DEC-0062 and CR-0015 change-control metadata
+  - generated reconstruction and checksums
+  - CURRENT_STATE reconciliation; no dependency edge, ACC/VER/EVD contract, action authority, requirement, interface, risk, gate, milestone or material-action fence change
+  semantic_delta: exactly seven owner-selected tasks are deferred until after Version 1 / the controlled Release-1 test with 10-20 people; they remain non-PASS with dependencies and acceptance/evidence contracts preserved; all nonselected tasks remain subject to ordinary dependency semantics
   change_record: Registers/EXCEPTIONS_CHANGE_CONTROLS.md#post-freeze-material-change-records
-
 generated_assembly_contract:
   output: Generated/MASTER_PLAN_FULL.md
   markdown_modules: concatenate in deterministic_assembly_order with relative links rebased from Generated/
