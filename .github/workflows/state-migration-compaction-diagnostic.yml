@@ -1,0 +1,64 @@
+name: Measure safe state compaction opportunities
+
+on:
+  push:
+    branches:
+      - state-migration-rev50-20260908
+    paths:
+      - .github/workflows/state-migration-compaction-diagnostic.yml
+
+permissions:
+  contents: read
+
+jobs:
+  measure:
+    runs-on:
+      - self-hosted
+      - Linux
+      - X64
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Measure optional and archival fields
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(hostname)" = "adguardvm"
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('CURRENT_STATE.md').read_text(encoding='utf-8'))
+          bm = {x['id']: x for x in p['baseline']['work_items']}
+          rt = p['runtime']['items']
+          def b(s): return len(str(s).encode('utf-8'))
+          sums = {
+              'WAIT_CONDITION_TEXT': 0,
+              'WAIT_RESOLUTION_TEXT': 0,
+              'WAIT_REFERENCE_TEXT': 0,
+              'CONTINUATION_NOTE_TEXT': 0,
+              'AC_REF_REFERENCE_TEXT': 0,
+              'AC_REF_SUMMARY_TEXT': 0,
+              'AC_REF_VERIFICATION_CONTEXT_TEXT': 0,
+              'PASS_SPEC_REFERENCE_TEXT': 0,
+              'WAITING_SPEC_REFERENCE_TEXT': 0,
+          }
+          counts = {k: 0 for k in sums}
+          for r in rt:
+              if r.get('wait'):
+                  for field, key in [('condition','WAIT_CONDITION_TEXT'),('resolution_check','WAIT_RESOLUTION_TEXT'),('reference','WAIT_REFERENCE_TEXT')]:
+                      if r['wait'].get(field): sums[key] += b(r['wait'][field]); counts[key] += 1
+              if r.get('continuation_note'):
+                  sums['CONTINUATION_NOTE_TEXT'] += b(r['continuation_note']); counts['CONTINUATION_NOTE_TEXT'] += 1
+              for a in r.get('acceptance_references', []):
+                  sums['AC_REF_REFERENCE_TEXT'] += b(a.get('reference','')); counts['AC_REF_REFERENCE_TEXT'] += 1
+                  sums['AC_REF_SUMMARY_TEXT'] += b(a.get('summary','')); counts['AC_REF_SUMMARY_TEXT'] += 1
+                  if a.get('verification_context'):
+                      sums['AC_REF_VERIFICATION_CONTEXT_TEXT'] += b(a['verification_context']); counts['AC_REF_VERIFICATION_CONTEXT_TEXT'] += 1
+              spec = bm[r['id']].get('spec_reference')
+              if spec and r['status'] == 'PASS':
+                  sums['PASS_SPEC_REFERENCE_TEXT'] += b(spec); counts['PASS_SPEC_REFERENCE_TEXT'] += 1
+              if spec and r['status'] == 'WAITING':
+                  sums['WAITING_SPEC_REFERENCE_TEXT'] += b(spec); counts['WAITING_SPEC_REFERENCE_TEXT'] += 1
+          for k in sums:
+              print(f'{k}_BYTES={sums[k]} COUNT={counts[k]}')
+          PY
