@@ -1,5 +1,5 @@
-# Deployment revision: 9
-name: Deploy verifier TLS and proxy on AdGuard VM
+# Diagnostic revision: 10
+name: Diagnose verifier SNI with reversible Nginx probe
 
 on:
   push:
@@ -15,17 +15,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  diagnose:
     runs-on: [self-hosted, linux, x64]
-    timeout-minutes: 15
+    timeout-minutes: 5
     steps:
-      - name: Deploy verifier TLS and proxy with rollback
+      - name: Reproduce verifier SNI and restore Nginx
         shell: bash
-        env:
-          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           set -Eeuo pipefail
-
           [[ "${GITHUB_EVENT_NAME}" == "push" ]]
           [[ "${GITHUB_REF}" == "refs/heads/main" ]]
           [[ "${RUNNER_OS}" == "Linux" ]]
@@ -34,104 +31,50 @@ jobs:
           [[ "$(id -un)" == "azureusr" ]]
           sudo -n true
           [[ "$(curl -fsS --max-time 5 https://api.ipify.org)" == "52.157.109.120" ]]
-          [[ -n "${CF_API_TOKEN:-}" ]]
           systemctl is-active --quiet nginx
-          systemctl is-active --quiet certbot.timer
           sudo nginx -t
 
           challenge="0123456789abcdef0123456789abcdef.verify.usesafeweb.com"
-          cf_creds="/etc/letsencrypt/cloudflare-usesafeweb.ini"
-          backup_dir="/var/backups/usesafeweb"
-          nginx_backup=""
-          creds_backup=""
-          nginx_changed=0
-          creds_changed=0
-          cert_ready=0
-          tmp_creds=""
+          cert_dir="/etc/letsencrypt/live/verify.usesafeweb.com"
+          backup="/var/backups/usesafeweb/nginx.conf.${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}.diag.bak"
+          changed=0
 
-          cleanup_or_rollback() {
+          restore() {
             rc=$?
             trap - EXIT
-            [[ -n "${tmp_creds}" ]] && rm -f "${tmp_creds}" || true
-            if (( rc != 0 )); then
-              echo "DEPLOYMENT=FAIL;ROLLBACK=START"
-              if (( nginx_changed == 1 )) && [[ -n "${nginx_backup}" ]] && sudo test -f "${nginx_backup}"; then
-                sudo cp -a "${nginx_backup}" /etc/nginx/nginx.conf
-                sudo nginx -t
-                sudo systemctl reload nginx
-                echo "NGINX_ROLLBACK=PASS"
-              fi
-              if (( creds_changed == 1 && cert_ready == 0 )); then
-                if [[ -n "${creds_backup}" ]] && sudo test -f "${creds_backup}"; then
-                  sudo cp -a "${creds_backup}" "${cf_creds}"
-                else
-                  sudo rm -f "${cf_creds}"
-                fi
-                echo "CREDENTIAL_ROLLBACK=PASS"
-              elif (( cert_ready == 1 )); then
-                echo "CERTIFICATE_AND_RENEWAL_CREDENTIAL=RETAINED_FOR_SAFE_RETRY"
-              fi
-              echo "ROLLBACK=COMPLETE"
+            if (( changed == 1 )); then
+              sudo cp -a "${backup}" /etc/nginx/nginx.conf
+              sudo nginx -t
+              sudo systemctl reload nginx
+              echo 'RESTORE=PASS'
             fi
             exit "${rc}"
           }
-          trap cleanup_or_rollback EXIT
+          trap restore EXIT
 
-          echo '--- PRECHANGE HEALTH ---'
-          openssl s_client -connect 127.0.0.1:443 -servername dns.usesafeweb.com -verify_return_error -verify_hostname dns.usesafeweb.com -brief </dev/null >/dev/null 2>&1
-          doh_before=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' https://dns.usesafeweb.com/dns-query)
-          web_before=$(curl -LsS --max-time 10 -o /dev/null -w '%{http_code}' https://usesafeweb.com/)
-          api_before=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' https://usesafeweb.com/api/dns-verification/requests)
-          [[ "${doh_before}" == "400" ]]
-          [[ "${web_before}" == "200" ]]
-          [[ "${api_before}" == "405" ]]
-          echo "PRECHANGE_DOH=${doh_before};WEB_FINAL=${web_before};API=${api_before}"
+          sudo test -r "${cert_dir}/cert.pem"
+          sudo test -r "${cert_dir}/chain.pem"
+          sudo test -r "${cert_dir}/fullchain.pem"
+          sudo test -r "${cert_dir}/privkey.pem"
+          ! sudo grep -Fq 'server_name verify.usesafeweb.com *.verify.usesafeweb.com;' /etc/nginx/nginx.conf
 
-          if ! sudo certbot plugins 2>/dev/null | grep -q 'dns-cloudflare'; then
-            sudo apt-get update -qq
-            sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends python3-certbot-dns-cloudflare
-          fi
-          sudo certbot plugins 2>/dev/null | grep -q 'dns-cloudflare'
+          echo '--- CERTIFICATE DIRECT VALIDATION ---'
+          sudo openssl x509 -in "${cert_dir}/cert.pem" -noout -subject -issuer -dates -ext subjectAltName
+          set +e
+          sudo openssl verify \
+            -CAfile /etc/ssl/certs/ca-certificates.crt \
+            -untrusted "${cert_dir}/chain.pem" \
+            -verify_hostname "${challenge}" \
+            "${cert_dir}/cert.pem"
+          cert_verify_rc=$?
+          set -e
+          echo "CERT_VERIFY_RC=${cert_verify_rc}"
 
-          sudo mkdir -p "${backup_dir}"
-          if sudo test -f "${cf_creds}"; then
-            creds_backup="${backup_dir}/cloudflare-usesafeweb.ini.${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}.bak"
-            sudo cp -a "${cf_creds}" "${creds_backup}"
-          fi
-          tmp_creds=$(mktemp)
-          chmod 600 "${tmp_creds}"
-          printf 'dns_cloudflare_api_token = %s\n' "${CF_API_TOKEN}" > "${tmp_creds}"
-          sudo install -o root -g root -m 600 "${tmp_creds}" "${cf_creds}"
-          rm -f "${tmp_creds}"
-          tmp_creds=""
-          creds_changed=1
-          [[ "$(sudo stat -c '%U:%G:%a' "${cf_creds}")" == "root:root:600" ]]
+          sudo mkdir -p /var/backups/usesafeweb
+          sudo cp -a /etc/nginx/nginx.conf "${backup}"
+          changed=1
 
-          echo '--- CERTIFICATE ISSUE/RENEWAL PROOF ---'
-          sudo certbot certonly \
-            --non-interactive \
-            --agree-tos \
-            --dns-cloudflare \
-            --dns-cloudflare-credentials "${cf_creds}" \
-            --dns-cloudflare-propagation-seconds 30 \
-            --cert-name verify.usesafeweb.com \
-            --keep-until-expiring \
-            --deploy-hook "/usr/bin/systemctl reload nginx" \
-            -d verify.usesafeweb.com \
-            -d '*.verify.usesafeweb.com'
-          cert_ready=1
-
-          sudo test -r /etc/letsencrypt/live/verify.usesafeweb.com/fullchain.pem
-          sudo test -r /etc/letsencrypt/live/verify.usesafeweb.com/privkey.pem
-          sudo openssl x509 -in /etc/letsencrypt/live/verify.usesafeweb.com/fullchain.pem -noout -ext subjectAltName \
-            | grep -F 'DNS:*.verify.usesafeweb.com' >/dev/null
-          sudo certbot renew --cert-name verify.usesafeweb.com --dry-run --non-interactive
-
-          nginx_backup="${backup_dir}/nginx.conf.${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}.bak"
-          sudo cp -a /etc/nginx/nginx.conf "${nginx_backup}"
-
-          if ! sudo grep -Fq 'server_name verify.usesafeweb.com *.verify.usesafeweb.com;' /etc/nginx/nginx.conf; then
-            sudo python3 - <<'PY'
+          sudo python3 - <<'PY'
           from pathlib import Path
 
           path = Path('/etc/nginx/nginx.conf')
@@ -177,43 +120,42 @@ jobs:
           '''
           path.write_text(text.replace(marker, "\n" + block + "\n}\n\nstream {\n", 1))
           PY
-            nginx_changed=1
-          fi
 
           sudo nginx -t
           sudo systemctl reload nginx
           systemctl is-active --quiet nginx
+          echo '--- ACTIVE SERVER NAMES ---'
+          sudo nginx -T 2>&1 | grep -E 'server_name (dns|verify)|ssl_certificate /etc/letsencrypt/live/(dns|verify)' || true
 
-          echo '--- VERIFIER FUNCTIONAL PROOF ---'
-          openssl s_client -connect 127.0.0.1:443 -servername "${challenge}" -verify_return_error -verify_hostname "${challenge}" -brief </dev/null >/dev/null 2>&1
-          dig +short "${challenge}" A | grep -Fx '52.157.109.120' >/dev/null
+          echo '--- TLS AND PROBE MEASUREMENTS ---'
+          set +e
+          tls_challenge=$(openssl s_client -connect 127.0.0.1:443 -servername "${challenge}" -brief </dev/null 2>&1); tls_challenge_rc=$?
+          tls_challenge_verified=$(openssl s_client -connect 127.0.0.1:443 -servername "${challenge}" -verify_return_error -verify_hostname "${challenge}" -brief </dev/null 2>&1); tls_challenge_verified_rc=$?
+          tls_apex=$(openssl s_client -connect 127.0.0.1:443 -servername verify.usesafeweb.com -brief </dev/null 2>&1); tls_apex_rc=$?
+          tls_dns=$(openssl s_client -connect 127.0.0.1:443 -servername dns.usesafeweb.com -verify_return_error -verify_hostname dns.usesafeweb.com -brief </dev/null 2>&1); tls_dns_rc=$?
+          local_probe_insecure=$(curl -ksS --max-time 15 --resolve "${challenge}:443:127.0.0.1" -o /dev/null -w '%{http_code}' -X POST -H 'Origin: https://usesafeweb.com' -H 'Content-Type: text/plain' --data 'invalid-probe-token' "https://${challenge}/api/dns-verification/probes"); local_probe_insecure_rc=$?
+          local_probe_secure=$(curl -sS --max-time 15 --resolve "${challenge}:443:127.0.0.1" -o /dev/null -w '%{http_code}' -X POST -H 'Origin: https://usesafeweb.com' -H 'Content-Type: text/plain' --data 'invalid-probe-token' "https://${challenge}/api/dns-verification/probes"); local_probe_secure_rc=$?
+          public_probe_secure=$(curl -sS --max-time 15 -o /dev/null -w '%{http_code}' -X POST -H 'Origin: https://usesafeweb.com' -H 'Content-Type: text/plain' --data 'invalid-probe-token' "https://${challenge}/api/dns-verification/probes"); public_probe_secure_rc=$?
+          dns_a=$(dig +short "${challenge}" A | tr '\n' ',' | sed 's/,$//'); dns_rc=$?
+          set -e
 
-          local_probe=$(curl -sS --max-time 15 \
-            --resolve "${challenge}:443:127.0.0.1" \
-            -o /dev/null -w '%{http_code}' \
-            -X POST \
-            -H 'Origin: https://usesafeweb.com' \
-            -H 'Content-Type: text/plain' \
-            --data 'invalid-probe-token' \
-            "https://${challenge}/api/dns-verification/probes")
-          public_probe=$(curl -sS --max-time 15 \
-            -o /dev/null -w '%{http_code}' \
-            -X POST \
-            -H 'Origin: https://usesafeweb.com' \
-            -H 'Content-Type: text/plain' \
-            --data 'invalid-probe-token' \
-            "https://${challenge}/api/dns-verification/probes")
-          [[ "${local_probe}" == "403" ]]
-          [[ "${public_probe}" == "403" ]]
+          echo "CERT_VERIFY_RC=${cert_verify_rc}"
+          echo "TLS_CHALLENGE_RC=${tls_challenge_rc}"
+          printf '%s\n' "${tls_challenge}" | tail -n 8
+          echo "TLS_CHALLENGE_VERIFIED_RC=${tls_challenge_verified_rc}"
+          printf '%s\n' "${tls_challenge_verified}" | tail -n 8
+          echo "TLS_APEX_RC=${tls_apex_rc}"
+          printf '%s\n' "${tls_apex}" | tail -n 8
+          echo "TLS_DNS_RC=${tls_dns_rc}"
+          echo "LOCAL_PROBE_INSECURE_RC=${local_probe_insecure_rc};CODE=${local_probe_insecure}"
+          echo "LOCAL_PROBE_SECURE_RC=${local_probe_secure_rc};CODE=${local_probe_secure}"
+          echo "PUBLIC_PROBE_SECURE_RC=${public_probe_secure_rc};CODE=${public_probe_secure}"
+          echo "DNS_RC=${dns_rc};A=${dns_a}"
 
-          doh_after=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' https://dns.usesafeweb.com/dns-query)
-          web_after=$(curl -LsS --max-time 10 -o /dev/null -w '%{http_code}' https://usesafeweb.com/)
-          api_after=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' https://usesafeweb.com/api/dns-verification/requests)
-          [[ "${doh_after}" == "400" ]]
-          [[ "${web_after}" == "200" ]]
-          [[ "${api_after}" == "405" ]]
-
-          creds_changed=0
-          nginx_changed=0
+          sudo cp -a "${backup}" /etc/nginx/nginx.conf
+          sudo nginx -t
+          sudo systemctl reload nginx
+          changed=0
           trap - EXIT
-          echo "DEPLOYMENT=PASS;LOCAL_PROBE=${local_probe};PUBLIC_PROBE=${public_probe};DOH=${doh_after};WEB_FINAL=${web_after};API=${api_after}"
+          echo 'RESTORE=PASS'
+          echo 'DIAGNOSTIC=PASS'
