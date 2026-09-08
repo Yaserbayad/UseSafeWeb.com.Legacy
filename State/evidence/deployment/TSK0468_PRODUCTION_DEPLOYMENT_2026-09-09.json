@@ -1,0 +1,113 @@
+{
+  "evidence_schema": "usesafeweb-production-deployment-evidence-v1",
+  "project_id": "UseSafeWeb.com",
+  "work_item_id": "TSK-0468",
+  "acceptance_id": "ACC-0468",
+  "recorded_at": "2026-09-08T23:06:30Z",
+  "acceptance_condition": "`/website` release manifest and production configuration match; direct-host deployment, content/locales/CMS integration, server functions, privacy notices and any migrations pass; health/smoke/security/accessibility checks pass; rollback is available. Initial/high-impact production release remains approval-required; later low-risk reversible releases may use their explicit task authority.",
+  "owner_approval": {
+    "reference": "State/evidence/human/TSK0468_PRODUCTION_DEPLOYMENT_APPROVAL_2026-09-09.json; blob 447830ab6ba19fd6d4bda6901072e770af08f8de",
+    "sequencing_override_reference": "State/evidence/human/WEBSITE_DEPLOYMENT_SEQUENCING_OVERRIDE_2026-09-08.json; blob e500e169d709325ed04aacf978e99357a6af6591"
+  },
+  "release": {
+    "repository": "Yaserbayad/UseSafeWeb.com",
+    "target_commit": "907d3880026ca73be949cfc7ecee14eff3efb60c",
+    "previous_commit": "efe9d4d885d6057b18c5fddea5a0dd2d49d3ec25",
+    "pr": 119,
+    "pr_head": "eae58ba6443595a5a852f1aad309d7e0f0329fc8",
+    "merge_identity": "PR #119 merge commit is the deployed target; compare PR head -> deployed merge is ahead by one merge commit with zero changed files, binding tested website content to the deployed tree."
+  },
+  "production_target": {
+    "transport_repository": "Yaserbayad/erp.hmg.test",
+    "runner": "hmgweb",
+    "hostname": "hmgweb",
+    "public_ip": "20.71.90.212",
+    "os": "Ubuntu 24.04",
+    "application_root": "/opt/usesafeweb-web",
+    "service": "usesafeweb-web.service",
+    "listener": "127.0.0.1:3100",
+    "public_origin": "https://usesafeweb.com"
+  },
+  "preflight": {
+    "result": "PASS",
+    "run_id": 34288429214,
+    "job_id": 102269283365,
+    "workflow": ".github/workflows/usesafeweb-webhost-upgrade-preflight-20260909.yml",
+    "reference": "State/evidence/deployment/TSK0468_GITHUB_WEBHOST_CONTROL_READY_2026-09-09.json; blob 16a355da8963570753e31971b6efef5e9250dd95"
+  },
+  "deployment": {
+    "result": "PASS",
+    "workflow_commit": "f2a48f09dcc93e86dd0614f55bcc852469bef5dd",
+    "run_id": 34288791722,
+    "job_id": 102270432495,
+    "canonical_deploy_script_blob": "5cea28abde776cfc43d849c3029b62e9a8ebec56",
+    "markers": [
+      "PRE_DEPLOY=PASS",
+      "SOURCE=PASS",
+      "RELEASE_BINDING=PASS",
+      "USESAFEWEB_DEPLOY=PASS release=907d3880026ca73be949cfc7ecee14eff3efb60c",
+      "CANONICAL_DEPLOY=PASS",
+      "HEALTH=PASS local=200 public_https=200 tls_verified=1 listener=127.0.0.1:3100",
+      "PUBLIC_SURFACE=PASS landing=1 wordmark=1 start=1 setup_route=1 locales=en-GB,tr-TR,ar",
+      "SECURITY_AND_ROLLBACK=PASS",
+      "TSK0468_DEPLOYMENT=PASS from=efe9d4d885d6057b18c5fddea5a0dd2d49d3ec25 to=907d3880026ca73be949cfc7ecee14eff3efb60c host=hmgweb ip=20.71.90.212"
+    ],
+    "validation": {
+      "contract_tests": "118/118 PASS",
+      "lint": "PASS with one pre-existing warning and zero errors",
+      "typecheck": "PASS",
+      "production_build": "PASS",
+      "runtime_release_binding": "PASS",
+      "signing_secret": "preserved and never printed",
+      "local_health": "PASS exact target SHA",
+      "public_https_health": "PASS exact target SHA and TLS verified",
+      "landing": "PASS",
+      "wordmark": "PASS",
+      "start_route": "PASS",
+      "setup_route": "PASS",
+      "locales": ["en-GB", "tr-TR", "ar"],
+      "fail_closed_runtime_negative_test": "PASS",
+      "system_node_npm_unchanged": true
+    }
+  },
+  "independent_post_deploy_verification": {
+    "result": "PASS",
+    "workflow_commit": "7ac25bf2f579879a6ba1d44c22dbf0e6ce06b892",
+    "run_id": 34289013271,
+    "job_id": 102271111149,
+    "markers": [
+      "HOST=PASS hostname=hmgweb ip=20.71.90.212 os=ubuntu-24.04",
+      "RELEASE_IDENTITY=PASS sha=907d3880026ca73be949cfc7ecee14eff3efb60c env=bound secret=present_not_printed",
+      "SERVICE_SECURITY=PASS active=1 user=usesafeweb-web no_new_privileges=yes protect_system=strict listener=127.0.0.1:3100 node=v22.23.2 npm=10.9.8",
+      "NGINX=PASS config_valid=1 upstream=127.0.0.1:3100",
+      "HEALTH=PASS local=200 public_https=200 tls_verified=1",
+      "PUBLIC_SURFACE=PASS landing=1 wordmark=1 trust_links=1 start=1 setup_route=1 locales=en-GB,tr-TR,ar",
+      "ROLLBACK_AVAILABILITY=PASS previous_release=efe9d4d885d6057b18c5fddea5a0dd2d49d3ec25 retained=1",
+      "TSK0468_POSTDEPLOY=PASS release=907d3880026ca73be949cfc7ecee14eff3efb60c host=hmgweb ip=20.71.90.212"
+    ]
+  },
+  "accessibility_and_browser_acceptance": {
+    "result": "PASS",
+    "source_commit": "eae58ba6443595a5a852f1aad309d7e0f0329fc8",
+    "deployed_merge_commit": "907d3880026ca73be949cfc7ecee14eff3efb60c",
+    "source_to_deployed_compare_changed_files": 0,
+    "run_id": 34277106920,
+    "job_id": 102232725342,
+    "browser_marker": "TSK0395_BROWSER_ACCEPTANCE=PASS",
+    "playwright": "1.62.1",
+    "axe_core": "4.13.0",
+    "browser_test_blob_at_deployed_release": "02bb2e49096a167b0070627bed7443f677319a8b",
+    "coverage": "Chromium across en-GB/tr-TR/ar at 320/768/1024/1440 widths; 200% text resize check; WCAG 2 A/AA, 2.1 AA and 2.2 AA axe scan at 320px with zero violations; CTA minimum target checks; LTR/RTL, overflow, runtime errors, storage/cookies, off-origin requests and unsupported locale fail-closed checks."
+  },
+  "rollback": {
+    "available": true,
+    "previous_release_retained": "efe9d4d885d6057b18c5fddea5a0dd2d49d3ec25",
+    "deploy_script_same_for_previous_and_target": true,
+    "deploy_script_blob": "5cea28abde776cfc43d849c3029b62e9a8ebec56",
+    "prior_live_rollback_proof_run": 33969593425,
+    "note": "No rollback was needed in this successful upgrade; the identical rollback implementation already has prior live proof and the previous release remains installed."
+  },
+  "secrets": "No secret values are stored in this evidence.",
+  "result": "PASS",
+  "conclusion": "ACC-0468 is satisfied for release 907d3880026ca73be949cfc7ecee14eff3efb60c: exact release/configuration binding, direct-host deployment, production content/locales/server routes/privacy-linked public surface, health/smoke/security/accessibility checks, owner approval, and rollback availability are all durably evidenced."
+}
