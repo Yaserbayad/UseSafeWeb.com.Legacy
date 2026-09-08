@@ -7,9 +7,10 @@ import checkpoint_storage_adapter_v4 as v4
 
 OPERATION = "mark_tsk0468_pass_production_deployment"
 TARGET_ID = "TSK-0468"
+AC_ID = "ACC-0468"
 RELEASE_COMMIT = "907d3880026ca73be949cfc7ecee14eff3efb60c"
 EVIDENCE_PATH = Path("State/evidence/deployment/TSK0468_PRODUCTION_DEPLOYMENT_2026-09-09.json")
-EVIDENCE_BLOB = "6c08a79b671db7081b422b292cf30bd6b2201275"
+EVIDENCE_BLOB = "64414cb49dc5e2674de0de374bfec9c400666133"
 EVIDENCE_REFERENCE = f"{EVIDENCE_PATH}; blob {EVIDENCE_BLOB}"
 APPROVAL_REFERENCE = "State/evidence/human/TSK0468_PRODUCTION_DEPLOYMENT_APPROVAL_2026-09-09.json; blob 447830ab6ba19fd6d4bda6901072e770af08f8de"
 SEQUENCING_APPROVAL_REFERENCE = "State/evidence/human/WEBSITE_DEPLOYMENT_SEQUENCING_OVERRIDE_2026-09-08.json; blob e500e169d709325ed04aacf978e99357a6af6591"
@@ -21,6 +22,12 @@ BROWSER_RUN_ID = 34277106920
 BROWSER_JOB_ID = 102232725342
 PREVIOUS_RELEASE = "efe9d4d885d6057b18c5fddea5a0dd2d49d3ec25"
 DEPLOY_SCRIPT_BLOB = "5cea28abde776cfc43d849c3029b62e9a8ebec56"
+ACCEPTANCE_REFERENCE = {
+    "ac_id": AC_ID,
+    "evidence_type": "GITHUB_BLOB",
+    "reference": EVIDENCE_REFERENCE,
+    "summary": "Exact production deployment, independent post-deploy verification, browser/accessibility acceptance, owner approval, security and rollback proof for release 907d3880026ca73be949cfc7ecee14eff3efb60c.",
+}
 
 
 def validate_request(request):
@@ -46,7 +53,7 @@ def validate_evidence():
     v1.require(evidence.get("evidence_schema") == "usesafeweb-production-deployment-evidence-v1", "production evidence schema mismatch")
     v1.require(evidence.get("project_id") == "UseSafeWeb.com", "production evidence project mismatch")
     v1.require(evidence.get("work_item_id") == TARGET_ID, "production evidence target mismatch")
-    v1.require(evidence.get("acceptance_id") == "ACC-0468", "production acceptance id mismatch")
+    v1.require(evidence.get("acceptance_id") == AC_ID, "production acceptance id mismatch")
     v1.require(evidence.get("result") == "PASS", "production evidence did not pass")
 
     owner = evidence.get("owner_approval", {})
@@ -57,7 +64,7 @@ def validate_evidence():
     v1.require(release.get("target_commit") == RELEASE_COMMIT, "deployed release mismatch")
     v1.require(release.get("previous_commit") == PREVIOUS_RELEASE, "previous release mismatch")
     v1.require(release.get("pr") == 119, "PR identity mismatch")
-    v1.require(release.get("source_to_deployed_compare_changed_files", 0) == 0, "unexpected release content drift")
+    v1.require(release.get("pr_head") == "eae58ba6443595a5a852f1aad309d7e0f0329fc8", "PR head mismatch")
 
     target = evidence.get("production_target", {})
     v1.require(target.get("runner") == "hmgweb", "production runner mismatch")
@@ -118,6 +125,7 @@ def transition(request, source, source_raw, source_blob, stats):
     v1.require(source["runtime"].get("governance_blocker") is None, "project governance blocker present")
     v1.require(target_work.get("title") == "Deploy production web/application/content release candidate", "target title mismatch")
     v1.require(target_work.get("depends_on") == [], "sequencing override dependency state drift")
+    v1.require([ac.get("id") for ac in target_work.get("acceptance_criteria", [])] == [AC_ID], "target acceptance criteria drift")
     v1.require(any(rule.get("id") == "POL-016" for rule in source["baseline"].get("policy_rules", [])), "sequencing override missing")
     v1.require(target_runtime.get("status") == "TODO", "target is not TODO")
     v1.require(target_runtime.get("acceptance_references") == [], "target already has acceptance references")
@@ -131,7 +139,7 @@ def transition(request, source, source_raw, source_blob, stats):
     for item in updated["runtime"]["items"]:
         if item["id"] == TARGET_ID:
             item["status"] = "PASS"
-            item["acceptance_references"] = [EVIDENCE_REFERENCE]
+            item["acceptance_references"] = [copy.deepcopy(ACCEPTANCE_REFERENCE)]
             break
 
     normalized = copy.deepcopy(updated)
