@@ -31,7 +31,11 @@ export function LandingPage({
               {actions.map((action) => (
                 <Link
                   key={action.href}
-                  className={action.secondary ? 'sw-button sw-button--secondary' : 'sw-button'}
+                  className={
+                    action.secondary
+                      ? 'sw-button sw-button--secondary'
+                      : 'sw-button'
+                  }
                   href={action.href}
                 >
                   {action.label}
