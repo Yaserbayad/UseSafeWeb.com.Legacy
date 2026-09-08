@@ -1,0 +1,358 @@
+{
+  "archive_schema": "usesafeweb-checkpoint-wait-payload-v1",
+  "authoritative": false,
+  "source_checkpoint": {
+    "path": "CURRENT_STATE.md",
+    "git_blob": "ae203f4b55864f6c0163669dcaf853bcf225a546",
+    "checkpoint_revision": 49,
+    "baseline_version": 1
+  },
+  "order_range": {
+    "first": 385,
+    "last": 448
+  },
+  "items": [
+    {
+      "id": "TSK-0385",
+      "order": 385,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0385; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0386",
+      "order": 386,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0386; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0387",
+      "order": 387,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0387; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0388",
+      "order": 388,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0388; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0389",
+      "order": 389,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0389; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0390",
+      "order": 390,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0390; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0391",
+      "order": 391,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0391; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0392",
+      "order": 392,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Meaningful external-user/availability dependency justifies a public status surface and the applicable owner/release authority opens it. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0392; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0393",
+      "order": 393,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0393; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0394",
+      "order": 394,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0394; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0396",
+      "order": 396,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0396; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0397",
+      "order": 397,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0397; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0398",
+      "order": 398,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0398; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0399",
+      "order": 399,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0399; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0400",
+      "order": 400,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0400; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0401",
+      "order": 401,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0401; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0403",
+      "order": 403,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0403; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0404",
+      "order": 404,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0404; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0406",
+      "order": 406,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0406; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0407",
+      "order": 407,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0407; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0414",
+      "order": 414,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0414; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0415",
+      "order": 415,
+      "wait": {
+        "condition": "Deferred by DEC-0062 / CR-0015 until after Version 1 / the controlled Release-1 test with approximately 10-20 people.",
+        "resolution_check": "Confirm the Version-1 / controlled Release-1 deferral boundary has passed and current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0415; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0062 / CR-0015"
+      }
+    },
+    {
+      "id": "TSK-0416",
+      "order": 416,
+      "wait": {
+        "condition": "Deferred by DEC-0062 / CR-0015 until after Version 1 / the controlled Release-1 test with approximately 10-20 people.",
+        "resolution_check": "Confirm the Version-1 / controlled Release-1 deferral boundary has passed and current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0416; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0062 / CR-0015"
+      }
+    },
+    {
+      "id": "TSK-0417",
+      "order": 417,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0417; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0418",
+      "order": 418,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0418; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0419",
+      "order": 419,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0419; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0420",
+      "order": 420,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0420; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0421",
+      "order": 421,
+      "wait": {
+        "condition": "Deferred by DEC-0062 / CR-0015 until after Version 1 / the controlled Release-1 test with approximately 10-20 people.",
+        "resolution_check": "Confirm the Version-1 / controlled Release-1 deferral boundary has passed and current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0421; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0062 / CR-0015"
+      }
+    },
+    {
+      "id": "TSK-0424",
+      "order": 424,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0424; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0425",
+      "order": 425,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0425; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0426",
+      "order": 426,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0426; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0427",
+      "order": 427,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0427; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0435",
+      "order": 435,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Owner has manually created and made the pilot Azure VM reachable for approved automation. Preconditions: Owner-provided Azure VM exists; canonical state read; current gate/authority confirmed; access metadata is available without exposing secrets; no participant data is present before readiness permits it.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0435; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0438",
+      "order": 438,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0438; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0439",
+      "order": 439,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0439; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0440",
+      "order": 440,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0440; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0447",
+      "order": 447,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0447; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    },
+    {
+      "id": "TSK-0448",
+      "order": 448,
+      "wait": {
+        "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
+        "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
+        "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0448; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+      }
+    }
+  ]
+}

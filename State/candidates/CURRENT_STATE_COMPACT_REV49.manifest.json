@@ -1,21 +1,25 @@
 {
-  "manifest_schema": "usesafeweb-checkpoint-compaction-candidate-v1",
+  "manifest_schema": "usesafeweb-checkpoint-aggressive-compaction-v1",
   "authoritative": false,
   "source": {
     "path": "CURRENT_STATE.md",
     "git_blob": "ae203f4b55864f6c0163669dcaf853bcf225a546",
     "checkpoint_revision": 49,
     "baseline_version": 1,
-    "bytes": 1332114
+    "bytes": 1332114,
+    "baseline_bytes": 601381,
+    "runtime_bytes": 687510
   },
   "candidate": {
     "path": "State/candidates/CURRENT_STATE_COMPACT_REV49.json",
-    "git_blob": "5d3df59d2f195b5264555d6da2fcac89e1bf2fa0",
+    "git_blob": "c65c4d6e8d9c565ad0bea2564dbf6cda06677ad8",
     "checkpoint_revision": 49,
     "baseline_version": 1,
-    "bytes": 1176978
+    "bytes": 917100,
+    "baseline_bytes": 601381,
+    "runtime_bytes": 273018
   },
-  "evidence_shards": [
+  "acceptance_evidence_shards": [
     {
       "path": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json",
       "git_blob": "1b1133a60a4f6b3da676caa64282dcdfc24806eb",
@@ -77,6 +81,74 @@
       "items_with_evidence": 6
     }
   ],
+  "wait_payload_shards": [
+    {
+      "path": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json",
+      "git_blob": "58068e585e0f60661511169270cba9a938f01455",
+      "bytes": 24437,
+      "waiting_items": 23
+    },
+    {
+      "path": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json",
+      "git_blob": "9571271529d9dc70a562d98ea14afed57f82bc12",
+      "bytes": 30619,
+      "waiting_items": 29
+    },
+    {
+      "path": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json",
+      "git_blob": "0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0",
+      "bytes": 17153,
+      "waiting_items": 16
+    },
+    {
+      "path": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json",
+      "git_blob": "30a9d0072e7e0beed9a1cf25f3f6149488658e26",
+      "bytes": 43881,
+      "waiting_items": 39
+    },
+    {
+      "path": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json",
+      "git_blob": "675febe76af2bdcdca88eb13f6b0cd47f909f30b",
+      "bytes": 45130,
+      "waiting_items": 42
+    },
+    {
+      "path": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json",
+      "git_blob": "1f4675d8c22cd5a2c73ba39e18b2f14bc451192f",
+      "bytes": 37112,
+      "waiting_items": 35
+    },
+    {
+      "path": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json",
+      "git_blob": "d06f671e5d1c45db495c144fa81f2e8558bbe661",
+      "bytes": 40619,
+      "waiting_items": 38
+    },
+    {
+      "path": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json",
+      "git_blob": "ea2e034b19d1256d18ff722d46e90d9c50b29485",
+      "bytes": 47324,
+      "waiting_items": 45
+    },
+    {
+      "path": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json",
+      "git_blob": "44a34b186327a70cf1d7b2060c389a064c467fa8",
+      "bytes": 56980,
+      "waiting_items": 54
+    },
+    {
+      "path": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json",
+      "git_blob": "21aef11c799d5350db78bd39a0657e4d63c3cb4d",
+      "bytes": 59188,
+      "waiting_items": 58
+    },
+    {
+      "path": "State/waits/rev49/WAIT_PAYLOAD_0641_0641.json",
+      "git_blob": "714c4a39caf5c56f6e3b9499f38ca4018693a91c",
+      "bytes": 1389,
+      "waiting_items": 1
+    }
+  ],
   "semantic_result": "PASS",
-  "scope": "Acceptance-evidence payload storage only; baseline, task states, dependencies, waits/blockers, constraints, gates, and closure state are unchanged."
+  "scope": "Runtime storage representation only. Baseline, task status, dependency, gate, constraint and closure semantics are unchanged; exact evidence and WAITING payloads remain reconstructable from immutable Git blobs."
 }
