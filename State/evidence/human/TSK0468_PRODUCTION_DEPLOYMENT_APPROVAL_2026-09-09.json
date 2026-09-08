@@ -1,0 +1,21 @@
+{
+  "evidence_schema": "usesafeweb-human-approval-v1",
+  "project_id": "UseSafeWeb.com",
+  "recorded_at": "2026-09-08T23:06:00Z",
+  "authority_existed_before_production_dispatch": true,
+  "approval_text": "The first exact fix to do is to implement the website, deploy it fully.",
+  "scope": {
+    "work_item_id": "TSK-0468",
+    "release_commit": "907d3880026ca73be949cfc7ecee14eff3efb60c",
+    "action": "initial production website release deployment",
+    "target": "UseSafeWeb.com root website production host",
+    "one_time_release": true
+  },
+  "related_owner_approval": "State/evidence/human/WEBSITE_DEPLOYMENT_SEQUENCING_OVERRIDE_2026-09-08.json; blob e500e169d709325ed04aacf978e99357a6af6591",
+  "preserved_boundaries": [
+    "All TSK-0468 acceptance criteria remain required.",
+    "No unrelated production activation or project-wide launch is authorized by this record.",
+    "No master-plan repair, normalization, restructuring, or reconciliation is authorized.",
+    "The release must remain rollback-capable and evidence-verified before PASS."
+  ]
+}
