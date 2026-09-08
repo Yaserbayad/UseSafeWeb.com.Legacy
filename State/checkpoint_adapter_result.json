@@ -1,24 +1,23 @@
 {
   "result_schema": "usesafeweb-checkpoint-storage-result-v1",
-  "operation": "transition_tsk0468_waiting_to_todo",
-  "request_id": "tsk0468-production-ready-20260908",
+  "operation": "transition_tsk0468_todo_to_waiting_webhost_control",
+  "request_id": "tsk0468-webhost-control-wait-20260908",
   "result": "PASS",
-  "old_checkpoint_blob": "c6bdc2babedb0f63e77d945c04c698736478f971",
-  "old_revision": 52,
-  "new_checkpoint_blob": "f11330e6d7b00814cc921825dd7d77a2be9d7d71",
-  "new_revision": 53,
+  "old_checkpoint_blob": "f11330e6d7b00814cc921825dd7d77a2be9d7d71",
+  "old_revision": 53,
+  "new_checkpoint_blob": "7f9a7cfccd8933e451a169599c253da8cccfe037",
+  "new_revision": 54,
   "baseline_version": 2,
   "target_work_item": "TSK-0468",
   "release_commit": "907d3880026ca73be949cfc7ecee14eff3efb60c",
-  "approval_reference": "State/evidence/human/WEBSITE_DEPLOYMENT_SEQUENCING_OVERRIDE_2026-09-08.json; blob e500e169d709325ed04aacf978e99357a6af6591",
-  "readiness_reference": "GitHub Actions run 34281607760; job 102247438816; workflow website-production-readonly-preflight-20260908.yml",
-  "stable_mutation": "TSK-0468 transitioned from WAITING to TODO after verified production-host execution-path/read-only preflight evidence; baseline and all unrelated runtime state remain unchanged.",
-  "old_bytes": 918868,
-  "new_bytes": 917842,
+  "wait_evidence_reference": "State/evidence/deployment/TSK0468_WEBHOST_CONTROL_WAIT_2026-09-08.json; blob 438af4194ec535314c4e6b8fe1214817c13d9f84",
+  "stable_mutation": "TSK-0468 transitioned from TODO to WAITING because no authenticated governed control path is currently available to the confirmed root website host 20.71.90.212; no production deployment occurred; baseline and all unrelated runtime state remain unchanged.",
+  "old_bytes": 917842,
+  "new_bytes": 918690,
   "status_counts": {
     "BLOCKED": 0,
     "PASS": 262,
-    "TODO": 1,
-    "WAITING": 378
+    "TODO": 0,
+    "WAITING": 379
   }
 }
