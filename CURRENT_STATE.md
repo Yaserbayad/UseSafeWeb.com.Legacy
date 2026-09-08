@@ -2,7 +2,7 @@
   "checkpoint_schema": "serial-light-checkpoint-v1",
   "project_id": "UseSafeWeb.com",
   "governance_mode": "SERIAL_LIGHT",
-  "checkpoint_revision": 49,
+  "checkpoint_revision": 50,
   "baseline": {
     "version": 1,
     "objectives": [
@@ -14330,9 +14330,9 @@
         "id": "TSK-0001",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0001; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0001/wait"
         },
         "acceptance_references": []
       },
@@ -14343,9 +14343,8 @@
           {
             "ac_id": "ACC-0002",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0002_CHECKPOINT_DECISION_RECORD_EVIDENCE_2026-09-05.md; blob ac03f35d37e94abc681b3a2bf6f8fd5ffb946c2d; publication commit 4745356e4a7a400b7ec42ff1f7ab536011f60d49",
-            "summary": "Direct evidence backfill verifies that the current checkpoint declares runtime item status authoritative and prevents stale WBS execution snapshots from overriding later confirmed checkpoint state.",
-            "verification_context": "Frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765, blob 357c5e1be3b455e7efddd329d6a2468e3125b502; source checkpoint revision 21 blob 1f8eadb1517c862da5313c60b4a824bf46c65249; dependency TSK-0004 PASS; evidence blob ac03f35d37e94abc681b3a2bf6f8fd5ffb946c2d."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0002/ACC-0002",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14356,9 +14355,8 @@
           {
             "ac_id": "ACC-0003",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0003; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0003 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0003; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0003/ACC-0003",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14369,9 +14367,8 @@
           {
             "ac_id": "ACC-0004",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0004; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0004 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0004; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0004/ACC-0004",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14382,9 +14379,8 @@
           {
             "ac_id": "ACC-0005",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0005; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0005 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0005; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0005/ACC-0005",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14392,9 +14388,9 @@
         "id": "TSK-0006",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0006; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0006/wait"
         },
         "acceptance_references": []
       },
@@ -14404,10 +14400,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0007",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0007; - Verification: GitHub Actions run/attempt `33527915089 / 1` plus current master-plan validation. Layer 5 implements canonical-state read, latest-owner authority, eligibility/dependency/gate checks, action authority, bounded execution, acceptance verification, durable evidence, stable TODO/PASS/WAITING/BLOCKED outcome, authorized state write, fetch/read-back comparison, reconciliation, and next-task selection.",
-            "summary": "Current runtime PASS for TSK-0007 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0007; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0007/ACC-0007",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14418,9 +14413,8 @@
           {
             "ac_id": "ACC-0008",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0008; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0008 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0008; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0008/ACC-0008",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14431,9 +14425,8 @@
           {
             "ac_id": "ACC-0009",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0009_MASTER_PLAN_PUBLICATION_EVIDENCE_2026-09-05.md; blob 741c5663c85fcb741a6b3fd9d7dfb4ccdb561bb6; publication evidence commit 7dccab9d09ee7c9f696e8baec3c15c597b08d10d; historical publication commit fce408f34470c0a0883ab978685b5265fdec4b97; verification run 33979284902 job 101341451733 artifact 9973256098",
-            "summary": "ACC-0009 is satisfied: the complete owner-frozen Plans tree was published under the approved repository root, publication identity and tree/file read-back were recovered, SHA256SUMS coverage and validators passed, and derived MASTER_PLAN_FULL remains non-authoritative.",
-            "verification_context": "Frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; source checkpoint revision 23 blob c2cc419ce936dfca10b7811a88ec010a49f1c13c; dependency TSK-0017 PASS; evidence blob 741c5663c85fcb741a6b3fd9d7dfb4ccdb561bb6; verification run 33979284902."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0009/ACC-0009",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14444,9 +14437,8 @@
           {
             "ac_id": "ACC-0010",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_REBASELINE_EVIDENCE_2026-09-05.md; blob 6e1be43bfa6a73b2d77b7a40e569a93c9539eb77; evidence commit c42f408eec8ad6830ae128df072e2c294cb8223a; frozen authority commit 20e2763c0be2124378e3158ac559aed826bc6765 Plans tree 0ed412e5dd90f5a05238bb6542a061d7b0ce0ccf SHA256SUMS blob 8fbeb7337233adc289ea51e49a0722f33db08323; selector trace run 33980986839 job 101346042362 artifact 9973737334",
-            "summary": "ACC-0010 is satisfied: canonical state is bound to the frozen modular planning authority and publication/readback identities, valid historical runtime PASS evidence is preserved, DEC-0053 accountless and DEC-0043 recovery decisions are recorded, and LG-03 maps legacy G-02 with NOT_APPLICABLE active-pre-product disposition rather than a fabricated gate PASS.",
-            "verification_context": "Source checkpoint revision 28 blob 1b2c5e610371610899fd8bca97a5fd3f4332f62b; runtime-preservation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a; selector trace run 33980986839 job 101346042362 artifact 9973737334: hypothetical post-PASS eligible TODO count=0 and first satisfied non-deferred WAITING/AUTO_ALLOWED candidate=TSK-0423 priority 0 order 423. Selector result is derived acceptance evidence only and is not persisted as mutable next_work state."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0010/ACC-0010",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14457,9 +14449,8 @@
           {
             "ac_id": "ACC-0011",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0011_PUBLISHED_PLAN_READBACK_EVIDENCE_2026-09-05.md; blob b89ca291a9cf891e6f3aed3918058b9576edcd87; evidence commit a19856346604521aef897a52e8c6e0d45ce63c94; frozen authority commit 20e2763c0be2124378e3158ac559aed826bc6765 Plans tree 0ed412e5dd90f5a05238bb6542a061d7b0ce0ccf; verification run 33979759038 job 101342759961 artifact 9973390487",
-            "summary": "ACC-0011 is satisfied: GitHub main read-back of the complete approved Plans package exactly matches the frozen authority tree; all 64 declared SHA-256 values and file-set checks pass, required authority-root files are present, and generated MASTER_PLAN_FULL remains non-authoritative.",
-            "verification_context": "Source checkpoint revision 25 blob 21a13045d2ad5c6408ca4ec86da76df2ea370755; dependency TSK-0009 PASS; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; manifest blob da35db0fe16009dfb5ce0e24caab05d6d02c84ed; SHA256SUMS blob 8fbeb7337233adc289ea51e49a0722f33db08323; verification run 33979759038."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0011/ACC-0011",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14467,9 +14458,9 @@
         "id": "TSK-0012",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Frozen plan publication and owner authorization to rebuild ClickUp; current tracker remains stale until then. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0012; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0012/wait"
         },
         "acceptance_references": []
       },
@@ -14477,9 +14468,9 @@
         "id": "TSK-0013",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Owner decides Monday provides sufficient executive value after ClickUp/canonical operation is stable. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0013; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0013/wait"
         },
         "acceptance_references": []
       },
@@ -14490,9 +14481,8 @@
           {
             "ac_id": "ACC-0014",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com blob 25047283940ff4a02cbbdd640e262adf65ae033d path Plans/Master/Governance/SOURCE_PLAN_FREEZE_AUDIT.md; current legacy checkpoint also records later adversarial semantic validation",
-            "summary": "The frozen adversarial-completeness review artifact records CC-16 and the independent adversarial validation pass; later current-state audits preserve/revalidate the corrected modular system.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0014; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0014/ACC-0014",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14502,10 +14492,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0015",
-            "evidence_type": "TEST_RESULT",
-            "reference": "Yaserbayad/UseSafeWeb.com GitHub Actions run 33919215443 job 101173407414; current canonical Master Plan validation PASS",
-            "summary": "Current deterministic planning-system validation re-proves the structural/automated-check acceptance for TSK-0015.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0015; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0015/ACC-0015",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14516,9 +14505,8 @@
           {
             "ac_id": "ACC-0016",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 42846094ea8e7ff1714388eb52ad2249b22de318; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0016",
-            "summary": "Current runtime PASS for TSK-0016 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0016; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0016/ACC-0016",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14529,9 +14517,8 @@
           {
             "ac_id": "ACC-0017",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0017; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0017 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0017; owner freeze 2026-08-27T19:38:36Z; reviewed main 21fabcb64a17f4f1dbe79e3be61d769c0fbab574; reviewed Git tree afc300b23ee63eead391eef0ae139c6fb8e7d9fc; deterministic Plans ZIP SHA-256 f5076ca88b625bb1f2512ebad7831f23ed4bf2c8e7477e92626bc2d4aed5f32c; MANIFEST.yaml canonicalization record"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0017/ACC-0017",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14539,9 +14526,9 @@
         "id": "TSK-0018",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0018; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0018/wait"
         },
         "acceptance_references": []
       },
@@ -14549,9 +14536,9 @@
         "id": "TSK-0019",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0019; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0019/wait"
         },
         "acceptance_references": []
       },
@@ -14562,9 +14549,8 @@
           {
             "ac_id": "ACC-0020",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0020; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0020 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0020; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0020/ACC-0020",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14572,9 +14558,9 @@
         "id": "TSK-0021",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0021; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0021/wait"
         },
         "acceptance_references": []
       },
@@ -14582,9 +14568,9 @@
         "id": "TSK-0022",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0022; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0022/wait"
         },
         "acceptance_references": []
       },
@@ -14592,9 +14578,9 @@
         "id": "TSK-0023",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0023; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0023/wait"
         },
         "acceptance_references": []
       },
@@ -14602,9 +14588,9 @@
         "id": "TSK-0024",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0024; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0024/wait"
         },
         "acceptance_references": []
       },
@@ -14612,9 +14598,9 @@
         "id": "TSK-0025",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0025; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0025/wait"
         },
         "acceptance_references": []
       },
@@ -14625,9 +14611,8 @@
           {
             "ac_id": "ACC-0026",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0026; acceptance ACC-0026",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0026/ACC-0026",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14638,9 +14623,8 @@
           {
             "ac_id": "ACC-0027",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0027; acceptance ACC-0027",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0027/ACC-0027",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14651,9 +14635,8 @@
           {
             "ac_id": "ACC-0028",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0028; acceptance ACC-0028",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0028/ACC-0028",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14664,9 +14647,8 @@
           {
             "ac_id": "ACC-0029",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0029; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0029 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0029; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0029/ACC-0029",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14677,9 +14659,8 @@
           {
             "ac_id": "ACC-0030",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0030; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0030 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0030; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0030/ACC-0030",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14690,9 +14671,8 @@
           {
             "ac_id": "ACC-0031",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0031; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0031 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0031; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0031/ACC-0031",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14703,9 +14683,8 @@
           {
             "ac_id": "ACC-0032",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0032; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0032 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0032; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0032/ACC-0032",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14716,9 +14695,8 @@
           {
             "ac_id": "ACC-0033",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0033; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0033 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0033; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0033/ACC-0033",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14729,9 +14707,8 @@
           {
             "ac_id": "ACC-0034",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0034; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0034 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0034; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0034/ACC-0034",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14742,9 +14719,8 @@
           {
             "ac_id": "ACC-0035",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0035; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0035 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0035; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0035/ACC-0035",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14755,9 +14731,8 @@
           {
             "ac_id": "ACC-0036",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0036; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0036 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0036; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0036/ACC-0036",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14768,9 +14743,8 @@
           {
             "ac_id": "ACC-0037",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0037; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0037 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0037; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0037/ACC-0037",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14781,9 +14755,8 @@
           {
             "ac_id": "ACC-0038",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0038; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0038 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0038; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0038/ACC-0038",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14794,9 +14767,8 @@
           {
             "ac_id": "ACC-0039",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0039; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0039 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0039; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0039/ACC-0039",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14807,9 +14779,8 @@
           {
             "ac_id": "ACC-0040",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0040; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0040 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0040; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0040/ACC-0040",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14820,9 +14791,8 @@
           {
             "ac_id": "ACC-0041",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 95a5292223f1d2c3c8f79d4c889ad91e917478b2; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0041",
-            "summary": "Current runtime PASS for TSK-0041 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0041; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0041/ACC-0041",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14833,9 +14803,8 @@
           {
             "ac_id": "ACC-0042",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob e2802e3fff4e73ab2be890ad0f7e719bf36635bc; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0042",
-            "summary": "Current runtime PASS for TSK-0042 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0042; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0042/ACC-0042",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14845,10 +14814,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0043",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0043; `TSK-0043 — Run cross-functional requirements review and resolve conflicts`: **PASS** under current dual-mode Version-1 authority. Current review blob `a9b9712208c88838410d7e57a243990d721a0e48` records 0 unresolved critical conflicts; both noncritical interpretation controls have named owners, control date 2026-09-01 and deterministic recheck triggers. Final verification run/job `33492766097 / 99807875248`: PASS. No later gate or implementation state is inferred.",
-            "summary": "Current runtime PASS for TSK-0043 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0043; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0043/ACC-0043",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14858,10 +14826,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0044",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0044; - Independent read-only VER-0044: workflow blob `00e367e8dc5456b5052f1f8f6a6daa1fb4cc113b`; verifier script blob `0c92fdebb55da98e8f94be649f5bec88f85233e2`; run/job `33588675744 / 100118011663`; conclusion **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0044 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0044; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0044/ACC-0044",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14871,10 +14838,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0045",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0045; - Independent read-only VER-0045 final workflow blob `a9bee09c494027ea187769744b181ec3f770305e`; run/job `33582987002 / 100101061365`: **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0045 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0045; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0045/ACC-0045",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14884,10 +14850,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0046",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0046; - Independent read-only VER-0046 final verifier script blob `340ed4864cf6c63f8c163bb5852a9f16f7de4aa3`, workflow blob `22707f3ee628c2421a5707fdc7ec09b365309d98`; run/job `33581514882 / 100096620942`: **SUCCESS** with `contents: read`.",
-            "summary": "Current runtime PASS for TSK-0046 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0046; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0046/ACC-0046",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14897,10 +14862,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0047",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0047; - Independent GitHub Actions verification run `33662280269 / 1`: **SUCCESS**; current WBS/dependency/authority, CR-0007 production-only lifecycle, CI/ephemeral verification, versioning/change flow, configuration migration, test gates, rollback triggers/procedure, evidence retention, privacy/security/non-goal and CR-0009 boundaries all pass. Full modular validator PASS.",
-            "summary": "Current runtime PASS for TSK-0047 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0047; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0047/ACC-0047",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14910,10 +14874,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0048",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0048; - Independent read-only GitHub Actions verification run `33661466541 / 1`: **SUCCESS**. Full modular validator also PASS: 641 tasks, 858 dependency edges, 0 broken links, 0 generated missing task IDs.",
-            "summary": "Current runtime PASS for TSK-0048 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0048; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0048/ACC-0048",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14923,10 +14886,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0049",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0049; - Deterministic verifier: `Plans/Master/Tools/verify_tsk0049_lg07_approval_component_20260902.py`, blob `28a23bea81ece638a991157314d628856c7c2bd2`. Independent read-only GitHub Actions verification run `33656968873 / 1`, source commit `ba500bae2257d7a2ea0d731ad287051c780b2904`: **SUCCESS**; TSK-0049 verifier PASS, full modular master-plan validator PASS (`641` tasks, `858` dependency edges, `0` broken links), and repository diff check PASS.",
-            "summary": "Current runtime PASS for TSK-0049 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0049; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0049/ACC-0049",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14936,10 +14898,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0050",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0050; - Independent read-only GitHub Actions verification run `33664917332 / 1`: **SUCCESS**; 12 immutable readiness artifacts matched exact blobs, current LG-07 PASS and authority separation were verified, the next action was confirmed as a full L6 frontier recomputation, secret/participant-data payload guards passed, and the full modular validator passed with 641 tasks / 858 dependency edges / 0 broken links / 0 generated missing task IDs.",
-            "summary": "Current runtime PASS for TSK-0050 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0050; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0050/ACC-0050",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14949,10 +14910,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0051",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0051; - Independent read-only GitHub Actions verification run `33664361566 / 1`: **SUCCESS**; exact authoritative WBS/gate hashes, 20 current PASS evidence anchors, residual L5 frontier, `CP-LG07-01` integrated checkpoint semantics, backlog coverage, risk/cost/legal fences, full modular validator and L6 non-inference all PASS. Validator: 641 tasks, 858 dependency edges, 0 broken links, 0 generated missing task IDs.",
-            "summary": "Current runtime PASS for TSK-0051 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0051; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0051/ACC-0051",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14962,10 +14922,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0052",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0052; - Independent verification: run/job `33493887308 / 99811476611` — SUCCESS; durable marker `TSK_0052_LG06_CURRENT_EVIDENCE_AUTOVERIFY_2026-09-01.md`, blob `8eb3eb14b7f62775f0ee0fbc6312f161a5a94333`.",
-            "summary": "Current runtime PASS for TSK-0052 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0052; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json; blob 1b1133a60a4f6b3da676caa64282dcdfc24806eb#TSK-0052/ACC-0052",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -14973,9 +14932,9 @@
         "id": "TSK-0053",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0053; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0053/wait"
         },
         "acceptance_references": []
       },
@@ -14983,9 +14942,9 @@
         "id": "TSK-0054",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0054; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0054/wait"
         },
         "acceptance_references": []
       },
@@ -14993,9 +14952,9 @@
         "id": "TSK-0055",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0055; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0055/wait"
         },
         "acceptance_references": []
       },
@@ -15003,9 +14962,9 @@
         "id": "TSK-0056",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0056; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0056/wait"
         },
         "acceptance_references": []
       },
@@ -15013,9 +14972,9 @@
         "id": "TSK-0057",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0057; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0057/wait"
         },
         "acceptance_references": []
       },
@@ -15023,9 +14982,9 @@
         "id": "TSK-0058",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0058; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0058/wait"
         },
         "acceptance_references": []
       },
@@ -15033,9 +14992,9 @@
         "id": "TSK-0059",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0059; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0059/wait"
         },
         "acceptance_references": []
       },
@@ -15043,9 +15002,9 @@
         "id": "TSK-0060",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0060; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0060/wait"
         },
         "acceptance_references": []
       },
@@ -15053,9 +15012,9 @@
         "id": "TSK-0061",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0061; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0061/wait"
         },
         "acceptance_references": []
       },
@@ -15063,9 +15022,9 @@
         "id": "TSK-0062",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0062; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0062/wait"
         },
         "acceptance_references": []
       },
@@ -15073,9 +15032,9 @@
         "id": "TSK-0063",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0063; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0063/wait"
         },
         "acceptance_references": []
       },
@@ -15083,9 +15042,9 @@
         "id": "TSK-0064",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0064; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0001_0064.json; blob 58068e585e0f60661511169270cba9a938f01455#TSK-0064/wait"
         },
         "acceptance_references": []
       },
@@ -15093,9 +15052,9 @@
         "id": "TSK-0065",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0065; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0065/wait"
         },
         "acceptance_references": []
       },
@@ -15103,9 +15062,9 @@
         "id": "TSK-0066",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0066; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0066/wait"
         },
         "acceptance_references": []
       },
@@ -15113,9 +15072,9 @@
         "id": "TSK-0067",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0067; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0067/wait"
         },
         "acceptance_references": []
       },
@@ -15123,9 +15082,9 @@
         "id": "TSK-0068",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0068; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0068/wait"
         },
         "acceptance_references": []
       },
@@ -15133,9 +15092,9 @@
         "id": "TSK-0069",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0069; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0069/wait"
         },
         "acceptance_references": []
       },
@@ -15143,9 +15102,9 @@
         "id": "TSK-0070",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0070; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0070/wait"
         },
         "acceptance_references": []
       },
@@ -15153,9 +15112,9 @@
         "id": "TSK-0071",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0071; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0071/wait"
         },
         "acceptance_references": []
       },
@@ -15163,9 +15122,9 @@
         "id": "TSK-0072",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0072; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0072/wait"
         },
         "acceptance_references": []
       },
@@ -15173,9 +15132,9 @@
         "id": "TSK-0073",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0073; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0073/wait"
         },
         "acceptance_references": []
       },
@@ -15183,9 +15142,9 @@
         "id": "TSK-0074",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0074; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0074/wait"
         },
         "acceptance_references": []
       },
@@ -15193,9 +15152,9 @@
         "id": "TSK-0075",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0075; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0075/wait"
         },
         "acceptance_references": []
       },
@@ -15203,9 +15162,9 @@
         "id": "TSK-0076",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0076; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0076/wait"
         },
         "acceptance_references": []
       },
@@ -15213,9 +15172,9 @@
         "id": "TSK-0077",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0077; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0077/wait"
         },
         "acceptance_references": []
       },
@@ -15223,9 +15182,9 @@
         "id": "TSK-0078",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0078; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0078/wait"
         },
         "acceptance_references": []
       },
@@ -15233,9 +15192,9 @@
         "id": "TSK-0079",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0079; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0079/wait"
         },
         "acceptance_references": []
       },
@@ -15243,9 +15202,9 @@
         "id": "TSK-0080",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0080; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0080/wait"
         },
         "acceptance_references": []
       },
@@ -15253,9 +15212,9 @@
         "id": "TSK-0081",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0081; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0081/wait"
         },
         "acceptance_references": []
       },
@@ -15263,9 +15222,9 @@
         "id": "TSK-0082",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0082; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0082/wait"
         },
         "acceptance_references": []
       },
@@ -15273,9 +15232,9 @@
         "id": "TSK-0083",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0083; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0083/wait"
         },
         "acceptance_references": []
       },
@@ -15283,9 +15242,9 @@
         "id": "TSK-0084",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0084; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0084/wait"
         },
         "acceptance_references": []
       },
@@ -15293,9 +15252,9 @@
         "id": "TSK-0085",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0085; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0085/wait"
         },
         "acceptance_references": []
       },
@@ -15303,9 +15262,9 @@
         "id": "TSK-0086",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0086; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0086/wait"
         },
         "acceptance_references": []
       },
@@ -15313,9 +15272,9 @@
         "id": "TSK-0087",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0087; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0087/wait"
         },
         "acceptance_references": []
       },
@@ -15323,9 +15282,9 @@
         "id": "TSK-0088",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0088; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0088/wait"
         },
         "acceptance_references": []
       },
@@ -15333,9 +15292,9 @@
         "id": "TSK-0089",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0089; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0089/wait"
         },
         "acceptance_references": []
       },
@@ -15343,9 +15302,9 @@
         "id": "TSK-0090",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0090; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0090/wait"
         },
         "acceptance_references": []
       },
@@ -15353,9 +15312,9 @@
         "id": "TSK-0091",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0091; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0091/wait"
         },
         "acceptance_references": []
       },
@@ -15363,9 +15322,9 @@
         "id": "TSK-0092",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0092; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0092/wait"
         },
         "acceptance_references": []
       },
@@ -15373,9 +15332,9 @@
         "id": "TSK-0093",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0093; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0065_0128.json; blob 9571271529d9dc70a562d98ea14afed57f82bc12#TSK-0093/wait"
         },
         "acceptance_references": []
       },
@@ -15386,9 +15345,8 @@
           {
             "ac_id": "ACC-0094",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0094; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0094 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0094; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0094/ACC-0094",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15399,9 +15357,8 @@
           {
             "ac_id": "ACC-0095",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0095; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0095 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0095; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0095/ACC-0095",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15412,9 +15369,8 @@
           {
             "ac_id": "ACC-0096",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0096; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0096 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0096; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0096/ACC-0096",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15425,9 +15381,8 @@
           {
             "ac_id": "ACC-0097",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0097; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0097 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0097; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0097/ACC-0097",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15438,9 +15393,8 @@
           {
             "ac_id": "ACC-0098",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0098; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0098 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0098; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0098/ACC-0098",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15451,9 +15405,8 @@
           {
             "ac_id": "ACC-0099",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0099; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0099 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0099; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0099/ACC-0099",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15464,9 +15417,8 @@
           {
             "ac_id": "ACC-0100",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0100; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0100 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0100; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0100/ACC-0100",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15477,9 +15429,8 @@
           {
             "ac_id": "ACC-0101",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0101; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0101 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0101; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0101/ACC-0101",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15490,9 +15441,8 @@
           {
             "ac_id": "ACC-0102",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0102; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0102 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0102; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0102/ACC-0102",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15503,9 +15453,8 @@
           {
             "ac_id": "ACC-0103",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0103; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0103 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0103; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0103/ACC-0103",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15516,9 +15465,8 @@
           {
             "ac_id": "ACC-0104",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0104; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0104 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0104; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0104/ACC-0104",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15529,9 +15477,8 @@
           {
             "ac_id": "ACC-0105",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0105; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0105 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0105; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0105/ACC-0105",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15542,9 +15489,8 @@
           {
             "ac_id": "ACC-0106",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0106; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0106 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0106; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0106/ACC-0106",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15555,9 +15501,8 @@
           {
             "ac_id": "ACC-0107",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0107; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0107 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0107; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0107/ACC-0107",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15568,9 +15513,8 @@
           {
             "ac_id": "ACC-0108",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0108; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0108 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0108; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0108/ACC-0108",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15581,9 +15525,8 @@
           {
             "ac_id": "ACC-0109",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0109; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0109 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0109; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0109/ACC-0109",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15594,9 +15537,8 @@
           {
             "ac_id": "ACC-0110",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0110; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0110 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0110; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0110/ACC-0110",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15607,9 +15549,8 @@
           {
             "ac_id": "ACC-0111",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0111; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0111 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0111; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0111/ACC-0111",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15620,9 +15561,8 @@
           {
             "ac_id": "ACC-0112",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0112; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0112 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0112; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0112/ACC-0112",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15633,9 +15573,8 @@
           {
             "ac_id": "ACC-0113",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0113; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0113 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0113; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0113/ACC-0113",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15646,9 +15585,8 @@
           {
             "ac_id": "ACC-0114",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0114; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0114 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0114; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0114/ACC-0114",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15659,9 +15597,8 @@
           {
             "ac_id": "ACC-0115",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0115; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0115 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0115; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0115/ACC-0115",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15672,9 +15609,8 @@
           {
             "ac_id": "ACC-0116",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0116; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0116 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0116; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0116/ACC-0116",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15685,9 +15621,8 @@
           {
             "ac_id": "ACC-0117",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0117; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0117 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0117; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0117/ACC-0117",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15698,9 +15633,8 @@
           {
             "ac_id": "ACC-0118",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0118; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0118 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0118; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0118/ACC-0118",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15711,9 +15645,8 @@
           {
             "ac_id": "ACC-0119",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0119; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0119 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0119; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0119/ACC-0119",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15724,9 +15657,8 @@
           {
             "ac_id": "ACC-0120",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0120; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0120 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0120; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0120/ACC-0120",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15737,9 +15669,8 @@
           {
             "ac_id": "ACC-0121",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0121; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0121 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0121; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0121/ACC-0121",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15750,9 +15681,8 @@
           {
             "ac_id": "ACC-0122",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0122; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0122 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0122; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0122/ACC-0122",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15763,9 +15693,8 @@
           {
             "ac_id": "ACC-0123",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0123; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0123 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0123; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0123/ACC-0123",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15776,9 +15705,8 @@
           {
             "ac_id": "ACC-0124",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0124; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0124 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0124; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0124/ACC-0124",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15789,9 +15717,8 @@
           {
             "ac_id": "ACC-0125",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0125; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0125 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0125; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0125/ACC-0125",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15802,9 +15729,8 @@
           {
             "ac_id": "ACC-0126",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0126; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0126 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0126; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0126/ACC-0126",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15815,9 +15741,8 @@
           {
             "ac_id": "ACC-0127",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0127; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0127 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0127; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0127/ACC-0127",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15828,9 +15753,8 @@
           {
             "ac_id": "ACC-0128",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0128; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0128 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0128; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json; blob 11845cabd49248fb0afc2403ee2278ee85ee038c#TSK-0128/ACC-0128",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15841,9 +15765,8 @@
           {
             "ac_id": "ACC-0129",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0129; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0129 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0129; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0129/ACC-0129",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15854,9 +15777,8 @@
           {
             "ac_id": "ACC-0130",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0130; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0130 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0130; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0130/ACC-0130",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15867,9 +15789,8 @@
           {
             "ac_id": "ACC-0131",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0131; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0131 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0131; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0131/ACC-0131",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15880,9 +15801,8 @@
           {
             "ac_id": "ACC-0132",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0132; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0132 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0132; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0132/ACC-0132",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15893,9 +15813,8 @@
           {
             "ac_id": "ACC-0133",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0133; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0133 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0133; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0133/ACC-0133",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15906,9 +15825,8 @@
           {
             "ac_id": "ACC-0134",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0134; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0134 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0134; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0134/ACC-0134",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15919,9 +15837,8 @@
           {
             "ac_id": "ACC-0135",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0135; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0135 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0135; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0135/ACC-0135",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15932,9 +15849,8 @@
           {
             "ac_id": "ACC-0136",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0136; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0136 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0136; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0136/ACC-0136",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15945,9 +15861,8 @@
           {
             "ac_id": "ACC-0137",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0137; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0137 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0137; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0137/ACC-0137",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15958,9 +15873,8 @@
           {
             "ac_id": "ACC-0138",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob f3c29b5db8b835ef2c896f61335656ea51d8ba1c; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0138",
-            "summary": "Current runtime PASS for TSK-0138 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0138; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0138/ACC-0138",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15971,9 +15885,8 @@
           {
             "ac_id": "ACC-0139",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0139; acceptance ACC-0139",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0139/ACC-0139",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15983,10 +15896,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0140",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0140; - Successful independent verification run/job `33391565765 / 99486171756` on self-hosted `adguardvm`: WBS contract PASS; current TSK-0138 dependency PASS; CR-0006 dual-mode reconciliation PASS; CR-0007 authority/lifecycle reconciliation PASS; ACC semantics PASS; stale owner-review absence PASS; independent verification PASS; `git diff --check` and clean-status checks passed.",
-            "summary": "Current runtime PASS for TSK-0140 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0140; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0140/ACC-0140",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -15996,10 +15908,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0141",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0141; - Deterministic verifier run/job `33308167888 / 99248297105`: SUCCESS on self-hosted `adguardvm`; dependency, stale pre-CR-0006 scope detection, current-scope mapping, ACC-0141 and no-behavioral-inference checks all PASS.",
-            "summary": "Current runtime PASS for TSK-0141 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0141; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0141/ACC-0141",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16009,10 +15920,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0142",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0142; - Independent verifier run/job `33401200803 / 99517634917` on self-hosted `adguardvm`: WBS contract, both dependency markers, all ACC-0142 semantics, 20 deterministic/synthetic test cases, scope fences, analytical evidence and no-downstream-PASS inference all PASS; repository diff/clean checks passed.",
-            "summary": "Current runtime PASS for TSK-0142 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0142; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0142/ACC-0142",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16023,9 +15933,8 @@
           {
             "ac_id": "ACC-0143",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 3e10db0f6549a24349fafeef24fb30db8dd282cc; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0143",
-            "summary": "Current runtime PASS for TSK-0143 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0143; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0143/ACC-0143",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16036,9 +15945,8 @@
           {
             "ac_id": "ACC-0144",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob c5238c07474ec713c6917ad50ee721cbd20cff54; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0144",
-            "summary": "Current runtime PASS for TSK-0144 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0144; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0144/ACC-0144",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16048,10 +15956,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0145",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0145; `TSK-0145 — Build requirement-to-evidence traceability matrix`: **PASS** under the current ACC-0145 metadata contract. Final verification run/job `33492766097 / 99807875248` proved all 91 current requirements are represented with canonical source/priority/verification and populated rationale/owner/release-target/status/task linkage. Current matrix blob `d358d9129f37809743a1f599703a706de7333051`; consolidated requalification evidence `TSK_LG06_PREDECESSOR_CURRENT_REQUALIFICATION_EVIDENCE_2026-09-01.md`. The matrix remains derived/non-authoritative and creates no requirement-level PASS.",
-            "summary": "Current runtime PASS for TSK-0145 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0145; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0145/ACC-0145",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16061,10 +15968,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0146",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0146; - Deterministic verification run/job `33307541477 / 99246630910`: SUCCESS on self-hosted `adguardvm`; WBS contract, exact canonical source hashes, all required ACC-0146 clauses, non-goals and no-downstream-PASS-inference checks passed.",
-            "summary": "Current runtime PASS for TSK-0146 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0146; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0146/ACC-0146",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16075,9 +15981,8 @@
           {
             "ac_id": "ACC-0147",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0147; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0147 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0147; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0147/ACC-0147",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16088,9 +15993,8 @@
           {
             "ac_id": "ACC-0148",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0148; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0148 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0148; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0148/ACC-0148",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16100,10 +16004,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0149",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0149; - Independent verifier run/job `33402148107 / 99520837413` on self-hosted `adguardvm`: WBS contract, dependency runtime, current ACC semantics, all 10 deterministic assertions, analytical evidence and no-downstream-PASS inference all PASS; repository diff/clean checks passed.",
-            "summary": "Current runtime PASS for TSK-0149 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0149; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0149/ACC-0149",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16111,9 +16014,9 @@
         "id": "TSK-0150",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0150; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0150/wait"
         },
         "acceptance_references": []
       },
@@ -16121,9 +16024,9 @@
         "id": "TSK-0151",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0151; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0151/wait"
         },
         "acceptance_references": []
       },
@@ -16131,9 +16034,9 @@
         "id": "TSK-0152",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0152; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0152/wait"
         },
         "acceptance_references": []
       },
@@ -16141,9 +16044,9 @@
         "id": "TSK-0153",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0153; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0153/wait"
         },
         "acceptance_references": []
       },
@@ -16151,9 +16054,9 @@
         "id": "TSK-0154",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0154; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0154/wait"
         },
         "acceptance_references": []
       },
@@ -16161,9 +16064,9 @@
         "id": "TSK-0155",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0155; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0155/wait"
         },
         "acceptance_references": []
       },
@@ -16171,9 +16074,9 @@
         "id": "TSK-0156",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0156; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0156/wait"
         },
         "acceptance_references": []
       },
@@ -16184,9 +16087,8 @@
           {
             "ac_id": "ACC-0157",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0157; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0157 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0157; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0157/ACC-0157",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16197,9 +16099,8 @@
           {
             "ac_id": "ACC-0158",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0158; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0158 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0158; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0158/ACC-0158",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16210,9 +16111,8 @@
           {
             "ac_id": "ACC-0159",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0159; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0159 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0159; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0159/ACC-0159",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16220,9 +16120,9 @@
         "id": "TSK-0160",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0160; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0160/wait"
         },
         "acceptance_references": []
       },
@@ -16230,9 +16130,9 @@
         "id": "TSK-0161",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Observed recurring need cannot be met safely and simply with accountless mechanisms, plus owner authorization and architecture/privacy/security review. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0161; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0161/wait"
         },
         "acceptance_references": []
       },
@@ -16240,9 +16140,9 @@
         "id": "TSK-0162",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0162; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0162/wait"
         },
         "acceptance_references": []
       },
@@ -16250,9 +16150,9 @@
         "id": "TSK-0163",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0163; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0163/wait"
         },
         "acceptance_references": []
       },
@@ -16263,9 +16163,8 @@
           {
             "ac_id": "ACC-0164",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0164; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0164 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0164; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0164/ACC-0164",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16276,9 +16175,8 @@
           {
             "ac_id": "ACC-0165",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0165; acceptance ACC-0165",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0165/ACC-0165",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16289,9 +16187,8 @@
           {
             "ac_id": "ACC-0166",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0166; acceptance ACC-0166",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0166/ACC-0166",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16302,9 +16199,8 @@
           {
             "ac_id": "ACC-0167",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0167; acceptance ACC-0167",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0167/ACC-0167",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16315,9 +16211,8 @@
           {
             "ac_id": "ACC-0168",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0168; acceptance ACC-0168",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0168/ACC-0168",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16328,9 +16223,8 @@
           {
             "ac_id": "ACC-0169",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0169; acceptance ACC-0169",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0169/ACC-0169",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16341,9 +16235,8 @@
           {
             "ac_id": "ACC-0170",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0170; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0170 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0170; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0170/ACC-0170",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16354,9 +16247,8 @@
           {
             "ac_id": "ACC-0171",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0171; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0171 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0171; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0171/ACC-0171",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16367,9 +16259,8 @@
           {
             "ac_id": "ACC-0172",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0172; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0172 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0172; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0172/ACC-0172",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16380,9 +16271,8 @@
           {
             "ac_id": "ACC-0173",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0173; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0173 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0173; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0173/ACC-0173",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16393,9 +16283,8 @@
           {
             "ac_id": "ACC-0174",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0174; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0174 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0174; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0174/ACC-0174",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16406,9 +16295,8 @@
           {
             "ac_id": "ACC-0175",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0175; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0175 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0175; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0175/ACC-0175",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16419,9 +16307,8 @@
           {
             "ac_id": "ACC-0176",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0176; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0176 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0176; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0176/ACC-0176",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16432,9 +16319,8 @@
           {
             "ac_id": "ACC-0177",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0177; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0177 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0177; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0177/ACC-0177",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16445,9 +16331,8 @@
           {
             "ac_id": "ACC-0178",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0178; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0178 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0178; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0178/ACC-0178",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16458,9 +16343,8 @@
           {
             "ac_id": "ACC-0179",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0179; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0179 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0179; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0179/ACC-0179",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16471,9 +16355,8 @@
           {
             "ac_id": "ACC-0180",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0180; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0180 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0180; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0180/ACC-0180",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16484,9 +16367,8 @@
           {
             "ac_id": "ACC-0181",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0181; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0181 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0181; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0181/ACC-0181",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16497,9 +16379,8 @@
           {
             "ac_id": "ACC-0182",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0182; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0182 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0182; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0182/ACC-0182",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16510,9 +16391,8 @@
           {
             "ac_id": "ACC-0183",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0183; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0183 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0183; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0183/ACC-0183",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16523,9 +16403,8 @@
           {
             "ac_id": "ACC-0184",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0184; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0184 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0184; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0184/ACC-0184",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16536,9 +16415,8 @@
           {
             "ac_id": "ACC-0185",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0185; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0185 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0185; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0185/ACC-0185",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16549,9 +16427,8 @@
           {
             "ac_id": "ACC-0186",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0186; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0186 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0186; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0186/ACC-0186",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16562,9 +16439,8 @@
           {
             "ac_id": "ACC-0187",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0187; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0187 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0187; created at execution or in this candidate for PASS planning tasks; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json; blob 1c43df60b9dab101e02edebc91e13f7bbfcca2d4#TSK-0187/ACC-0187",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16572,9 +16448,9 @@
         "id": "TSK-0188",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0188; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0188/wait"
         },
         "acceptance_references": []
       },
@@ -16582,9 +16458,9 @@
         "id": "TSK-0189",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0189; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0189/wait"
         },
         "acceptance_references": []
       },
@@ -16592,9 +16468,9 @@
         "id": "TSK-0190",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0190; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0190/wait"
         },
         "acceptance_references": []
       },
@@ -16602,9 +16478,9 @@
         "id": "TSK-0191",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0191; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0191/wait"
         },
         "acceptance_references": []
       },
@@ -16612,9 +16488,9 @@
         "id": "TSK-0192",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0192; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0129_0192.json; blob 0f781ea1b4f7bb202d8ab7303ff902fe42c1b9c0#TSK-0192/wait"
         },
         "acceptance_references": []
       },
@@ -16622,9 +16498,9 @@
         "id": "TSK-0193",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0193; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0193/wait"
         },
         "acceptance_references": []
       },
@@ -16632,9 +16508,9 @@
         "id": "TSK-0194",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0194; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0194/wait"
         },
         "acceptance_references": []
       },
@@ -16642,9 +16518,9 @@
         "id": "TSK-0195",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0195; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0195/wait"
         },
         "acceptance_references": []
       },
@@ -16652,9 +16528,9 @@
         "id": "TSK-0196",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0196; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0196/wait"
         },
         "acceptance_references": []
       },
@@ -16662,9 +16538,9 @@
         "id": "TSK-0197",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Stable UK product evidence and owner selection of a next localized market candidate. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0197; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0197/wait"
         },
         "acceptance_references": []
       },
@@ -16675,9 +16551,8 @@
           {
             "ac_id": "ACC-0198",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0198; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0198 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0198; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0198/ACC-0198",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16688,9 +16563,8 @@
           {
             "ac_id": "ACC-0199",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0199; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0199 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0199; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0199/ACC-0199",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16701,9 +16575,8 @@
           {
             "ac_id": "ACC-0200",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0200; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0200 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0200; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0200/ACC-0200",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16711,9 +16584,9 @@
         "id": "TSK-0201",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0201; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0201/wait"
         },
         "acceptance_references": []
       },
@@ -16724,9 +16597,8 @@
           {
             "ac_id": "ACC-0202",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0202; acceptance ACC-0202",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0202/ACC-0202",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16734,9 +16606,9 @@
         "id": "TSK-0203",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0203; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0203/wait"
         },
         "acceptance_references": []
       },
@@ -16744,9 +16616,9 @@
         "id": "TSK-0204",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0204; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0204/wait"
         },
         "acceptance_references": []
       },
@@ -16754,9 +16626,9 @@
         "id": "TSK-0205",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0205; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0205/wait"
         },
         "acceptance_references": []
       },
@@ -16764,9 +16636,9 @@
         "id": "TSK-0206",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0206; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0206/wait"
         },
         "acceptance_references": []
       },
@@ -16777,9 +16649,8 @@
           {
             "ac_id": "ACC-0207",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0207; acceptance ACC-0207",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0207/ACC-0207",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16787,9 +16658,9 @@
         "id": "TSK-0208",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0208; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0208/wait"
         },
         "acceptance_references": []
       },
@@ -16797,9 +16668,9 @@
         "id": "TSK-0209",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0209; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0209/wait"
         },
         "acceptance_references": []
       },
@@ -16807,9 +16678,9 @@
         "id": "TSK-0210",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0210; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0210/wait"
         },
         "acceptance_references": []
       },
@@ -16817,9 +16688,9 @@
         "id": "TSK-0211",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0211; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0211/wait"
         },
         "acceptance_references": []
       },
@@ -16827,9 +16698,9 @@
         "id": "TSK-0212",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0212; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0212/wait"
         },
         "acceptance_references": []
       },
@@ -16837,9 +16708,9 @@
         "id": "TSK-0213",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0213; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0213/wait"
         },
         "acceptance_references": []
       },
@@ -16850,9 +16721,8 @@
           {
             "ac_id": "ACC-0214",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0214; acceptance ACC-0214",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0214/ACC-0214",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16860,9 +16730,9 @@
         "id": "TSK-0215",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0215; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0215/wait"
         },
         "acceptance_references": []
       },
@@ -16873,9 +16743,8 @@
           {
             "ac_id": "ACC-0216",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0216; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0216 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0216; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0216/ACC-0216",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16883,9 +16752,9 @@
         "id": "TSK-0217",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0217; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0217/wait"
         },
         "acceptance_references": []
       },
@@ -16893,9 +16762,9 @@
         "id": "TSK-0218",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0218; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0218/wait"
         },
         "acceptance_references": []
       },
@@ -16906,9 +16775,8 @@
           {
             "ac_id": "ACC-0219",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0219; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0219 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0219; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0219/ACC-0219",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16916,9 +16784,9 @@
         "id": "TSK-0220",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0220; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0220/wait"
         },
         "acceptance_references": []
       },
@@ -16926,9 +16794,9 @@
         "id": "TSK-0221",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0221; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0221/wait"
         },
         "acceptance_references": []
       },
@@ -16939,9 +16807,8 @@
           {
             "ac_id": "ACC-0222",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0222; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0222 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0222; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0222/ACC-0222",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16952,9 +16819,8 @@
           {
             "ac_id": "ACC-0223",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0223; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0223 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0223; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0223/ACC-0223",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16965,9 +16831,8 @@
           {
             "ac_id": "ACC-0224",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0224; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0224 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0224; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0224/ACC-0224",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16978,9 +16843,8 @@
           {
             "ac_id": "ACC-0225",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0225; acceptance ACC-0225",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0225/ACC-0225",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -16988,9 +16852,9 @@
         "id": "TSK-0226",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0226; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0226/wait"
         },
         "acceptance_references": []
       },
@@ -17001,9 +16865,8 @@
           {
             "ac_id": "ACC-0227",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0227; acceptance ACC-0227",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0227/ACC-0227",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17014,9 +16877,8 @@
           {
             "ac_id": "ACC-0228",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0228; acceptance ACC-0228",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0228/ACC-0228",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17026,10 +16888,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0229",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0229; - Corrected deterministic verification run/job `33307917535 / 99247643413`: SUCCESS on self-hosted `adguardvm`; eligibility, base contract, CR-0006 separation, ACC-0229, privacy boundaries and downstream scope fence all PASS.",
-            "summary": "Current runtime PASS for TSK-0229 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0229; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0229/ACC-0229",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17040,9 +16901,8 @@
           {
             "ac_id": "ACC-0230",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob ba43a489602a2441574c608c26e6fb9f67009dc6; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0230",
-            "summary": "Current runtime PASS for TSK-0230 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0230; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0230/ACC-0230",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17052,10 +16912,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0231",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0231; - Acceptance workflow run `33556140201` verified the exact WBS contract/dependencies/ACC/VER/EVD and linked controls, immutable artifact blob, all 10 ADRs and all required fields/rejected-alternative/privacy/non-inference markers, then passed the full modular validator before this runtime mutation.",
-            "summary": "Current runtime PASS for TSK-0231 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0231; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0231/ACC-0231",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17066,9 +16925,8 @@
           {
             "ac_id": "ACC-0232",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob d2705797f51f0cfa3683fbebcd1a9966aac3da78; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0232",
-            "summary": "Current runtime PASS for TSK-0232 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0232; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0232/ACC-0232",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17079,9 +16937,8 @@
           {
             "ac_id": "ACC-0233",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 139acb64760d1bc224129a1d72849528c1f7b126; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0233",
-            "summary": "Current runtime PASS for TSK-0233 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0233; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0233/ACC-0233",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17092,9 +16949,8 @@
           {
             "ac_id": "ACC-0234",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob c904a932b3c91721880783720f2d8b86a4580c93; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0234",
-            "summary": "Current runtime PASS for TSK-0234 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0234; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0234/ACC-0234",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17105,9 +16961,8 @@
           {
             "ac_id": "ACC-0235",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob ffdd33b3e835a9563ea31c842e5ae8740f3a9cbf; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0235",
-            "summary": "Current runtime PASS for TSK-0235 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0235; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0235/ACC-0235",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17118,9 +16973,8 @@
           {
             "ac_id": "ACC-0236",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob c69cfa355721e5be413201f8a64675485d5f79f4; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0236",
-            "summary": "Current runtime PASS for TSK-0236 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0236; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0236/ACC-0236",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17130,10 +16984,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0237",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0237; - Independent GitHub Actions verification run `33662918882 / 1`: **SUCCESS**; verifies owners/cadence/signals/thresholds, official source baseline, quota/price/session/provider/OAuth/scope/terms/subprocessor/OpenAPI/release/default/security/license/platform triggers, safe responses, migration/retest paths, and gate/state reopening rules. Full modular validator PASS.",
-            "summary": "Current runtime PASS for TSK-0237 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0237; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0237/ACC-0237",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17143,10 +16996,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0238",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0238; - Acceptance workflow run `33556839829` verified the exact WBS contract/dependency/ACC/VER/EVD and linked controls, immutable artifact blob, primary/backup ownership, cadence, escalation, human-only boundaries, coverage gaps, nine staffing/service review triggers, privacy/legal fences and non-inference, then passed the full modular validator before this runtime mutation.",
-            "summary": "Current runtime PASS for TSK-0238 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0238; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0238/ACC-0238",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17156,10 +17008,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0239",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0239; - Independent GitHub Actions verification run/attempt `33621524294 / 1`, source commit `e61d57d690782b338b0b69f4ba43eb7d2793b6d7`, verified exact upstream artifact blobs, current WBS contract, CR-0009 semantics, all 30 TM-01..TM-30 rows exactly once, required owner/location/verification/gate/monitoring/failure/status cells, global security/privacy invariants, `git diff --check`, and full modular master-plan validator PASS before this runtime mutation.",
-            "summary": "Current runtime PASS for TSK-0239 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0239; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json; blob 62ad2c31f4ea019feb8744eb0dfa8212dc59aa79#TSK-0239/ACC-0239",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17167,9 +17018,9 @@
         "id": "TSK-0240",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0240; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0240/wait"
         },
         "acceptance_references": []
       },
@@ -17177,9 +17028,9 @@
         "id": "TSK-0241",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0241; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0241/wait"
         },
         "acceptance_references": []
       },
@@ -17187,9 +17038,9 @@
         "id": "TSK-0242",
         "status": "WAITING",
         "wait": {
-          "condition": "Deferred by DEC-0062 / CR-0015 until after Version 1 / the controlled Release-1 test with approximately 10-20 people.",
-          "resolution_check": "Confirm the Version-1 / controlled Release-1 deferral boundary has passed and current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0242; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0062 / CR-0015"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0242/wait"
         },
         "acceptance_references": []
       },
@@ -17197,9 +17048,9 @@
         "id": "TSK-0243",
         "status": "WAITING",
         "wait": {
-          "condition": "Fresh bounded public preflight confirms public application/API routing and verifier wildcard DNS are present, but the deterministic 32-hex challenge host still fails TLS/SNI with alert unrecognized name and its probe endpoint remains unreachable (HTTP 000). TSK-0452 is already PASS, so the remaining TSK-0243 prerequisite is specifically the verifier challenge-host TLS/proxy functional path, not target access or general web deployment.",
-          "resolution_check": "Rerun the existing bounded read-only TSK-0243 public preflight. Remain WAITING until the deterministic 32-hex challenge hostname both completes trusted TLS/SNI and reaches the approved /api/dns-verification/probes interface while the public application request/result endpoints remain healthy. Only then may separately authorized functional target proof proceed; do not infer DNS/TLS/proxy mutation authority from this WAITING state.",
-          "reference": "Fresh bounded read-only public preflight: workflow run 33900198638, rerun attempt 46, fresh job 101501085656; run completed successfully 2026-09-06T14:15:29Z; authority binding PASS; usesafeweb.com A observed at 20.71.90.212 and HTTP 200, request endpoint HTTP 405, dns endpoint HTTP 400, verifier wildcard DNS present at 52.157.109.120; deterministic challenge probe remains HTTP 000 and TLS/SNI still fails with alert unrecognized name. Current durable SERIAL LIGHT frontier recomputed from revision 48: eligible TODO count 0; all recorded WAITING entries retain nonempty resolution conditions; project ACTIVE, governance blocker null, human constraints empty; POL-005/POL-006/POL-007 deferrals remain active. No material-action authority inferred."
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0243/wait"
         },
         "acceptance_references": []
       },
@@ -17207,9 +17058,9 @@
         "id": "TSK-0244",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0244; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0244/wait"
         },
         "acceptance_references": []
       },
@@ -17217,9 +17068,9 @@
         "id": "TSK-0245",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0245; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0245/wait"
         },
         "acceptance_references": []
       },
@@ -17227,9 +17078,9 @@
         "id": "TSK-0246",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0246; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0246/wait"
         },
         "acceptance_references": []
       },
@@ -17237,9 +17088,9 @@
         "id": "TSK-0247",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0247; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0247/wait"
         },
         "acceptance_references": []
       },
@@ -17247,9 +17098,9 @@
         "id": "TSK-0248",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0248; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0248/wait"
         },
         "acceptance_references": []
       },
@@ -17257,9 +17108,9 @@
         "id": "TSK-0249",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0249; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0249/wait"
         },
         "acceptance_references": []
       },
@@ -17267,9 +17118,9 @@
         "id": "TSK-0250",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0250; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0250/wait"
         },
         "acceptance_references": []
       },
@@ -17277,9 +17128,9 @@
         "id": "TSK-0251",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0251; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0251/wait"
         },
         "acceptance_references": []
       },
@@ -17287,9 +17138,9 @@
         "id": "TSK-0252",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0252; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0252/wait"
         },
         "acceptance_references": []
       },
@@ -17297,9 +17148,9 @@
         "id": "TSK-0253",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0253; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0253/wait"
         },
         "acceptance_references": []
       },
@@ -17307,9 +17158,9 @@
         "id": "TSK-0254",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0254; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0254/wait"
         },
         "acceptance_references": []
       },
@@ -17317,9 +17168,9 @@
         "id": "TSK-0255",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0255; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0255/wait"
         },
         "acceptance_references": []
       },
@@ -17327,9 +17178,9 @@
         "id": "TSK-0256",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0256; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0256/wait"
         },
         "acceptance_references": []
       },
@@ -17337,9 +17188,9 @@
         "id": "TSK-0257",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0257; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0257/wait"
         },
         "acceptance_references": []
       },
@@ -17347,9 +17198,9 @@
         "id": "TSK-0258",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0258; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0258/wait"
         },
         "acceptance_references": []
       },
@@ -17357,9 +17208,9 @@
         "id": "TSK-0259",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0259; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0259/wait"
         },
         "acceptance_references": []
       },
@@ -17367,9 +17218,9 @@
         "id": "TSK-0260",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0260; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0260/wait"
         },
         "acceptance_references": []
       },
@@ -17377,9 +17228,9 @@
         "id": "TSK-0261",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0261; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0261/wait"
         },
         "acceptance_references": []
       },
@@ -17387,9 +17238,9 @@
         "id": "TSK-0262",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0262; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0262/wait"
         },
         "acceptance_references": []
       },
@@ -17397,9 +17248,9 @@
         "id": "TSK-0263",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0263; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0263/wait"
         },
         "acceptance_references": []
       },
@@ -17407,9 +17258,9 @@
         "id": "TSK-0264",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0264; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0264/wait"
         },
         "acceptance_references": []
       },
@@ -17417,9 +17268,9 @@
         "id": "TSK-0265",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0265; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0265/wait"
         },
         "acceptance_references": []
       },
@@ -17427,9 +17278,9 @@
         "id": "TSK-0266",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0266; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0266/wait"
         },
         "acceptance_references": []
       },
@@ -17437,9 +17288,9 @@
         "id": "TSK-0267",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0267; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0267/wait"
         },
         "acceptance_references": []
       },
@@ -17447,9 +17298,9 @@
         "id": "TSK-0268",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0268; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0268/wait"
         },
         "acceptance_references": []
       },
@@ -17457,9 +17308,9 @@
         "id": "TSK-0269",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0269; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0269/wait"
         },
         "acceptance_references": []
       },
@@ -17467,9 +17318,9 @@
         "id": "TSK-0270",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0270; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0270/wait"
         },
         "acceptance_references": []
       },
@@ -17477,9 +17328,9 @@
         "id": "TSK-0271",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0271; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0271/wait"
         },
         "acceptance_references": []
       },
@@ -17487,9 +17338,9 @@
         "id": "TSK-0272",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0272; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0272/wait"
         },
         "acceptance_references": []
       },
@@ -17497,9 +17348,9 @@
         "id": "TSK-0273",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0273; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0273/wait"
         },
         "acceptance_references": []
       },
@@ -17507,9 +17358,9 @@
         "id": "TSK-0274",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0274; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0274/wait"
         },
         "acceptance_references": []
       },
@@ -17517,9 +17368,9 @@
         "id": "TSK-0275",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Owner selects a specific next officially supported market/locale and product/operational evidence supports expansion. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0275; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0275/wait"
         },
         "acceptance_references": []
       },
@@ -17527,9 +17378,9 @@
         "id": "TSK-0276",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0276; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0276/wait"
         },
         "acceptance_references": []
       },
@@ -17537,9 +17388,9 @@
         "id": "TSK-0277",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0277; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0277/wait"
         },
         "acceptance_references": []
       },
@@ -17547,9 +17398,9 @@
         "id": "TSK-0278",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0278; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0278/wait"
         },
         "acceptance_references": []
       },
@@ -17557,9 +17408,9 @@
         "id": "TSK-0279",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0279; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0279/wait"
         },
         "acceptance_references": []
       },
@@ -17567,9 +17418,9 @@
         "id": "TSK-0280",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0280; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0280/wait"
         },
         "acceptance_references": []
       },
@@ -17577,9 +17428,9 @@
         "id": "TSK-0281",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0281; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0281/wait"
         },
         "acceptance_references": []
       },
@@ -17587,9 +17438,9 @@
         "id": "TSK-0282",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0282; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0282/wait"
         },
         "acceptance_references": []
       },
@@ -17597,9 +17448,9 @@
         "id": "TSK-0283",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0283; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0283/wait"
         },
         "acceptance_references": []
       },
@@ -17607,9 +17458,9 @@
         "id": "TSK-0284",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0284; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0284/wait"
         },
         "acceptance_references": []
       },
@@ -17617,9 +17468,9 @@
         "id": "TSK-0285",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0285; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0285/wait"
         },
         "acceptance_references": []
       },
@@ -17627,9 +17478,9 @@
         "id": "TSK-0286",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0286; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0286/wait"
         },
         "acceptance_references": []
       },
@@ -17637,9 +17488,9 @@
         "id": "TSK-0287",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0287; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0287/wait"
         },
         "acceptance_references": []
       },
@@ -17647,9 +17498,9 @@
         "id": "TSK-0288",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0288; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0288/wait"
         },
         "acceptance_references": []
       },
@@ -17657,9 +17508,9 @@
         "id": "TSK-0289",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0289; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0289/wait"
         },
         "acceptance_references": []
       },
@@ -17667,9 +17518,9 @@
         "id": "TSK-0290",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0290; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0290/wait"
         },
         "acceptance_references": []
       },
@@ -17677,9 +17528,9 @@
         "id": "TSK-0291",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0291; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0291/wait"
         },
         "acceptance_references": []
       },
@@ -17687,9 +17538,9 @@
         "id": "TSK-0292",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0292; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0292/wait"
         },
         "acceptance_references": []
       },
@@ -17697,9 +17548,9 @@
         "id": "TSK-0293",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0293; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0293/wait"
         },
         "acceptance_references": []
       },
@@ -17707,9 +17558,9 @@
         "id": "TSK-0294",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0294; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0294/wait"
         },
         "acceptance_references": []
       },
@@ -17717,9 +17568,9 @@
         "id": "TSK-0295",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0295; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0295/wait"
         },
         "acceptance_references": []
       },
@@ -17727,9 +17578,9 @@
         "id": "TSK-0296",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0296; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0296/wait"
         },
         "acceptance_references": []
       },
@@ -17739,10 +17590,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0297",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0297; - Independent read-only VER-0297: verifier blob `ccdb8e65177777500cc2bbe80a68ebff0b3a6a49`, workflow blob `cd5bfb7b6bbb96b18a2ccdfc677787df056f11e2`, run/job `33594493974 / 100135082837`, conclusion **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0297 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0297; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0297/ACC-0297",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17753,9 +17603,8 @@
           {
             "ac_id": "ACC-0298",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0298; acceptance ACC-0298",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0298/ACC-0298",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17765,10 +17614,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0299",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0299; - Corrected independent read-only verification `.github/workflows/verify-tsk0299-owner-identity-correction-v2.yml`, blob `8f039c55ed6c61f790cae958f3b40a9b0d0321f4`; run/job `33572423991 / 100069047010`: **SUCCESS** with `contents: read`.",
-            "summary": "Current runtime PASS for TSK-0299 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0299; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0299/ACC-0299",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17778,10 +17626,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0300",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0300; - Independent read-only VER-0300 correction: verifier blob `154f84b453694861f58df1a5dcf19ea372644fb5`, workflow blob `85278743149c6017f7ea0d4ad899c4094d0f3249`, run/job `33592292946 / 100128578252`, conclusion **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0300 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0300; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0300/ACC-0300",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17791,10 +17638,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0301",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0301; - Successful independent read-only VER-0301 v2: workflow `.github/workflows/verify-tsk0301-current-revalidation-v2.yml`, blob `21b362de5342832e14e2bfa1d08d0d700e4293c1`; run/job `33573469599 / 100072230006`: **SUCCESS** with `contents: read`.",
-            "summary": "Current runtime PASS for TSK-0301 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0301; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0301/ACC-0301",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17805,9 +17651,8 @@
           {
             "ac_id": "ACC-0302",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0302; acceptance ACC-0302",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0302/ACC-0302",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17817,10 +17662,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0303",
-            "evidence_type": "TEST_RESULT",
-            "reference": "Yaserbayad/UseSafeWeb.com merged source commit 02dc0b8939e784de563443b9668f083d1e35d388 from exact tested PR head b5621ad17c4938308afdfbff81a6ddbade28b3f5; verifier blob c9231b8277b17be94d34cf69f7af7c140e60520b; acceptance workflow blob 8b77cde0be9b09205809f053f4e28840652f3586; GitHub Actions acceptance run 33996922413 job 101388968428 artifact 9978335900; governed promotion run 33996922335 jobs 101388968271 and 101389147493",
-            "summary": "ACC-0303 satisfied: automated contrast/asset/semantic checks and representative desktop, mobile and RTL snapshots pass after correcting dark-field contrast, deterministic monochrome treatment and visible brand-name consistency.",
-            "verification_context": "Exact-head acceptance run 33996922413 passed with contrast ratios heading/page 10.621, accent/page 8.411, body/page 13.455, inverse/green 10.621 and focus/page 8.411; six desktop plus six mobile context snapshots and one RTL product snapshot were captured. Focus/error states, logo scaling, imagery/icon meaning and RTL brand isolation passed; directional icon mirroring is not applicable because the reference set contains no directional UI icons. Governed CI and promotion eligibility also passed on the exact tested head. No deployment, participant/profile, telemetry, payment, production/public activation, market activation, service removal/revocation or launch action was performed."
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0303/ACC-0303",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17828,9 +17672,9 @@
         "id": "TSK-0304",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0304; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0304/wait"
         },
         "acceptance_references": []
       },
@@ -17838,9 +17682,9 @@
         "id": "TSK-0305",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: A specific locale passes the official market/localization activation gate. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0305; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0257_0320.json; blob 675febe76af2bdcdca88eb13f6b0cd47f909f30b#TSK-0305/wait"
         },
         "acceptance_references": []
       },
@@ -17851,9 +17695,8 @@
           {
             "ac_id": "ACC-0306",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0306; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0306 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0306; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0306/ACC-0306",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17863,10 +17706,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0307",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0307; - Independent read-only VER-0307: verifier script blob `34fb3b8532375ba7b6e080f44256f6f0ab9a0ddf`; workflow blob `00077c7dac9a5001001a077ea4e7482f76dea4c6`; run/job `33586673039 / 100112160467`; conclusion **SUCCESS**. Structural current acceptance PASS and live first-party source reachability `6/6 PASS`.",
-            "summary": "Current runtime PASS for TSK-0307 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0307; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0307/ACC-0307",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17876,10 +17718,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0308",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0308; - Independent read-only VER-0308: script blob `3c364d588fd4d89407c2db8223cf4fe34f0b865f`, workflow blob `f35da0b77340e68b3247eb1a547c11ba02a6faa4`, run/job `33593810379 / 100133049388`, conclusion **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0308 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0308; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0308/ACC-0308",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17889,10 +17730,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0309",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0309; `TSK-0309 — Freeze the implementation-ready experience baseline from current internal and automated acceptance evidence`: **PASS** under current `DEC-0052/0053/0054` authority. Baseline `2.0.0-post-cr0006`, blob `6302bb2509d04c8269e4df112140d7c416e42eff`, manifest `0b78a52ebd64e02d198d73bc37015bbfe4244e6e`, now binds the accepted dual-mode `prototype/TSK-0333` source and current account/session/dashboard/device lifecycle while preserving the complete accountless core. Final TSK-0321 evidence blob `433800f2fd4a54c1fba2c42826579675df20bd75` supplies accepted target-environment responsive/accessibility/regression proof. Final source requalification run/job `33492766097 / 99807875248`: PASS. No ",
-            "summary": "Current runtime PASS for TSK-0309 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0309; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0309/ACC-0309",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17902,10 +17742,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0310",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0310; - Corrected TSK-0300 predecessor is current PASS at runtime commit `93fea25db8c1b6fd70a8fd45e0ff531cf33ea2e1`; evidence blob `a3e39896b67098ced321cb9e4b82c65c440806e4` and independent run/job `33592292946 / 100128578252` are bound directly.",
-            "summary": "Current runtime PASS for TSK-0310 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0310; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0310/ACC-0310",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17915,10 +17754,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0311",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0311; - Independent read-only VER-0311: verifier script blob `7908f574aeffbe7b19c51670a2dee5b49cee08ce`; workflow blob `b5e1dc4d6e34cca83f289e3bca0a0095488abaec`; run/job `33587275544 / 100113936593`; conclusion **SUCCESS**. Verification proved 13/13 namespaces, 21/21 representative dual-mode keys and 18/18 current implementation test assertions.",
-            "summary": "Current runtime PASS for TSK-0311 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0311; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0311/ACC-0311",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17928,10 +17766,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0312",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0312; - Independent verifier run/job `33397888358 / 99506708568` on self-hosted `adguardvm`: WBS contract, dependency runtime, product scope, identity/intake minimization, account/session lifecycle, CSRF/session requirements, no-linkage, no-password/SMS, all 16 deterministic test cases, no-downstream-PASS inference and independent verification all PASS; repository diff/clean checks passed.",
-            "summary": "Current runtime PASS for TSK-0312 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0312; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0312/ACC-0312",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17942,9 +17779,8 @@
           {
             "ac_id": "ACC-0313",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 42761e3d2a624841f300cbddca9cdb362cef931e; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0313",
-            "summary": "Current runtime PASS for TSK-0313 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0313; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0313/ACC-0313",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17954,10 +17790,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0314",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0314; - Independent read-only VER-0314 workflow blob `7a74e23fc573d953e9e035f46310fdc8517b9a75`; run/job `33582350458 / 100099089873`: **SUCCESS** with `contents: read`.",
-            "summary": "Current runtime PASS for TSK-0314 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0314; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0314/ACC-0314",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17967,10 +17802,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0315",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0315; - Independent verifier run/job `33402665013 / 99522523592` on self-hosted `adguardvm`: WBS contract, all dependency markers, 25-stage mapping, all ACC semantics, 24 deterministic assertions, analytical evidence and no-downstream-PASS inference all PASS; repository diff/clean checks passed.",
-            "summary": "Current runtime PASS for TSK-0315 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0315; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0315/ACC-0315",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17980,10 +17814,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0316",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0316; - Independent read-only VER-0316 workflow `.github/workflows/verify-tsk0316-post-cr0008.yml`, blob `c4948995ad5fde72c827d588132ec5aa7ff1dd09`; run/job `33574008442 / 100073872441`: **SUCCESS** with `contents: read`.",
-            "summary": "Current runtime PASS for TSK-0316 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0316; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0316/ACC-0316",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -17993,10 +17826,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0317",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0317; - Independent read-only VER-0317 final workflow `.github/workflows/verify-tsk0317-current-revalidation.yml`, blob `b36c1fca1c4ad6f31cf8eb4b55cb25a33c35b6e6`; run/job `33576615158 / 100081874297`: **SUCCESS** with `contents: read`.",
-            "summary": "Current runtime PASS for TSK-0317 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0317; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0317/ACC-0317",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18006,10 +17838,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0318",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0318; - Independent read-only verification run/job `33571019275 / 100064770925`: **SUCCESS** on GitHub-hosted Ubuntu 24.04 with `contents: read`. WBS contract, current predecessor, graph references, dual-mode scope, 38 complete page/screen IA rows, SEO/privacy/accessibility, lifecycle-operation separation, scope negatives and successor-impact assertions all PASS.",
-            "summary": "Current runtime PASS for TSK-0318 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0318; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0318/ACC-0318",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18019,10 +17850,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0319",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0319; - Independent evidence `TSK_0319_POST_CR0008_INDEPENDENT_VERIFICATION_EVIDENCE_2026-09-01.md`, blob `8a797f8257247bc3c557af10fe1d16b37c831077`, commit `050374e470e58d7fbd30bfd85bf60eef32197da4`; run/job `33567214382 / 100053030433`: **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0319 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0319; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0319/ACC-0319",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18032,10 +17862,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0320",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0320; - Verification: GitHub Actions run/attempt `33531622530 / 1`; exact current WBS dependency/authority/ACC, current TSK-0315 PASS, CR-0008 marker, governing requirements/adjacent truth-state contracts, six-state evidence/copy/transition semantics, negative anti-promotion assertions, literal-secret guard and full master-plan validator were checked before runtime mutation.",
-            "summary": "Current runtime PASS for TSK-0320 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0320; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json; blob b0917cdc41481aac73467699cc9c03755b3060e3#TSK-0320/ACC-0320",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18045,10 +17874,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0321",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0321; - Authoritative verification source commit `564cdfe0502e2eca6eb35a5057f6f7e0505f28af`; GitHub Actions run `33487808712` on self-hosted `adguardvm`: focused 320px/200% proof PASS; full current SafeWeb TSK-0333 Chromium regression PASS; full post-CR-0007 TSK-0321 accessibility suite PASS; source unchanged during review.",
-            "summary": "Current runtime PASS for TSK-0321 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0321; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0321/ACC-0321",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18058,10 +17886,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0322",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0322; - Deterministic run/job `33479775242 / 99766584019`: SUCCESS; WBS, current predecessor context, guide semantics, machine policy, identity and endpoint fences all PASS. Earlier run `33479719170 / 99766406951` was verifier-only phrase matching and changed no content/runtime.",
-            "summary": "Current runtime PASS for TSK-0322 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0322; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0322/ACC-0322",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18071,10 +17898,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0323",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0323; - Deterministic verification: run/job `33483472503 / 99778062685` — SUCCESS; 12/12 instruction-record semantics unchanged, current dependency/scope/language-policy checks PASS.",
-            "summary": "Current runtime PASS for TSK-0323 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0323; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0323/ACC-0323",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18084,10 +17910,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0324",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0324; - Deterministic verification: run/job `33484058318 / 99779915675` — SUCCESS; current WBS/dependency, preserved base accessibility contract, dual-mode component rules, contrast/source classification and TSK-0322 alignment all PASS.",
-            "summary": "Current runtime PASS for TSK-0324 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0324; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0324/ACC-0324",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18097,10 +17922,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0325",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0325; - Final structured verifier blob `bae7ea3714495bb3a11f40dcadfecf3c714c1409`; final run/job `33405928577 / 99533392966`: **SUCCESS** on self-hosted `adguardvm`.",
-            "summary": "Current runtime PASS for TSK-0325 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0325; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0325/ACC-0325",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18111,9 +17935,8 @@
           {
             "ac_id": "ACC-0326",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0326; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0326 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0326; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0326/ACC-0326",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18123,10 +17946,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0327",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0327; - Deterministic post-brand run/job `33479274751 / 99765034038`: SUCCESS on self-hosted `adguardvm`; current blobs, WBS contract, corrected predecessor context, v2.1 findings disposition and SafeWeb retest evidence all PASS.",
-            "summary": "Current runtime PASS for TSK-0327 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0327; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0327/ACC-0327",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18136,10 +17958,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0328",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0328; - Relationship graph blob `c108d2c162bcea2ee4cc01def46d0487a9501032`; bounded graph inspection run/job `33407284717 / 99537877018`: **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0328 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0328; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0328/ACC-0328",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18149,10 +17970,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0329",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0329; - Relationship graph blob `c108d2c162bcea2ee4cc01def46d0487a9501032`; bounded current-authority inspection run/job `33408418927 / 99541674501`: **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0329 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0329; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0329/ACC-0329",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18162,10 +17982,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0330",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0330; - Original owner-bound acceptance evidence: `TSK_0330_PHONE_INTERNET_SERVICES_FLOW_ACCEPTANCE_EVIDENCE_2026-08-29.md`, blob `794e12b56e902270f6d4ef052abaa2d1fba1963b`; original final run/job `33280241901 / 99174073706`: SUCCESS.",
-            "summary": "Current runtime PASS for TSK-0330 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0330; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0330/ACC-0330",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18175,10 +17994,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0331",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0331; - First GREEN run/job `33419145661 / 99576961041` passed all structural checks and exposed a test-setup-only skip-link assertion issue; product files were unchanged for that correction.",
-            "summary": "Current runtime PASS for TSK-0331 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0331; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0331/ACC-0331",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18188,10 +18006,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0332",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0332; - Final run/job `33415101545 / 99563744494`: **SUCCESS** on self-hosted `adguardvm`; Node `v22.23.2`, npm `10.9.8`, Playwright `1.62.0`, Chromium `151.0.7922.34`.",
-            "summary": "Current runtime PASS for TSK-0332 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0332; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0332/ACC-0332",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18201,10 +18018,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0333",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0333; - Full identity + regression run/job `33479022852 / 99764278062`: SUCCESS on self-hosted `adguardvm`; exact identity authority, pure substitution, endpoint fence, WBS contract and the full integrated Chromium suite all PASS.",
-            "summary": "Current runtime PASS for TSK-0333 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0333; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0333/ACC-0333",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18214,10 +18030,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0334",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0334; - Preparation evidence `TSK_0334_POST_CR0007_CURRENT_SCOPE_PREPARATION_EVIDENCE_2026-08-31.md`, blob `652845396bc62a1df859b2a9f1944576268066b6`; preparation run/job `33415828154 / 99566111401`: SUCCESS.",
-            "summary": "Current runtime PASS for TSK-0334 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0334; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0334/ACC-0334",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18227,10 +18042,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0335",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0335; - Preflight run/job `33301129850` / `99229374133`: SUCCESS; exact WBS/source identities pinned.",
-            "summary": "Current runtime PASS for TSK-0335 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0335; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0335/ACC-0335",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18241,9 +18055,8 @@
           {
             "ac_id": "ACC-0336",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0336; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0336 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0336; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0336/ACC-0336",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18251,9 +18064,9 @@
         "id": "TSK-0337",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0337; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0337/wait"
         },
         "acceptance_references": []
       },
@@ -18261,9 +18074,9 @@
         "id": "TSK-0338",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0338; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0338/wait"
         },
         "acceptance_references": []
       },
@@ -18271,9 +18084,9 @@
         "id": "TSK-0339",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0339; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0339/wait"
         },
         "acceptance_references": []
       },
@@ -18281,9 +18094,9 @@
         "id": "TSK-0340",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0340; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0340/wait"
         },
         "acceptance_references": []
       },
@@ -18291,9 +18104,9 @@
         "id": "TSK-0341",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0341; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0341/wait"
         },
         "acceptance_references": []
       },
@@ -18301,9 +18114,9 @@
         "id": "TSK-0342",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0342; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0342/wait"
         },
         "acceptance_references": []
       },
@@ -18311,9 +18124,9 @@
         "id": "TSK-0343",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0343; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0343/wait"
         },
         "acceptance_references": []
       },
@@ -18321,9 +18134,9 @@
         "id": "TSK-0344",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0344; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0344/wait"
         },
         "acceptance_references": []
       },
@@ -18331,9 +18144,9 @@
         "id": "TSK-0345",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0345; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0345/wait"
         },
         "acceptance_references": []
       },
@@ -18341,9 +18154,9 @@
         "id": "TSK-0346",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0346; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0346/wait"
         },
         "acceptance_references": []
       },
@@ -18351,9 +18164,9 @@
         "id": "TSK-0347",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0347; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0347/wait"
         },
         "acceptance_references": []
       },
@@ -18361,9 +18174,9 @@
         "id": "TSK-0348",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0348; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0348/wait"
         },
         "acceptance_references": []
       },
@@ -18371,9 +18184,9 @@
         "id": "TSK-0349",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0349; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0349/wait"
         },
         "acceptance_references": []
       },
@@ -18381,9 +18194,9 @@
         "id": "TSK-0350",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0350; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0350/wait"
         },
         "acceptance_references": []
       },
@@ -18391,9 +18204,9 @@
         "id": "TSK-0351",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0351; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0351/wait"
         },
         "acceptance_references": []
       },
@@ -18403,10 +18216,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0352",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0352; - Independent read-only VER-0352: base script blob `43a4013967c8066ba2c1f79d68a512c49cf9aef3`, final wrapper blob `11640b9b0c99c0a19440eda7987f3dcd32474539`, workflow blob `3c3832a66ed03d5cbe5ac8f163b1ae0a97abdfcd`, run/job `33590945044 / 100124642037`, conclusion **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0352 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0352; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0352/ACC-0352",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18416,10 +18228,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0353",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0353; - Independent read-only VER-0353: verifier script blob `9c60b5b087eaf9dd2a2a79e9440997bb89d7fa67`; workflow blob `ef2bc9ac92ab11886859af397c91ae602f511b10`; run/job `33589319072 / 100119889794`; conclusion **SUCCESS**, no verifier correction cycle.",
-            "summary": "Current runtime PASS for TSK-0353 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0353; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0353/ACC-0353",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18430,9 +18241,8 @@
           {
             "ac_id": "ACC-0354",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 2d243962cd28ca8cf271fa30de953feab2807cc2; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0354",
-            "summary": "Current runtime PASS for TSK-0354 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0354; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0354/ACC-0354",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18443,9 +18253,8 @@
           {
             "ac_id": "ACC-0355",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 3afc1a8e80ccaed8805d1cd8fdea7f88670de319; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0355",
-            "summary": "Current runtime PASS for TSK-0355 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0355; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0355/ACC-0355",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18456,9 +18265,8 @@
           {
             "ac_id": "ACC-0356",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob a15636d6ab870ca73e9008e406a9751a0ba16cb0; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0356",
-            "summary": "Current runtime PASS for TSK-0356 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0356; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0356/ACC-0356",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18468,10 +18276,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0357",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0357; - Feature exact-head verification: run `33690892293`, job `100449138836`: **SUCCESS** with current contracts/build/audits, `TSK0361_BROWSER_ACCEPTANCE=PASS`, `TSK0357_BROWSER_ACCEPTANCE=PASS`, and persisted-head acceptance.",
-            "summary": "Current runtime PASS for TSK-0357 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0357; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0357/ACC-0357",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18481,10 +18288,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0358",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0358; - Clean merged-main target-runtime verification: run `33693907580`, job `100458530863`: **SUCCESS** on Ubuntu 24.04 / Node 22.23.2 / Next.js production runtime / real Chromium; master-plan validation PASS; **22/22** contract tests PASS; lint has zero errors; typecheck and production build PASS; production/all dependency audits report **0 vulnerabilities**; `TSK0361_BROWSER_ACCEPTANCE=PASS`; `TSK0357_BROWSER_ACCEPTANCE=PASS`; `TSK0358_BROWSER_ACCEPTANCE=PASS`; `TSK0358_CLEAN_MAIN_ACCEPTANCE=PASS`.",
-            "summary": "Current runtime PASS for TSK-0358 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0358; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0358/ACC-0358",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18494,10 +18300,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0359",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0359; - Final feature acceptance run/job `33706555973 / 100496805461`: **SUCCESS** on exact feature head `e7c1f89d72a47f729970d1b679908fa2338436df`.",
-            "summary": "Current runtime PASS for TSK-0359 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0359; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0359/ACC-0359",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18505,9 +18310,9 @@
         "id": "TSK-0360",
         "status": "WAITING",
         "wait": {
-          "condition": "No authorized supported iPhone/device target plus required profile-delivery access is durably available for the current target acceptance boundary.",
-          "resolution_check": "Confirm an authorized supported device/target and the exact required profile-delivery access are durably available under current authority; then re-evaluate current task acceptance and material-action fences before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0360; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0360/wait"
         },
         "acceptance_references": []
       },
@@ -18517,10 +18322,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0361",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0361; - Final pre-merge branch acceptance run/job `33685314060 / 100431277608`: **SUCCESS**, including contract, locked install, lint, typecheck, production build, zero-vulnerability full/production audits, exact browser-tool pins, real-browser functional/negative/accessibility/security/SEO/locale/RTL acceptance, and synthetic performance.",
-            "summary": "Current runtime PASS for TSK-0361 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0361; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0361/ACC-0361",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18528,9 +18332,9 @@
         "id": "TSK-0362",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0362; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0362/wait"
         },
         "acceptance_references": []
       },
@@ -18538,9 +18342,9 @@
         "id": "TSK-0363",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0363; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0363/wait"
         },
         "acceptance_references": []
       },
@@ -18548,9 +18352,9 @@
         "id": "TSK-0364",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0364; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0364/wait"
         },
         "acceptance_references": []
       },
@@ -18558,9 +18362,9 @@
         "id": "TSK-0365",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0365; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0365/wait"
         },
         "acceptance_references": []
       },
@@ -18568,9 +18372,9 @@
         "id": "TSK-0366",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0366; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0366/wait"
         },
         "acceptance_references": []
       },
@@ -18578,9 +18382,9 @@
         "id": "TSK-0367",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0367; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0367/wait"
         },
         "acceptance_references": []
       },
@@ -18588,9 +18392,9 @@
         "id": "TSK-0368",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0368; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0368/wait"
         },
         "acceptance_references": []
       },
@@ -18598,9 +18402,9 @@
         "id": "TSK-0369",
         "status": "WAITING",
         "wait": {
-          "condition": "Current durable authority does not yet explicitly permit the required target deployment/enablement and no qualifying target-runtime access is established.",
-          "resolution_check": "Confirm current explicit authority for the required target deployment/enablement and qualifying target-runtime access, then re-evaluate current acceptance and material-action fences before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0369; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0369/wait"
         },
         "acceptance_references": []
       },
@@ -18608,9 +18412,9 @@
         "id": "TSK-0370",
         "status": "WAITING",
         "wait": {
-          "condition": "Deferred by DEC-0062 / CR-0015 until after Version 1 / the controlled Release-1 test with approximately 10-20 people.",
-          "resolution_check": "Confirm the Version-1 / controlled Release-1 deferral boundary has passed and current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0370; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0062 / CR-0015"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0370/wait"
         },
         "acceptance_references": []
       },
@@ -18618,9 +18422,9 @@
         "id": "TSK-0371",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0371; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0371/wait"
         },
         "acceptance_references": []
       },
@@ -18628,9 +18432,9 @@
         "id": "TSK-0372",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0372; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0372/wait"
         },
         "acceptance_references": []
       },
@@ -18638,9 +18442,9 @@
         "id": "TSK-0373",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0373; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0373/wait"
         },
         "acceptance_references": []
       },
@@ -18651,9 +18455,8 @@
           {
             "ac_id": "ACC-0374",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0374; acceptance ACC-0374",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0374/ACC-0374",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18663,10 +18466,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0375",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0375; - Feature-head run/job `33723799253 / 100548279575`: **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0375 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0375; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0375/ACC-0375",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18676,10 +18478,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0376",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0376; - Direct acceptance: feature run/job `33730514968` / `100569122644` **PASS**; clean-main run/job `33730835303` / `100570144399` **PASS**; focused contract 6/6 and complete current website contract suite 74/74.",
-            "summary": "Current runtime PASS for TSK-0376 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0376; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0376/ACC-0376",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18687,9 +18488,9 @@
         "id": "TSK-0377",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0377; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0377/wait"
         },
         "acceptance_references": []
       },
@@ -18697,9 +18498,9 @@
         "id": "TSK-0378",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0378; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0378/wait"
         },
         "acceptance_references": []
       },
@@ -18707,9 +18508,9 @@
         "id": "TSK-0379",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0379; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0379/wait"
         },
         "acceptance_references": []
       },
@@ -18720,9 +18521,8 @@
           {
             "ac_id": "ACC-0380",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 81bf9cda1d2e3286a3e1953c92f69b6ef879d1f7; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0380",
-            "summary": "Current runtime PASS for TSK-0380 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0380; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json; blob 061edbba60cffab212a7c7ef27f72599a22f1bc9#TSK-0380/ACC-0380",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18730,9 +18530,9 @@
         "id": "TSK-0381",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0381; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0381/wait"
         },
         "acceptance_references": []
       },
@@ -18740,9 +18540,9 @@
         "id": "TSK-0382",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0382; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0382/wait"
         },
         "acceptance_references": []
       },
@@ -18750,9 +18550,9 @@
         "id": "TSK-0383",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0383; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0383/wait"
         },
         "acceptance_references": []
       },
@@ -18760,9 +18560,9 @@
         "id": "TSK-0384",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0384; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0321_0384.json; blob 1f4675d8c22cd5a2c73ba39e18b2f14bc451192f#TSK-0384/wait"
         },
         "acceptance_references": []
       },
@@ -18770,9 +18570,9 @@
         "id": "TSK-0385",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0385; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0385/wait"
         },
         "acceptance_references": []
       },
@@ -18780,9 +18580,9 @@
         "id": "TSK-0386",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0386; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0386/wait"
         },
         "acceptance_references": []
       },
@@ -18790,9 +18590,9 @@
         "id": "TSK-0387",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0387; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0387/wait"
         },
         "acceptance_references": []
       },
@@ -18800,9 +18600,9 @@
         "id": "TSK-0388",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0388; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0388/wait"
         },
         "acceptance_references": []
       },
@@ -18810,9 +18610,9 @@
         "id": "TSK-0389",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0389; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0389/wait"
         },
         "acceptance_references": []
       },
@@ -18820,9 +18620,9 @@
         "id": "TSK-0390",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0390; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0390/wait"
         },
         "acceptance_references": []
       },
@@ -18830,9 +18630,9 @@
         "id": "TSK-0391",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0391; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0391/wait"
         },
         "acceptance_references": []
       },
@@ -18840,9 +18640,9 @@
         "id": "TSK-0392",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Meaningful external-user/availability dependency justifies a public status surface and the applicable owner/release authority opens it. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0392; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0392/wait"
         },
         "acceptance_references": []
       },
@@ -18850,9 +18650,9 @@
         "id": "TSK-0393",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0393; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0393/wait"
         },
         "acceptance_references": []
       },
@@ -18860,9 +18660,9 @@
         "id": "TSK-0394",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0394; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0394/wait"
         },
         "acceptance_references": []
       },
@@ -18872,10 +18672,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0395",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0395; - Canonical-main TSK-0395 target acceptance run/job `33801214869 / 100800898380`: terminal SUCCESS on exact `main` SHA `ccbed0d70ab0e7f17bdd3809183fef58d73f0d1e`; final marker `TSK0395_BROWSER_ACCEPTANCE=PASS`.",
-            "summary": "Current runtime PASS for TSK-0395 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0395; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0395/ACC-0395",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18883,9 +18682,9 @@
         "id": "TSK-0396",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0396; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0396/wait"
         },
         "acceptance_references": []
       },
@@ -18893,9 +18692,9 @@
         "id": "TSK-0397",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0397; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0397/wait"
         },
         "acceptance_references": []
       },
@@ -18903,9 +18702,9 @@
         "id": "TSK-0398",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0398; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0398/wait"
         },
         "acceptance_references": []
       },
@@ -18913,9 +18712,9 @@
         "id": "TSK-0399",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0399; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0399/wait"
         },
         "acceptance_references": []
       },
@@ -18923,9 +18722,9 @@
         "id": "TSK-0400",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0400; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0400/wait"
         },
         "acceptance_references": []
       },
@@ -18933,9 +18732,9 @@
         "id": "TSK-0401",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0401; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0401/wait"
         },
         "acceptance_references": []
       },
@@ -18946,9 +18745,8 @@
           {
             "ac_id": "ACC-0402",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0402; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0402 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0402; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0402/ACC-0402",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18956,9 +18754,9 @@
         "id": "TSK-0403",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0403; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0403/wait"
         },
         "acceptance_references": []
       },
@@ -18966,9 +18764,9 @@
         "id": "TSK-0404",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0404; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0404/wait"
         },
         "acceptance_references": []
       },
@@ -18979,9 +18777,8 @@
           {
             "ac_id": "ACC-0405",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0405; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0405 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0405; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0405/ACC-0405",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -18989,9 +18786,9 @@
         "id": "TSK-0406",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0406; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0406/wait"
         },
         "acceptance_references": []
       },
@@ -18999,9 +18796,9 @@
         "id": "TSK-0407",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0407; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0407/wait"
         },
         "acceptance_references": []
       },
@@ -19011,10 +18808,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0408",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0408; - Independent verification: GitHub Actions run/job `33497169433 / 99821919358` — SUCCESS at verification head `3293a3fcae7e1258eab947bfb4218186b275d75a`.",
-            "summary": "Current runtime PASS for TSK-0408 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0408; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0408/ACC-0408",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19025,9 +18821,8 @@
           {
             "ac_id": "ACC-0409",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob bcccf7599dddd6e1665ba1207cafcadd6afe164d; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0409",
-            "summary": "Current runtime PASS for TSK-0409 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0409; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0409/ACC-0409",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19038,9 +18833,8 @@
           {
             "ac_id": "ACC-0410",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob f8fb1aee8504ff0c262ed7ff5c5b215572655cbe; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0410",
-            "summary": "Current runtime PASS for TSK-0410 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0410; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0410/ACC-0410",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19051,9 +18845,8 @@
           {
             "ac_id": "ACC-0411",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob e698ce6cfe7f629dd3d320581ce231ed08190257; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0411",
-            "summary": "Current runtime PASS for TSK-0411 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0411; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0411/ACC-0411",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19064,9 +18857,8 @@
           {
             "ac_id": "ACC-0412",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 10eb6e246e3662cc977ea04e44d0d1fe10c72687; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0412",
-            "summary": "Current runtime PASS for TSK-0412 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0412; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0412/ACC-0412",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19076,10 +18868,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0413",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0413; - Independent verification: GitHub Actions run/job `33500597612 / 99832778403` — **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0413 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0413; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0413/ACC-0413",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19087,9 +18878,9 @@
         "id": "TSK-0414",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0414; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0414/wait"
         },
         "acceptance_references": []
       },
@@ -19097,9 +18888,9 @@
         "id": "TSK-0415",
         "status": "WAITING",
         "wait": {
-          "condition": "Deferred by DEC-0062 / CR-0015 until after Version 1 / the controlled Release-1 test with approximately 10-20 people.",
-          "resolution_check": "Confirm the Version-1 / controlled Release-1 deferral boundary has passed and current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0415; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0062 / CR-0015"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0415/wait"
         },
         "acceptance_references": []
       },
@@ -19107,9 +18898,9 @@
         "id": "TSK-0416",
         "status": "WAITING",
         "wait": {
-          "condition": "Deferred by DEC-0062 / CR-0015 until after Version 1 / the controlled Release-1 test with approximately 10-20 people.",
-          "resolution_check": "Confirm the Version-1 / controlled Release-1 deferral boundary has passed and current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0416; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0062 / CR-0015"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0416/wait"
         },
         "acceptance_references": []
       },
@@ -19117,9 +18908,9 @@
         "id": "TSK-0417",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0417; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0417/wait"
         },
         "acceptance_references": []
       },
@@ -19127,9 +18918,9 @@
         "id": "TSK-0418",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0418; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0418/wait"
         },
         "acceptance_references": []
       },
@@ -19137,9 +18928,9 @@
         "id": "TSK-0419",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0419; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0419/wait"
         },
         "acceptance_references": []
       },
@@ -19147,9 +18938,9 @@
         "id": "TSK-0420",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0420; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0420/wait"
         },
         "acceptance_references": []
       },
@@ -19157,9 +18948,9 @@
         "id": "TSK-0421",
         "status": "WAITING",
         "wait": {
-          "condition": "Deferred by DEC-0062 / CR-0015 until after Version 1 / the controlled Release-1 test with approximately 10-20 people.",
-          "resolution_check": "Confirm the Version-1 / controlled Release-1 deferral boundary has passed and current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0421; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0062 / CR-0015"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0421/wait"
         },
         "acceptance_references": []
       },
@@ -19170,9 +18961,8 @@
           {
             "ac_id": "ACC-0422",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob a947aea558804da9a06650a6ae2324a9ca81a1d8; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0422",
-            "summary": "Current runtime PASS for TSK-0422 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0422; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0422/ACC-0422",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19182,10 +18972,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0423",
-            "evidence_type": "TEST_RESULT",
-            "reference": "Yaserbayad/UseSafeWeb.com source commit 0f5d9695c259c4f66b0c47bf3752cc40d7a10dc0; verifier blob c50dd2b9b5a0e83cdc60fd7a962f018dee46d142; acceptance workflow blob 1098e86c84eb8973f96f4d51d23d3956fe4ba230; GitHub Actions run 33982540881 jobs 101350218278 and 101350218385",
-            "summary": "ACC-0423 satisfied: the automated regression rejects every seeded unsafe privacy/security configuration class and the reusable release/deployment/recovery acceptance workflow passed both hosted negative-matrix verification and read-only production-like AdGuard target verification.",
-            "verification_context": "Run 33982540881 on exact head 0f5d9695c259c4f66b0c47bf3752cc40d7a10dc0: negative-regression SUCCESS and deployed-runtime-readonly SUCCESS. Target checks are read-only and cover live AdGuard settings, public-admin exposure/firewall, filter behavior and service state; no target mutation is performed."
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0423/ACC-0423",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19193,9 +18982,9 @@
         "id": "TSK-0424",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0424; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0424/wait"
         },
         "acceptance_references": []
       },
@@ -19203,9 +18992,9 @@
         "id": "TSK-0425",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0425; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0425/wait"
         },
         "acceptance_references": []
       },
@@ -19213,9 +19002,9 @@
         "id": "TSK-0426",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0426; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0426/wait"
         },
         "acceptance_references": []
       },
@@ -19223,9 +19012,9 @@
         "id": "TSK-0427",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0427; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0427/wait"
         },
         "acceptance_references": []
       },
@@ -19236,9 +19025,8 @@
           {
             "ac_id": "ACC-0428",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0428; acceptance ACC-0428",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0428/ACC-0428",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19249,9 +19037,8 @@
           {
             "ac_id": "ACC-0429",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0429; acceptance ACC-0429",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0429/ACC-0429",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19262,9 +19049,8 @@
           {
             "ac_id": "ACC-0430",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0430; acceptance ACC-0430",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0430/ACC-0430",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19275,9 +19061,8 @@
           {
             "ac_id": "ACC-0431",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0431; acceptance ACC-0431",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0431/ACC-0431",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19288,9 +19073,8 @@
           {
             "ac_id": "ACC-0432",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0432; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0432 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0432; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0432/ACC-0432",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19301,9 +19085,8 @@
           {
             "ac_id": "ACC-0433",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0433; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0433 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0433; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0433/ACC-0433",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19314,9 +19097,8 @@
           {
             "ac_id": "ACC-0434",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0434; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0434 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: Owner override 2026-08-27; DEC-0013; DEC-0043; CON-0004; REQ-0049"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0434/ACC-0434",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19324,9 +19106,9 @@
         "id": "TSK-0435",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Owner has manually created and made the pilot Azure VM reachable for approved automation. Preconditions: Owner-provided Azure VM exists; canonical state read; current gate/authority confirmed; access metadata is available without exposing secrets; no participant data is present before readiness permits it.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0435; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0435/wait"
         },
         "acceptance_references": []
       },
@@ -19337,9 +19119,8 @@
           {
             "ac_id": "ACC-0436",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0436; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0436 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: Owner override 2026-08-27; DEC-0013; CON-0004; TSK-0435; TSK-0437; TSK-0483"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0436/ACC-0436",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19350,9 +19131,8 @@
           {
             "ac_id": "ACC-0437",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0437; acceptance ACC-0437",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0437/ACC-0437",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19360,9 +19140,9 @@
         "id": "TSK-0438",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0438; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0438/wait"
         },
         "acceptance_references": []
       },
@@ -19370,9 +19150,9 @@
         "id": "TSK-0439",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0439; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0439/wait"
         },
         "acceptance_references": []
       },
@@ -19380,9 +19160,9 @@
         "id": "TSK-0440",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0440; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0440/wait"
         },
         "acceptance_references": []
       },
@@ -19393,9 +19173,8 @@
           {
             "ac_id": "ACC-0441",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0441; acceptance ACC-0441",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0441/ACC-0441",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19406,9 +19185,8 @@
           {
             "ac_id": "ACC-0442",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0442; acceptance ACC-0442",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0442/ACC-0442",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19419,9 +19197,8 @@
           {
             "ac_id": "ACC-0443",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0443; acceptance ACC-0443",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0443/ACC-0443",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19432,9 +19209,8 @@
           {
             "ac_id": "ACC-0444",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 04cdf8bffeeebde6fc4ee15ed67483b603de0cce; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0444",
-            "summary": "Current runtime PASS for TSK-0444 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0444; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0444/ACC-0444",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19445,9 +19221,8 @@
           {
             "ac_id": "ACC-0445",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 87d1ad25461ca263ee6c5f07c4f040e7b9893017; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0445",
-            "summary": "Current runtime PASS for TSK-0445 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0445; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0445/ACC-0445",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19457,10 +19232,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0446",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0446; - Independent verification: GitHub Actions run/job `33504115232 / 99843993787` — **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0446 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0446; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0446/ACC-0446",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19468,9 +19242,9 @@
         "id": "TSK-0447",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0447; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0447/wait"
         },
         "acceptance_references": []
       },
@@ -19478,9 +19252,9 @@
         "id": "TSK-0448",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0448; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0385_0448.json; blob d06f671e5d1c45db495c144fa81f2e8558bbe661#TSK-0448/wait"
         },
         "acceptance_references": []
       },
@@ -19491,9 +19265,8 @@
           {
             "ac_id": "ACC-0449",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 064ee110cd6d90136ea37df574baaef848b82d8a; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0449",
-            "summary": "Current runtime PASS for TSK-0449 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0449; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0449/ACC-0449",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19504,9 +19277,8 @@
           {
             "ac_id": "ACC-0450",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 4ab02533fa29aeb0c1c79a83d44a2dbc08bdf5a5; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0450",
-            "summary": "Current runtime PASS for TSK-0450 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0450; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0450/ACC-0450",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19517,9 +19289,8 @@
           {
             "ac_id": "ACC-0451",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob b1cab12c5dff3d5cbe8eec1ca790cbda1c60a61f; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0451",
-            "summary": "Current runtime PASS for TSK-0451 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0451; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0451/ACC-0451",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19530,9 +19301,8 @@
           {
             "ac_id": "ACC-0452",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0452_PILOT_DEPLOYMENT_AUTOMATION_EVIDENCE_2026-09-05.md; blob 65902c584f450cd00ef7b3d0a01b421075683289; Yaserbayad/erp.hmg.test Actions run 33969593425 job 101315631105; transport commit 03fc53cb5a030ce3534ede429a19123a28a27bbd",
-            "summary": "ACC-0452 is satisfied by the direct-host deployment evidence: immutable release identity, approved host/runtime, validation and health checks, safe rollback behavior, and externally injected secret handling were verified.",
-            "verification_context": "Frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765, blob 357c5e1be3b455e7efddd329d6a2468e3125b502; evidence blob 65902c584f450cd00ef7b3d0a01b421075683289; successful deployment run 33969593425 job 101315631105."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0452/ACC-0452",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19542,10 +19312,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0453",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0453; - Verification run/attempt: `33858461175 / 1` — repository structure, deterministic Master Plan validation, focused TSK-0453 contract, formatting, lint, typecheck, full contracts, production build, high-threshold dependency audits, negative formatter propagation/cleanup and clean-worktree checks all passed.",
-            "summary": "Current runtime PASS for TSK-0453 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0453; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0453/ACC-0453",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19555,10 +19324,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0454",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0454; - TDD evidence run `33665697962`: initial branch attempt failed as expected on the first missing canonical file (`.gitignore`); subsequent GREEN runs passed after the minimum structure was implemented; post-review GREEN passed after removing an unnecessary `website/public/README.md` runtime/public asset.",
-            "summary": "Current runtime PASS for TSK-0454 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0454; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0454/ACC-0454",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19566,9 +19334,9 @@
         "id": "TSK-0455",
         "status": "WAITING",
         "wait": {
-          "condition": "Owner sequencing under DEC-0059 / CR-0012 defers fresh-host deployment/recovery verification until the integrated environment is fully working and a fresh Ubuntu 24.04 LTS target plus required DNS/TLS/monitoring access are durably available.",
-          "resolution_check": "Verify the integrated environment is fully working and a fresh Ubuntu 24.04 LTS target with required DNS/TLS/monitoring access is durably available; then re-evaluate TSK-0455 under its unchanged ACC/VER/EVD before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0455; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0059 / CR-0012"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0455/wait"
         },
         "acceptance_references": []
       },
@@ -19576,9 +19344,9 @@
         "id": "TSK-0456",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0456; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0456/wait"
         },
         "acceptance_references": []
       },
@@ -19586,9 +19354,9 @@
         "id": "TSK-0457",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0457; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0457/wait"
         },
         "acceptance_references": []
       },
@@ -19596,9 +19364,9 @@
         "id": "TSK-0458",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0458; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0458/wait"
         },
         "acceptance_references": []
       },
@@ -19606,9 +19374,9 @@
         "id": "TSK-0459",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0459; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0459/wait"
         },
         "acceptance_references": []
       },
@@ -19616,9 +19384,9 @@
         "id": "TSK-0460",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0460; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0460/wait"
         },
         "acceptance_references": []
       },
@@ -19626,9 +19394,9 @@
         "id": "TSK-0461",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0461; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0461/wait"
         },
         "acceptance_references": []
       },
@@ -19636,9 +19404,9 @@
         "id": "TSK-0462",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0462; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0462/wait"
         },
         "acceptance_references": []
       },
@@ -19646,9 +19414,9 @@
         "id": "TSK-0463",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0463; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0463/wait"
         },
         "acceptance_references": []
       },
@@ -19656,9 +19424,9 @@
         "id": "TSK-0464",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0464; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0464/wait"
         },
         "acceptance_references": []
       },
@@ -19666,9 +19434,9 @@
         "id": "TSK-0465",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0465; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0465/wait"
         },
         "acceptance_references": []
       },
@@ -19676,9 +19444,9 @@
         "id": "TSK-0466",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0466; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0466/wait"
         },
         "acceptance_references": []
       },
@@ -19686,9 +19454,9 @@
         "id": "TSK-0467",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0467; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0467/wait"
         },
         "acceptance_references": []
       },
@@ -19696,9 +19464,9 @@
         "id": "TSK-0468",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0468; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0468/wait"
         },
         "acceptance_references": []
       },
@@ -19706,9 +19474,9 @@
         "id": "TSK-0469",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0469; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0469/wait"
         },
         "acceptance_references": []
       },
@@ -19716,9 +19484,9 @@
         "id": "TSK-0470",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0470; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0470/wait"
         },
         "acceptance_references": []
       },
@@ -19726,9 +19494,9 @@
         "id": "TSK-0471",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0471; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0471/wait"
         },
         "acceptance_references": []
       },
@@ -19736,9 +19504,9 @@
         "id": "TSK-0472",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0472; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0472/wait"
         },
         "acceptance_references": []
       },
@@ -19746,9 +19514,9 @@
         "id": "TSK-0473",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0473; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0473/wait"
         },
         "acceptance_references": []
       },
@@ -19756,9 +19524,9 @@
         "id": "TSK-0474",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0474; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0474/wait"
         },
         "acceptance_references": []
       },
@@ -19766,9 +19534,9 @@
         "id": "TSK-0475",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0475; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0475/wait"
         },
         "acceptance_references": []
       },
@@ -19776,9 +19544,9 @@
         "id": "TSK-0476",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0476; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0476/wait"
         },
         "acceptance_references": []
       },
@@ -19786,9 +19554,9 @@
         "id": "TSK-0477",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0477; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0477/wait"
         },
         "acceptance_references": []
       },
@@ -19796,9 +19564,9 @@
         "id": "TSK-0478",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0478; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0478/wait"
         },
         "acceptance_references": []
       },
@@ -19806,9 +19574,9 @@
         "id": "TSK-0479",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0479; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0479/wait"
         },
         "acceptance_references": []
       },
@@ -19816,9 +19584,9 @@
         "id": "TSK-0480",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0480; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0480/wait"
         },
         "acceptance_references": []
       },
@@ -19826,9 +19594,9 @@
         "id": "TSK-0481",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0481; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0481/wait"
         },
         "acceptance_references": []
       },
@@ -19836,9 +19604,9 @@
         "id": "TSK-0482",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0482; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0482/wait"
         },
         "acceptance_references": []
       },
@@ -19846,9 +19614,9 @@
         "id": "TSK-0483",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker. Owner-frozen final plan is published and fetch-verified; governance hold is released.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0483; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0483/wait"
         },
         "acceptance_references": []
       },
@@ -19858,10 +19626,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0484",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0484; - Independent read-only VER-0484 final workflow blob `b12ec1801dee4afe633fafb8830fc2be7498a07d`; run/job `33579079770 / 100089332047`: **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0484 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0484; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0484/ACC-0484",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19871,10 +19638,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0485",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0485; - Acceptance workflow run `33558048780` verified the exact WBS/dependency/ACC/VER/EVD contract, immutable artifact and verifier blobs, controlling requirement/constraint/risk/interface records, all 30 threat rows, all 10 trust boundaries, required threat categories, High/Critical prevention/detection/recovery/blocking-test completeness, privacy/truth/authority invariants, downstream gaps and non-inference; the full modular validator then passed before this runtime mutation.",
-            "summary": "Current runtime PASS for TSK-0485 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0485; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0485/ACC-0485",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19885,9 +19651,8 @@
           {
             "ac_id": "ACC-0486",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob c63b572a482ecb29ab24b3b6f4f5008e822255e0; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0486",
-            "summary": "Current runtime PASS for TSK-0486 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0486; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0486/ACC-0486",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19898,9 +19663,8 @@
           {
             "ac_id": "ACC-0487",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob ea1dceb68f78300c02718df2b36e68545636cc04; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0487",
-            "summary": "Current runtime PASS for TSK-0487 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0487; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0487/ACC-0487",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19908,9 +19672,9 @@
         "id": "TSK-0488",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0488; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0488/wait"
         },
         "acceptance_references": []
       },
@@ -19920,10 +19684,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0489",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0489; The former PR #99 exact-source-head interpretation is superseded. Current proof is the repaired PR #101/#102/#103 chain plus successful post-merge canonical TSK-0489 run `33894750987` on exact `main@26a8f786b5e74e665b5c19a9b156b68b5ced10be`. PR #103 included deliberate RED run `33894506486` that blocked the remaining indirect direct-main writer, followed by GREEN run `33894582672`; the final scanner reported 112 active workflows, 0 active write surfaces, and 77 transitively reachable executables. Full corrected proof is `TSK_0489_GOVERNED_CI_PROMOTION_EVIDENCE_2026-09-04.md`.",
-            "summary": "Current runtime PASS for TSK-0489 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0489; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0489/ACC-0489",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19934,9 +19697,8 @@
           {
             "ac_id": "ACC-0490",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 0ac50bd25fd25970cf99ac4f80b021b7ac4047b4; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0490",
-            "summary": "Current runtime PASS for TSK-0490 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0490; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0490/ACC-0490",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19946,10 +19708,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0491",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0491; - Clean-main TSK-0491 gate `33765234931 / 100681290132`: SUCCESS. All 12 workflows triggered by exact canonical source commit `59113366b14eca72101c1bc12bec0985cfd186c0` reached terminal SUCCESS with zero failed, queued, or in-progress runs; final browser-heavy TSK-0359 run/job `33765234882 / 100681289522` also completed SUCCESS.",
-            "summary": "Current runtime PASS for TSK-0491 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0491; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0491/ACC-0491",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -19957,9 +19718,9 @@
         "id": "TSK-0492",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0492; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0492/wait"
         },
         "acceptance_references": []
       },
@@ -19967,9 +19728,9 @@
         "id": "TSK-0493",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0493; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0493/wait"
         },
         "acceptance_references": []
       },
@@ -19977,9 +19738,9 @@
         "id": "TSK-0494",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0494; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0494/wait"
         },
         "acceptance_references": []
       },
@@ -19987,9 +19748,9 @@
         "id": "TSK-0495",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0495; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0495/wait"
         },
         "acceptance_references": []
       },
@@ -20000,9 +19761,8 @@
           {
             "ac_id": "ACC-0496",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0496; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
-            "summary": "TSK-0496 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0496; historical source evidence as cited; DEC-0052; CR-0005; owner instruction 2026-08-29"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0496/ACC-0496",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20012,10 +19772,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0497",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0497; - Independent read-only VER-0497: workflow blob `b0ea2fc03440862496f748a1bf5701272d26b77a`; verifier script blob `c1b85b059b74b8a1d1d3b660ab75ff6c4d325cab`; run/job `33583778318 / 100103488785`; conclusion **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0497 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0497; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0497/ACC-0497",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20026,9 +19785,8 @@
           {
             "ac_id": "ACC-0498",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 3c55b28f40615fe4e682e3f9b8fb1b8eb22989b9; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0498",
-            "summary": "Current runtime PASS for TSK-0498 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0498; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0498/ACC-0498",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20036,9 +19794,9 @@
         "id": "TSK-0499",
         "status": "WAITING",
         "wait": {
-          "condition": "Deferred by DEC-0062 / CR-0015 until after Version 1 / the controlled Release-1 test with approximately 10-20 people.",
-          "resolution_check": "Confirm the Version-1 / controlled Release-1 deferral boundary has passed and current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0499; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0062 / CR-0015"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0499/wait"
         },
         "acceptance_references": []
       },
@@ -20046,9 +19804,9 @@
         "id": "TSK-0500",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0500; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0500/wait"
         },
         "acceptance_references": []
       },
@@ -20056,9 +19814,9 @@
         "id": "TSK-0501",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0501; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0501/wait"
         },
         "acceptance_references": []
       },
@@ -20066,9 +19824,9 @@
         "id": "TSK-0502",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0502; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0502/wait"
         },
         "acceptance_references": []
       },
@@ -20076,9 +19834,9 @@
         "id": "TSK-0503",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0503; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0503/wait"
         },
         "acceptance_references": []
       },
@@ -20086,9 +19844,9 @@
         "id": "TSK-0504",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0504; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0504/wait"
         },
         "acceptance_references": []
       },
@@ -20096,9 +19854,9 @@
         "id": "TSK-0505",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0505; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0505/wait"
         },
         "acceptance_references": []
       },
@@ -20106,9 +19864,9 @@
         "id": "TSK-0506",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0506; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0506/wait"
         },
         "acceptance_references": []
       },
@@ -20116,9 +19874,9 @@
         "id": "TSK-0507",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0507; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0507/wait"
         },
         "acceptance_references": []
       },
@@ -20126,9 +19884,9 @@
         "id": "TSK-0508",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0508; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0508/wait"
         },
         "acceptance_references": []
       },
@@ -20136,9 +19894,9 @@
         "id": "TSK-0509",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0509; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0509/wait"
         },
         "acceptance_references": []
       },
@@ -20149,9 +19907,8 @@
           {
             "ac_id": "ACC-0510",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0510; acceptance ACC-0510",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0510/ACC-0510",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20162,9 +19919,8 @@
           {
             "ac_id": "ACC-0511",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0511; acceptance ACC-0511",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0511/ACC-0511",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20175,9 +19931,8 @@
           {
             "ac_id": "ACC-0512",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0512; acceptance ACC-0512",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json; blob 3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00#TSK-0512/ACC-0512",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20188,9 +19943,8 @@
           {
             "ac_id": "ACC-0513",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0513; acceptance ACC-0513",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0513_0576.json; blob 08087d804616e7aee1eb6c97e709575abddadc2b#TSK-0513/ACC-0513",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20201,9 +19955,8 @@
           {
             "ac_id": "ACC-0514",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0514; acceptance ACC-0514",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0513_0576.json; blob 08087d804616e7aee1eb6c97e709575abddadc2b#TSK-0514/ACC-0514",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20213,10 +19966,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0515",
-            "evidence_type": "TEST_RESULT",
-            "reference": "Yaserbayad/UseSafeWeb.com GitHub Actions run 33919215443 job 101173407414; current canonical Master Plan validation PASS",
-            "summary": "Current deterministic planning-system validation re-proves the structural/automated-check acceptance for TSK-0515.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0515; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0513_0576.json; blob 08087d804616e7aee1eb6c97e709575abddadc2b#TSK-0515/ACC-0515",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20226,10 +19978,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0516",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0516; - Independent read-only GitHub Actions verification run `33661808152 / 1`: **SUCCESS**; 32 unique VAT cases cover accountless/optional-account happy and negative paths, provider/session/CSRF/IDOR isolation, ownership/ClientID lifecycle, DNS/config/Protection Map, deletion/recovery, privacy/security/accessibility, CI/rollback/recovery/observability and non-goal regression. Full master-plan validator PASS.",
-            "summary": "Current runtime PASS for TSK-0516 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0516; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0513_0576.json; blob 08087d804616e7aee1eb6c97e709575abddadc2b#TSK-0516/ACC-0516",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20240,9 +19991,8 @@
           {
             "ac_id": "ACC-0517",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob 8b1305f3bd31e9e7955ab97e77c3ab17f643ec30; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0517",
-            "summary": "Current runtime PASS for TSK-0517 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0517; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0513_0576.json; blob 08087d804616e7aee1eb6c97e709575abddadc2b#TSK-0517/ACC-0517",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20252,10 +20002,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0518",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0518; - Independent verification: GitHub Actions run/job `33505275372 / 99847736387` — **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0518 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0518; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0513_0576.json; blob 08087d804616e7aee1eb6c97e709575abddadc2b#TSK-0518/ACC-0518",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20263,9 +20012,9 @@
         "id": "TSK-0519",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0519; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0519/wait"
         },
         "acceptance_references": []
       },
@@ -20273,9 +20022,9 @@
         "id": "TSK-0520",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0520; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0520/wait"
         },
         "acceptance_references": []
       },
@@ -20283,9 +20032,9 @@
         "id": "TSK-0521",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0521; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0521/wait"
         },
         "acceptance_references": []
       },
@@ -20293,9 +20042,9 @@
         "id": "TSK-0522",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0522; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0522/wait"
         },
         "acceptance_references": []
       },
@@ -20303,9 +20052,9 @@
         "id": "TSK-0523",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0523; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0523/wait"
         },
         "acceptance_references": []
       },
@@ -20313,9 +20062,9 @@
         "id": "TSK-0524",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0524; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0524/wait"
         },
         "acceptance_references": []
       },
@@ -20323,9 +20072,9 @@
         "id": "TSK-0525",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0525; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0525/wait"
         },
         "acceptance_references": []
       },
@@ -20333,9 +20082,9 @@
         "id": "TSK-0526",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0526; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0526/wait"
         },
         "acceptance_references": []
       },
@@ -20343,9 +20092,9 @@
         "id": "TSK-0527",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0527; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0527/wait"
         },
         "acceptance_references": []
       },
@@ -20353,9 +20102,9 @@
         "id": "TSK-0528",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0528; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0528/wait"
         },
         "acceptance_references": []
       },
@@ -20363,9 +20112,9 @@
         "id": "TSK-0529",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0529; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0529/wait"
         },
         "acceptance_references": []
       },
@@ -20373,9 +20122,9 @@
         "id": "TSK-0530",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0530; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0530/wait"
         },
         "acceptance_references": []
       },
@@ -20383,9 +20132,9 @@
         "id": "TSK-0531",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0531; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0531/wait"
         },
         "acceptance_references": []
       },
@@ -20393,9 +20142,9 @@
         "id": "TSK-0532",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0532; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0532/wait"
         },
         "acceptance_references": []
       },
@@ -20403,9 +20152,9 @@
         "id": "TSK-0533",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0533; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0533/wait"
         },
         "acceptance_references": []
       },
@@ -20413,9 +20162,9 @@
         "id": "TSK-0534",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0534; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0534/wait"
         },
         "acceptance_references": []
       },
@@ -20423,9 +20172,9 @@
         "id": "TSK-0535",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0535; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0535/wait"
         },
         "acceptance_references": []
       },
@@ -20433,9 +20182,9 @@
         "id": "TSK-0536",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0536; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0536/wait"
         },
         "acceptance_references": []
       },
@@ -20443,9 +20192,9 @@
         "id": "TSK-0537",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0537; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0537/wait"
         },
         "acceptance_references": []
       },
@@ -20455,10 +20204,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0538",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0538; - Independent structural verifier script blob `b71a66bfac3584d52cc7b3f16c5096962c1a3d2c`; read-only workflow blob `a92aed2c2ccef8b2d9f706995dfedc5d454254df`; run/job `33579914315 / 100091795138`: **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0538 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0538; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0513_0576.json; blob 08087d804616e7aee1eb6c97e709575abddadc2b#TSK-0538/ACC-0538",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20468,10 +20216,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0539",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0539; - Independent GitHub Actions verification run/attempt `33622250910 / 1`, source commit `9396def3f7507c9b3fb548fd29c8e08de489aa65`, verified current WBS/ACC/VER/EVD/dependency/authority contract; exact TSK-0538 and TSK-0239 artifact blobs; all 14 current SLI rows; all TM-01..TM-30 threat rows; nine runbook mappings; R0/R1/R2/R3 retention/access classes; event/metric/cardinality/privacy guards; four dashboard contracts; optional bounded tracing; literal-secret guard; `git diff --check`; and full modular master-plan validator PASS.",
-            "summary": "Current runtime PASS for TSK-0539 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0539; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0513_0576.json; blob 08087d804616e7aee1eb6c97e709575abddadc2b#TSK-0539/ACC-0539",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20479,9 +20226,9 @@
         "id": "TSK-0540",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0540; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0540/wait"
         },
         "acceptance_references": []
       },
@@ -20489,9 +20236,9 @@
         "id": "TSK-0541",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0541; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0541/wait"
         },
         "acceptance_references": []
       },
@@ -20499,9 +20246,9 @@
         "id": "TSK-0542",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0542; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0542/wait"
         },
         "acceptance_references": []
       },
@@ -20509,9 +20256,9 @@
         "id": "TSK-0543",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0543; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0543/wait"
         },
         "acceptance_references": []
       },
@@ -20519,9 +20266,9 @@
         "id": "TSK-0544",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0544; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0544/wait"
         },
         "acceptance_references": []
       },
@@ -20529,9 +20276,9 @@
         "id": "TSK-0545",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0545; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0545/wait"
         },
         "acceptance_references": []
       },
@@ -20539,9 +20286,9 @@
         "id": "TSK-0546",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0546; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0546/wait"
         },
         "acceptance_references": []
       },
@@ -20549,9 +20296,9 @@
         "id": "TSK-0547",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0547; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0547/wait"
         },
         "acceptance_references": []
       },
@@ -20559,9 +20306,9 @@
         "id": "TSK-0548",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0548; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0548/wait"
         },
         "acceptance_references": []
       },
@@ -20569,9 +20316,9 @@
         "id": "TSK-0549",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0549; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0549/wait"
         },
         "acceptance_references": []
       },
@@ -20579,9 +20326,9 @@
         "id": "TSK-0550",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0550; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0550/wait"
         },
         "acceptance_references": []
       },
@@ -20589,9 +20336,9 @@
         "id": "TSK-0551",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0551; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0551/wait"
         },
         "acceptance_references": []
       },
@@ -20599,9 +20346,9 @@
         "id": "TSK-0552",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0552; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0552/wait"
         },
         "acceptance_references": []
       },
@@ -20609,9 +20356,9 @@
         "id": "TSK-0553",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0553; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0553/wait"
         },
         "acceptance_references": []
       },
@@ -20619,9 +20366,9 @@
         "id": "TSK-0554",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0554; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0554/wait"
         },
         "acceptance_references": []
       },
@@ -20629,9 +20376,9 @@
         "id": "TSK-0555",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0555; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0555/wait"
         },
         "acceptance_references": []
       },
@@ -20639,9 +20386,9 @@
         "id": "TSK-0556",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0556; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0556/wait"
         },
         "acceptance_references": []
       },
@@ -20649,9 +20396,9 @@
         "id": "TSK-0557",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0557; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0557/wait"
         },
         "acceptance_references": []
       },
@@ -20662,9 +20409,8 @@
           {
             "ac_id": "ACC-0558",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0558; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0558 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0558; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0513_0576.json; blob 08087d804616e7aee1eb6c97e709575abddadc2b#TSK-0558/ACC-0558",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20675,9 +20421,8 @@
           {
             "ac_id": "ACC-0559",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0559; acceptance ACC-0559",
-            "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
-            "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0513_0576.json; blob 08087d804616e7aee1eb6c97e709575abddadc2b#TSK-0559/ACC-0559",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20685,9 +20430,9 @@
         "id": "TSK-0560",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0560; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0560/wait"
         },
         "acceptance_references": []
       },
@@ -20695,9 +20440,9 @@
         "id": "TSK-0561",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0561; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0561/wait"
         },
         "acceptance_references": []
       },
@@ -20705,9 +20450,9 @@
         "id": "TSK-0562",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0562; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0562/wait"
         },
         "acceptance_references": []
       },
@@ -20715,9 +20460,9 @@
         "id": "TSK-0563",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0563; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0563/wait"
         },
         "acceptance_references": []
       },
@@ -20725,9 +20470,9 @@
         "id": "TSK-0564",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0564; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0564/wait"
         },
         "acceptance_references": []
       },
@@ -20735,9 +20480,9 @@
         "id": "TSK-0565",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0565; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0565/wait"
         },
         "acceptance_references": []
       },
@@ -20745,9 +20490,9 @@
         "id": "TSK-0566",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0566; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0566/wait"
         },
         "acceptance_references": []
       },
@@ -20755,9 +20500,9 @@
         "id": "TSK-0567",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0567; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0567/wait"
         },
         "acceptance_references": []
       },
@@ -20765,9 +20510,9 @@
         "id": "TSK-0568",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0568; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0568/wait"
         },
         "acceptance_references": []
       },
@@ -20775,9 +20520,9 @@
         "id": "TSK-0569",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0569; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0569/wait"
         },
         "acceptance_references": []
       },
@@ -20785,9 +20530,9 @@
         "id": "TSK-0570",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0570; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0570/wait"
         },
         "acceptance_references": []
       },
@@ -20795,9 +20540,9 @@
         "id": "TSK-0571",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0571; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0571/wait"
         },
         "acceptance_references": []
       },
@@ -20805,9 +20550,9 @@
         "id": "TSK-0572",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0572; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0572/wait"
         },
         "acceptance_references": []
       },
@@ -20815,9 +20560,9 @@
         "id": "TSK-0573",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0573; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0573/wait"
         },
         "acceptance_references": []
       },
@@ -20825,9 +20570,9 @@
         "id": "TSK-0574",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0574; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0574/wait"
         },
         "acceptance_references": []
       },
@@ -20835,9 +20580,9 @@
         "id": "TSK-0575",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0575; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0575/wait"
         },
         "acceptance_references": []
       },
@@ -20845,9 +20590,9 @@
         "id": "TSK-0576",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0576; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0513_0576.json; blob 44a34b186327a70cf1d7b2060c389a064c467fa8#TSK-0576/wait"
         },
         "acceptance_references": []
       },
@@ -20855,9 +20600,9 @@
         "id": "TSK-0577",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0577; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0577/wait"
         },
         "acceptance_references": []
       },
@@ -20865,9 +20610,9 @@
         "id": "TSK-0578",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0578; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0578/wait"
         },
         "acceptance_references": []
       },
@@ -20875,9 +20620,9 @@
         "id": "TSK-0579",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0579; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0579/wait"
         },
         "acceptance_references": []
       },
@@ -20885,9 +20630,9 @@
         "id": "TSK-0580",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0580; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0580/wait"
         },
         "acceptance_references": []
       },
@@ -20895,9 +20640,9 @@
         "id": "TSK-0581",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0581; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0581/wait"
         },
         "acceptance_references": []
       },
@@ -20905,9 +20650,9 @@
         "id": "TSK-0582",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Stable UK evidence plus specific market/locale gate PASS and owner approval. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0582; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0582/wait"
         },
         "acceptance_references": []
       },
@@ -20915,9 +20660,9 @@
         "id": "TSK-0583",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Primary earned engine evidence, sufficient support/reliability capacity, and explicit owner approval within accumulated discretionary budget. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0583; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0583/wait"
         },
         "acceptance_references": []
       },
@@ -20928,9 +20673,8 @@
           {
             "ac_id": "ACC-0584",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0584; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
-            "summary": "Historical PASS for TSK-0584 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0584; created at execution or in this candidate for PASS planning tasks"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0577_0640.json; blob fc8361f8c4674f75c7179cc0c25f99bbd62dfe18#TSK-0584/ACC-0584",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20940,10 +20684,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0585",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0585; - Independent read-only live-source VER-0585: final wrapper blob `49251cf0cec47c59ff51e7c99210c684c1d92de1`, workflow blob `23d5e7033bf63c24c3c85a0cfc4a18cd65a2ca58`, run/job `33590152982 / 100122320757`, conclusion **SUCCESS**.",
-            "summary": "Current runtime PASS for TSK-0585 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0585; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0577_0640.json; blob fc8361f8c4674f75c7179cc0c25f99bbd62dfe18#TSK-0585/ACC-0585",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20954,9 +20697,8 @@
           {
             "ac_id": "ACC-0586",
             "evidence_type": "GITHUB_BLOB",
-            "reference": "Yaserbayad/UseSafeWeb.com immutable blob af2f096b74ea27b3775ecf0165bfff85021ccf54; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0586",
-            "summary": "Current runtime PASS for TSK-0586 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0586; historical source evidence as cited"
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0577_0640.json; blob fc8361f8c4674f75c7179cc0c25f99bbd62dfe18#TSK-0586/ACC-0586",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20966,10 +20708,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0587",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0587; - Independent GitHub Actions acceptance run `33663629268`: exact WBS/dependency/action-authority contract, immutable decision/approval blobs, resource/cost source-or-gap coverage, approved limit/contingency/cadence, critical-gap disposition, and full master-plan validator all PASS before this state mutation.",
-            "summary": "Current runtime PASS for TSK-0587 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0587; historical source evidence as cited"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0577_0640.json; blob fc8361f8c4674f75c7179cc0c25f99bbd62dfe18#TSK-0587/ACC-0587",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -20977,9 +20718,9 @@
         "id": "TSK-0588",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0588; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0588/wait"
         },
         "acceptance_references": []
       },
@@ -20987,9 +20728,9 @@
         "id": "TSK-0589",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0589; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0589/wait"
         },
         "acceptance_references": []
       },
@@ -20997,9 +20738,9 @@
         "id": "TSK-0590",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0590; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0590/wait"
         },
         "acceptance_references": []
       },
@@ -21007,9 +20748,9 @@
         "id": "TSK-0591",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0591; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0591/wait"
         },
         "acceptance_references": []
       },
@@ -21017,9 +20758,9 @@
         "id": "TSK-0592",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0592; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0592/wait"
         },
         "acceptance_references": []
       },
@@ -21027,9 +20768,9 @@
         "id": "TSK-0593",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0593; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0593/wait"
         },
         "acceptance_references": []
       },
@@ -21037,9 +20778,9 @@
         "id": "TSK-0594",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0594; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0594/wait"
         },
         "acceptance_references": []
       },
@@ -21047,9 +20788,9 @@
         "id": "TSK-0595",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0595; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0595/wait"
         },
         "acceptance_references": []
       },
@@ -21057,9 +20798,9 @@
         "id": "TSK-0596",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Behavioral value passes and the applicable pilot funding gate authorizes payment testing. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0596; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0596/wait"
         },
         "acceptance_references": []
       },
@@ -21067,9 +20808,9 @@
         "id": "TSK-0597",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0597; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0597/wait"
         },
         "acceptance_references": []
       },
@@ -21077,9 +20818,9 @@
         "id": "TSK-0598",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0598; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0598/wait"
         },
         "acceptance_references": []
       },
@@ -21087,9 +20828,9 @@
         "id": "TSK-0599",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0599; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0599/wait"
         },
         "acceptance_references": []
       },
@@ -21097,9 +20838,9 @@
         "id": "TSK-0600",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0600; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0600/wait"
         },
         "acceptance_references": []
       },
@@ -21107,9 +20848,9 @@
         "id": "TSK-0601",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0601; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0601/wait"
         },
         "acceptance_references": []
       },
@@ -21117,9 +20858,9 @@
         "id": "TSK-0602",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0602; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0602/wait"
         },
         "acceptance_references": []
       },
@@ -21127,9 +20868,9 @@
         "id": "TSK-0603",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0603; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0603/wait"
         },
         "acceptance_references": []
       },
@@ -21137,9 +20878,9 @@
         "id": "TSK-0604",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0604; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0604/wait"
         },
         "acceptance_references": []
       },
@@ -21147,9 +20888,9 @@
         "id": "TSK-0605",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0605; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0605/wait"
         },
         "acceptance_references": []
       },
@@ -21157,9 +20898,9 @@
         "id": "TSK-0606",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0606; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0606/wait"
         },
         "acceptance_references": []
       },
@@ -21167,9 +20908,9 @@
         "id": "TSK-0607",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0607; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0607/wait"
         },
         "acceptance_references": []
       },
@@ -21177,9 +20918,9 @@
         "id": "TSK-0608",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0608; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0608/wait"
         },
         "acceptance_references": []
       },
@@ -21187,9 +20928,9 @@
         "id": "TSK-0609",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0609; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0609/wait"
         },
         "acceptance_references": []
       },
@@ -21197,9 +20938,9 @@
         "id": "TSK-0610",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0610; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0610/wait"
         },
         "acceptance_references": []
       },
@@ -21207,9 +20948,9 @@
         "id": "TSK-0611",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0611; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0611/wait"
         },
         "acceptance_references": []
       },
@@ -21217,9 +20958,9 @@
         "id": "TSK-0612",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0612; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0612/wait"
         },
         "acceptance_references": []
       },
@@ -21227,9 +20968,9 @@
         "id": "TSK-0613",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0613; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0613/wait"
         },
         "acceptance_references": []
       },
@@ -21237,9 +20978,9 @@
         "id": "TSK-0614",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0614; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0614/wait"
         },
         "acceptance_references": []
       },
@@ -21247,9 +20988,9 @@
         "id": "TSK-0615",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0615; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0615/wait"
         },
         "acceptance_references": []
       },
@@ -21257,9 +20998,9 @@
         "id": "TSK-0616",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: 2027-08-27 or earlier explicit owner reactivation; then satisfy the original lifecycle/gate/dependency conditions. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0616; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0616/wait"
         },
         "acceptance_references": []
       },
@@ -21267,9 +21008,9 @@
         "id": "TSK-0617",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0617; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0617/wait"
         },
         "acceptance_references": []
       },
@@ -21277,9 +21018,9 @@
         "id": "TSK-0618",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0618; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0618/wait"
         },
         "acceptance_references": []
       },
@@ -21287,9 +21028,9 @@
         "id": "TSK-0619",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0619; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0619/wait"
         },
         "acceptance_references": []
       },
@@ -21297,9 +21038,9 @@
         "id": "TSK-0620",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0620; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0620/wait"
         },
         "acceptance_references": []
       },
@@ -21307,9 +21048,9 @@
         "id": "TSK-0621",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0621; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0621/wait"
         },
         "acceptance_references": []
       },
@@ -21317,9 +21058,9 @@
         "id": "TSK-0622",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0622; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0622/wait"
         },
         "acceptance_references": []
       },
@@ -21327,9 +21068,9 @@
         "id": "TSK-0623",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0623; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0623/wait"
         },
         "acceptance_references": []
       },
@@ -21337,9 +21078,9 @@
         "id": "TSK-0624",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0624; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0624/wait"
         },
         "acceptance_references": []
       },
@@ -21347,9 +21088,9 @@
         "id": "TSK-0625",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0625; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0625/wait"
         },
         "acceptance_references": []
       },
@@ -21357,9 +21098,9 @@
         "id": "TSK-0626",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0626; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0626/wait"
         },
         "acceptance_references": []
       },
@@ -21367,9 +21108,9 @@
         "id": "TSK-0627",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0627; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0627/wait"
         },
         "acceptance_references": []
       },
@@ -21379,10 +21120,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0628",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0628; `TSK-0628 — Define the no-routine-human-support operating model`: **PASS** under the current dual-mode L4 contract. Current operating-model blob `58fd192a2ebdbd2d809fa08f5e87808bf932967c` covers ordinary accountless plus sign-in/session/dashboard/device-management/account-device deletion/removal/recovery issues with exceptional bounded human routes only. Final verification run/job `33492766097 / 99807875248`: PASS. This does not prove real-user supportability or implement support automation.",
-            "summary": "Current runtime PASS for TSK-0628 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0628; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0577_0640.json; blob fc8361f8c4674f75c7179cc0c25f99bbd62dfe18#TSK-0628/ACC-0628",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -21392,10 +21132,9 @@
         "acceptance_references": [
           {
             "ac_id": "ACC-0629",
-            "evidence_type": "TEST_RESULT",
-            "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0629; - Exact-current source requalification head `761779ef0b8f89669d22416390f286061d8d3ab7`; run/job `33896808860 / 101101264905`: **PASS** — source binding, 7/7 focused contracts, lint, type-check, production build, zero-vulnerability audits, real-browser fail-closed/recovery acceptance, clean read-only disposition.",
-            "summary": "Current runtime PASS for TSK-0629 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
-            "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0629; created at execution or in this candidate for PASS planning tasks"
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0577_0640.json; blob fc8361f8c4674f75c7179cc0c25f99bbd62dfe18#TSK-0629/ACC-0629",
+            "summary": "Full proof preserved in immutable evidence shard."
           }
         ]
       },
@@ -21403,9 +21142,9 @@
         "id": "TSK-0630",
         "status": "WAITING",
         "wait": {
-          "condition": "Deferred by DEC-0062 / CR-0015 until after Version 1 / the controlled Release-1 test with approximately 10-20 people.",
-          "resolution_check": "Confirm the Version-1 / controlled Release-1 deferral boundary has passed and current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0630; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0062 / CR-0015"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0630/wait"
         },
         "acceptance_references": []
       },
@@ -21413,9 +21152,9 @@
         "id": "TSK-0631",
         "status": "WAITING",
         "wait": {
-          "condition": "Deferred by DEC-0061 / CR-0014 until after the controlled Release-1 test with approximately 10-20 people.",
-          "resolution_check": "Confirm the controlled Release-1 test has completed and the current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0631; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0061 / CR-0014"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0631/wait"
         },
         "acceptance_references": []
       },
@@ -21423,9 +21162,9 @@
         "id": "TSK-0632",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0632; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0632/wait"
         },
         "acceptance_references": []
       },
@@ -21433,9 +21172,9 @@
         "id": "TSK-0633",
         "status": "WAITING",
         "wait": {
-          "condition": "Deferred by DEC-0061 / CR-0014 until after the controlled Release-1 test with approximately 10-20 people.",
-          "resolution_check": "Confirm the controlled Release-1 test has completed and the current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0633; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0061 / CR-0014"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0633/wait"
         },
         "acceptance_references": []
       },
@@ -21443,9 +21182,9 @@
         "id": "TSK-0634",
         "status": "WAITING",
         "wait": {
-          "condition": "Deferred by DEC-0061 / CR-0014 until after the controlled Release-1 test with approximately 10-20 people.",
-          "resolution_check": "Confirm the controlled Release-1 test has completed and the current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0634; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0061 / CR-0014"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0634/wait"
         },
         "acceptance_references": []
       },
@@ -21453,9 +21192,9 @@
         "id": "TSK-0635",
         "status": "WAITING",
         "wait": {
-          "condition": "Deferred by DEC-0061 / CR-0014 until after the controlled Release-1 test with approximately 10-20 people.",
-          "resolution_check": "Confirm the controlled Release-1 test has completed and the current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0635; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0061 / CR-0014"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0635/wait"
         },
         "acceptance_references": []
       },
@@ -21463,9 +21202,9 @@
         "id": "TSK-0636",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0636; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0636/wait"
         },
         "acceptance_references": []
       },
@@ -21473,9 +21212,9 @@
         "id": "TSK-0637",
         "status": "WAITING",
         "wait": {
-          "condition": "Deferred by DEC-0061 / CR-0014 until after the controlled Release-1 test with approximately 10-20 people.",
-          "resolution_check": "Confirm the controlled Release-1 test has completed and the current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0637; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0061 / CR-0014"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0637/wait"
         },
         "acceptance_references": []
       },
@@ -21483,9 +21222,9 @@
         "id": "TSK-0638",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Version-1 optional-account scope is active under DEC-0053/CR-0006; ordinary lifecycle, gate, dependency, privacy, security and precondition requirements still apply. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0638; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0638/wait"
         },
         "acceptance_references": []
       },
@@ -21493,9 +21232,9 @@
         "id": "TSK-0639",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0639; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0639/wait"
         },
         "acceptance_references": []
       },
@@ -21503,9 +21242,9 @@
         "id": "TSK-0640",
         "status": "WAITING",
         "wait": {
-          "condition": "Deferred by DEC-0061 / CR-0014 until after the controlled Release-1 test with approximately 10-20 people.",
-          "resolution_check": "Confirm the controlled Release-1 test has completed and the current owner-frozen authority no longer defers this exact task; then re-evaluate dependencies, gates and acceptance before transitioning to TODO.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0640; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; DEC-0061 / CR-0014"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0577_0640.json; blob 21aef11c799d5350db78bd39a0657e4d63c3cb4d#TSK-0640/wait"
         },
         "acceptance_references": []
       },
@@ -21513,9 +21252,9 @@
         "id": "TSK-0641",
         "status": "WAITING",
         "wait": {
-          "condition": "Canonical migrated runtime records this task as WAITING. Trigger: Applicable lifecycle/gate and all hard dependencies satisfied. Preconditions: Canonical state read; current gate/authority confirmed; required inputs/access available; no unresolved safety/privacy blocker.",
-          "resolution_check": "Reload this checkpoint and the current owner-frozen modular Master Plan. Verify every hard dependency is PASS, every applicable lifecycle gate/trigger/precondition is satisfied, current action authority permits the work, and no material-action fence or active deferral applies. Only then transition WAITING to TODO in one confirmed checkpoint mutation; otherwise remain WAITING.",
-          "reference": "Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0641; CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2"
+          "condition": "See immutable wait reference for the exact condition.",
+          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
+          "reference": "State/waits/rev49/WAIT_PAYLOAD_0641_0641.json; blob 714c4a39caf5c56f6e3b9499f38ca4018693a91c#TSK-0641/wait"
         },
         "acceptance_references": []
       }
