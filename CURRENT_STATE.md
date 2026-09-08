@@ -2,7 +2,7 @@
   "checkpoint_schema": "serial-light-checkpoint-v1",
   "project_id": "UseSafeWeb.com",
   "governance_mode": "SERIAL_LIGHT",
-  "checkpoint_revision": 55,
+  "checkpoint_revision": 56,
   "baseline": {
     "version": 2,
     "objectives": [
@@ -19466,8 +19466,15 @@
       },
       {
         "id": "TSK-0468",
-        "status": "TODO",
-        "acceptance_references": []
+        "status": "PASS",
+        "acceptance_references": [
+          {
+            "ac_id": "ACC-0468",
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "State/evidence/deployment/TSK0468_PRODUCTION_DEPLOYMENT_2026-09-09.json; blob 64414cb49dc5e2674de0de374bfec9c400666133",
+            "summary": "Exact production deployment, independent post-deploy verification, browser/accessibility acceptance, owner approval, security and rollback proof for release 907d3880026ca73be949cfc7ecee14eff3efb60c."
+          }
+        ]
       },
       {
         "id": "TSK-0469",
