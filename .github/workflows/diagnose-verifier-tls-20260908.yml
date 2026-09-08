@@ -1,3 +1,4 @@
+# Diagnostic revision: 2
 name: Diagnose verifier TLS on AdGuard VM
 
 on:
