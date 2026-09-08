@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { getLocaleMeta, locales, type ContentBundle, type Locale } from '@/lib/i18n';
@@ -26,7 +27,7 @@ export function SiteShell({
       </a>
       <header className="sw-site-header">
         <Link className="sw-site-brand sw-brand-token" href={`/${locale}`}>
-          {common.brand}
+          <Image src="/safeweb-wordmark-primary.svg" alt={common.brand} width={150} height={30} />
         </Link>
         <nav aria-label={common.primaryNavigationLabel}>
           <ul className="sw-nav-list">
