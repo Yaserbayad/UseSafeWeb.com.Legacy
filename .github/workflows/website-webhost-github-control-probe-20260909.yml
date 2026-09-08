@@ -1,0 +1,79 @@
+name: Website web-host GitHub control probe 20260909
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/website-webhost-github-control-probe-20260909.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: [self-hosted, linux, x64]
+    timeout-minutes: 5
+    steps:
+      - name: Verify jump runner and inspect existing SSH control path
+        shell: bash
+        env:
+          TARGET_HOST: 20.71.90.212
+        run: |
+          set -Eeuo pipefail
+          [[ "$(hostname -s)" == "adguardvm" ]]
+          [[ "$(id -un)" == "azureusr" ]]
+          echo 'MODE=READ_ONLY'
+          echo "RUNNER_HOST=$(hostname -s)"
+          echo "RUNNER_USER=$(id -un)"
+          echo "TARGET_HOST=${TARGET_HOST}"
+
+          if timeout 5 bash -c "</dev/tcp/${TARGET_HOST}/22" 2>/dev/null; then
+            echo 'TARGET_TCP22=OPEN'
+          else
+            echo 'TARGET_TCP22=UNREACHABLE'
+          fi
+
+          echo 'SSH_CLIENT='"$(command -v ssh || echo missing)"
+
+          inspect_dir() {
+            local label="$1" dir="$2"
+            echo "${label}_DIR=${dir}"
+            if [[ -d "$dir" ]]; then
+              echo "${label}_DIR_PRESENT=YES"
+              find "$dir" -maxdepth 1 -type f -printf '%f %m %u:%g\n' 2>/dev/null | sort | sed "s/^/${label}_FILE=/"
+              if [[ -f "$dir/config" ]]; then
+                awk '
+                  /^[[:space:]]*Host[[:space:]]+/ {print "SSH_CONFIG_HOST=" $0}
+                  /^[[:space:]]*HostName[[:space:]]+/ {print "SSH_CONFIG_HOSTNAME=" $2}
+                  /^[[:space:]]*User[[:space:]]+/ {print "SSH_CONFIG_USER=" $2}
+                  /^[[:space:]]*IdentityFile[[:space:]]+/ {print "SSH_CONFIG_IDENTITYFILE=" $2}
+                ' "$dir/config" 2>/dev/null || true
+              fi
+            else
+              echo "${label}_DIR_PRESENT=NO"
+            fi
+          }
+
+          inspect_dir RUNNER_SSH "$HOME/.ssh"
+
+          if sudo -n true 2>/dev/null; then
+            echo 'PASSWORDLESS_SUDO=YES'
+            echo 'HOME_DIRS_BEGIN'
+            find /home -mindepth 1 -maxdepth 1 -type d -printf '%f\n' 2>/dev/null | sort
+            echo 'HOME_DIRS_END'
+            echo 'ROOT_SSH_METADATA_BEGIN'
+            sudo -n find /root/.ssh -maxdepth 1 -type f -printf '%f %m %u:%g\n' 2>/dev/null | sort || true
+            echo 'ROOT_SSH_METADATA_END'
+          else
+            echo 'PASSWORDLESS_SUDO=NO'
+          fi
+
+          if [[ -f "$HOME/.ssh/config" ]]; then
+            if ssh -G webtest >/tmp/ssh-g-webtest 2>/dev/null; then
+              awk '/^(hostname|user|identityfile) / {print "SSH_G_WEBTEST_" toupper($1) "=" $2}' /tmp/ssh-g-webtest
+            fi
+            rm -f /tmp/ssh-g-webtest
+          fi
+
+          echo 'GITHUB_CONTROL_PROBE=PASS'
