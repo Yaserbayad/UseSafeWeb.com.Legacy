@@ -1,0 +1,278 @@
+name: Generate isolated state migration candidate
+
+on:
+  push:
+    branches:
+      - state-migration-rev50-20260908
+    paths:
+      - .github/workflows/state-migration-rev50.yml
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout migration branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate and verify split candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import copy
+          import hashlib
+          import json
+          from collections import Counter
+          from pathlib import Path
+
+          SOURCE_BLOB = "ae203f4b55864f6c0163669dcaf853bcf225a546"
+          SOURCE_REVISION = 49
+          TARGET_REVISION = 50
+          PROJECT_ID = "UseSafeWeb.com"
+          NEW_EVIDENCE_BLOB = "a204a2f2aa4ea8463a539c740e58aa72f31ef9d6"
+          NEW_EVIDENCE_PATH = "TSK_0243_DNS_VERIFICATION_EVIDENCE_2026-09-08.md"
+          SOURCE = Path("CURRENT_STATE.md")
+          ROOT = Path("State")
+          ARCHIVE = ROOT / "archive"
+          OPEN = ROOT / "open"
+          CANDIDATE_DIR = ROOT / "candidate"
+          for d in (ARCHIVE, OPEN, CANDIDATE_DIR):
+              d.mkdir(parents=True, exist_ok=True)
+
+          raw = SOURCE.read_bytes()
+          git_blob = hashlib.sha1(f"blob {len(raw)}\0".encode() + raw).hexdigest()
+          assert git_blob == SOURCE_BLOB, (git_blob, SOURCE_BLOB)
+          source = json.loads(raw.decode("utf-8"))
+          assert source["checkpoint_schema"] == "serial-light-checkpoint-v1"
+          assert source["project_id"] == PROJECT_ID
+          assert source["governance_mode"] == "SERIAL_LIGHT"
+          assert source["checkpoint_revision"] == SOURCE_REVISION
+          assert source["baseline"]["version"] == 1
+          assert source["runtime"]["project_status"] == "ACTIVE"
+          assert source["runtime"]["governance_blocker"] is None
+
+          baseline_items = source["baseline"]["work_items"]
+          runtime_items = source["runtime"]["items"]
+          assert len(baseline_items) == len(runtime_items) == 641
+          baseline_ids = [x["id"] for x in baseline_items]
+          runtime_ids = [x["id"] for x in runtime_items]
+          assert baseline_ids == runtime_ids
+          assert len(set(baseline_ids)) == 641
+          baseline_map = {x["id"]: x for x in baseline_items}
+          source_runtime_map = {x["id"]: x for x in runtime_items}
+          assert source_runtime_map["TSK-0243"]["status"] == "WAITING"
+
+          # Exact pre-migration rollback copy. Git will naturally reuse the same blob when committed.
+          (ARCHIVE / "CURRENT_STATE_REV49_FULL.json").write_bytes(raw)
+
+          candidate = copy.deepcopy(source)
+          candidate["checkpoint_revision"] = TARGET_REVISION
+
+          compact_runtime = []
+          for original in source["runtime"]["items"]:
+              item_id = original["id"]
+              if item_id == "TSK-0243":
+                  ac_ids = [x["id"] for x in baseline_map[item_id]["acceptance_criteria"]]
+                  replacement = {
+                      "id": item_id,
+                      "status": "PASS",
+                      "acceptance_references": [
+                          {
+                              "ac_id": ac_id,
+                              "evidence_type": "GITHUB_BLOB",
+                              "reference": f"Yaserbayad/UseSafeWeb.com {NEW_EVIDENCE_PATH}; blob {NEW_EVIDENCE_BLOB}",
+                              "summary": "Production DNS verification, privacy, negative, regression, and rollback acceptance proof passed on 2026-09-08."
+                          }
+                          for ac_id in ac_ids
+                      ]
+                  }
+                  compact_runtime.append(replacement)
+                  continue
+
+              item = copy.deepcopy(original)
+              refs = item.get("acceptance_references", [])
+              if refs:
+                  item["acceptance_references"] = [
+                      {
+                          "ac_id": ref["ac_id"],
+                          "evidence_type": "GITHUB_BLOB",
+                          "reference": f"Yaserbayad/UseSafeWeb.com CURRENT_STATE.md revision 49; blob {SOURCE_BLOB}#runtime.items/{item_id}/{ref['ac_id']}",
+                          "summary": "Original acceptance proof is preserved in the immutable revision-49 checkpoint archive."
+                      }
+                      for ref in refs
+                  ]
+              if item.get("status") == "WAITING" and isinstance(item.get("wait"), dict) and item["wait"].get("reference"):
+                  item["wait"]["reference"] = f"Yaserbayad/UseSafeWeb.com CURRENT_STATE.md revision 49; blob {SOURCE_BLOB}#runtime.items/{item_id}/wait"
+              if item.get("status") == "BLOCKED" and isinstance(item.get("blocker"), dict) and item["blocker"].get("reference"):
+                  item["blocker"]["reference"] = f"Yaserbayad/UseSafeWeb.com CURRENT_STATE.md revision 49; blob {SOURCE_BLOB}#runtime.items/{item_id}/blocker"
+              compact_runtime.append(item)
+
+          candidate["runtime"]["items"] = compact_runtime
+
+          # Preserve the complete baseline and every non-item runtime field exactly.
+          assert candidate["baseline"] == source["baseline"]
+          for key in ("project_status", "governance_blocker", "gate_satisfactions", "human_constraints", "closure_references"):
+              assert candidate["runtime"][key] == source["runtime"][key]
+
+          candidate_runtime_map = {x["id"]: x for x in candidate["runtime"]["items"]}
+          assert list(candidate_runtime_map) == baseline_ids
+          assert len(candidate_runtime_map) == 641
+
+          for item_id in baseline_ids:
+              base = baseline_map[item_id]
+              current = candidate_runtime_map[item_id]
+              ac_ids = [x["id"] for x in base["acceptance_criteria"]]
+              ref_ids = [x["ac_id"] for x in current.get("acceptance_references", [])]
+              assert len(ref_ids) == len(set(ref_ids))
+              assert set(ref_ids).issubset(set(ac_ids))
+              status = current["status"]
+              if status == "PASS":
+                  assert sorted(ref_ids) == sorted(ac_ids)
+                  assert "wait" not in current and "blocker" not in current and "continuation_note" not in current
+              elif status == "WAITING":
+                  assert current.get("wait", {}).get("condition")
+                  assert current.get("wait", {}).get("resolution_check")
+                  assert "blocker" not in current
+              elif status == "BLOCKED":
+                  assert current.get("blocker", {}).get("reason")
+                  assert current.get("blocker", {}).get("required_resolution")
+                  assert "wait" not in current
+              elif status == "TODO":
+                  assert "wait" not in current and "blocker" not in current
+              else:
+                  raise AssertionError(status)
+
+          # Only one durable status changes: TSK-0243 WAITING -> PASS.
+          source_status = {x["id"]: x["status"] for x in source["runtime"]["items"]}
+          target_status = {x["id"]: x["status"] for x in candidate["runtime"]["items"]}
+          changed = {k: (source_status[k], target_status[k]) for k in baseline_ids if source_status[k] != target_status[k]}
+          assert changed == {"TSK-0243": ("WAITING", "PASS")}, changed
+
+          # Build lossless read-only shards from the resulting state. Existing PASS records retain
+          # their original detailed runtime proof; TSK-0243 uses its new verified PASS binding.
+          archive_runtime_map = {x["id"]: copy.deepcopy(x) for x in source["runtime"]["items"]}
+          archive_runtime_map["TSK-0243"] = copy.deepcopy(candidate_runtime_map["TSK-0243"])
+
+          resulting_status = Counter(target_status.values())
+          shards = {"PASS": [], "TODO": [], "WAITING": [], "BLOCKED": []}
+          for item_id in baseline_ids:
+              status = target_status[item_id]
+              runtime_record = archive_runtime_map[item_id] if status == "PASS" else source_runtime_map[item_id]
+              shards[status].append({
+                  "work_item": copy.deepcopy(baseline_map[item_id]),
+                  "runtime": copy.deepcopy(runtime_record)
+              })
+
+          def write_json(path, value):
+              text = json.dumps(value, ensure_ascii=False, indent=2) + "\n"
+              path.write_text(text, encoding="utf-8", newline="\n")
+              return text.encode("utf-8")
+
+          done_doc = {
+              "format": "usesafeweb-state-archive-v1",
+              "project_id": PROJECT_ID,
+              "resulting_checkpoint_revision": TARGET_REVISION,
+              "source_checkpoint_revision": SOURCE_REVISION,
+              "source_checkpoint_blob": SOURCE_BLOB,
+              "status": "PASS",
+              "count": len(shards["PASS"]),
+              "items": shards["PASS"]
+          }
+          write_json(ARCHIVE / "DONE_ARCHIVE_REV50.json", done_doc)
+
+          for status in ("TODO", "WAITING", "BLOCKED"):
+              doc = {
+                  "format": "usesafeweb-open-state-shard-v1",
+                  "project_id": PROJECT_ID,
+                  "resulting_checkpoint_revision": TARGET_REVISION,
+                  "source_checkpoint_blob": SOURCE_BLOB,
+                  "status": status,
+                  "count": len(shards[status]),
+                  "items": shards[status]
+              }
+              write_json(OPEN / f"{status}_REV50.json", doc)
+
+          candidate_bytes = write_json(CANDIDATE_DIR / "CURRENT_STATE_REV50_COMPACT.json", candidate)
+          assert len(candidate_bytes) < 950_000, f"candidate too large for qualified connector: {len(candidate_bytes)}"
+
+          def sha256_file(path):
+              return hashlib.sha256(path.read_bytes()).hexdigest()
+
+          manifest = {
+              "format": "usesafeweb-state-migration-manifest-v1",
+              "project_id": PROJECT_ID,
+              "source": {
+                  "checkpoint_revision": SOURCE_REVISION,
+                  "baseline_version": source["baseline"]["version"],
+                  "git_blob": SOURCE_BLOB,
+                  "bytes": len(raw),
+                  "status_counts": dict(sorted(Counter(source_status.values()).items()))
+              },
+              "candidate": {
+                  "checkpoint_revision": TARGET_REVISION,
+                  "baseline_version": candidate["baseline"]["version"],
+                  "bytes": len(candidate_bytes),
+                  "sha256": hashlib.sha256(candidate_bytes).hexdigest(),
+                  "status_counts": dict(sorted(resulting_status.items())),
+                  "only_status_change": {"TSK-0243": ["WAITING", "PASS"]},
+                  "baseline_deep_equal": True,
+                  "work_item_count": len(baseline_ids),
+                  "runtime_item_count": len(candidate_runtime_map)
+              },
+              "files": {
+                  "archive_full_rev49": {
+                      "path": "State/archive/CURRENT_STATE_REV49_FULL.json",
+                      "sha256": sha256_file(ARCHIVE / "CURRENT_STATE_REV49_FULL.json")
+                  },
+                  "done_archive": {
+                      "path": "State/archive/DONE_ARCHIVE_REV50.json",
+                      "count": len(shards["PASS"]),
+                      "sha256": sha256_file(ARCHIVE / "DONE_ARCHIVE_REV50.json")
+                  },
+                  "todo": {"path": "State/open/TODO_REV50.json", "count": len(shards["TODO"])},
+                  "waiting": {"path": "State/open/WAITING_REV50.json", "count": len(shards["WAITING"])},
+                  "blocked": {"path": "State/open/BLOCKED_REV50.json", "count": len(shards["BLOCKED"])},
+                  "candidate": {"path": "State/candidate/CURRENT_STATE_REV50_COMPACT.json"}
+              },
+              "preservation_checks": {
+                  "source_blob_exact": True,
+                  "identity_and_mode_unchanged": True,
+                  "baseline_unchanged": True,
+                  "all_641_ids_preserved_in_order": True,
+                  "all_open_runtime_payloads_preserved_except_compacted_reference_indirection": True,
+                  "pass_ac_coverage_complete": True,
+                  "master_plan_or_wbs_modified": False
+              }
+          }
+          write_json(ROOT / "MANIFEST_REV50.json", manifest)
+
+          readme = """# State split — revision 50 candidate\n\nThis directory is a storage/readability split only. It does not replace or modify the frozen Master Plan/WBS.\n\n- `archive/CURRENT_STATE_REV49_FULL.json` is the exact pre-migration checkpoint backup.\n- `archive/DONE_ARCHIVE_REV50.json` is the large completed/PASS archive.\n- `open/TODO_REV50.json`, `open/WAITING_REV50.json`, and `open/BLOCKED_REV50.json` are read-only convenience shards.\n- `candidate/CURRENT_STATE_REV50_COMPACT.json` is the proposed authoritative checkpoint.\n- `MANIFEST_REV50.json` records counts, hashes, and preservation assertions.\n\nUntil the candidate is separately verified and written to `CURRENT_STATE.md` through the qualified GitHub checkpoint update, revision 49 remains authoritative.\n"""
+          (ROOT / "README.md").write_text(readme, encoding="utf-8", newline="\n")
+
+          print("MIGRATION_CANDIDATE=PASS")
+          print(f"SOURCE_BLOB={SOURCE_BLOB}")
+          print(f"SOURCE_BYTES={len(raw)}")
+          print(f"CANDIDATE_BYTES={len(candidate_bytes)}")
+          print(f"STATUS_COUNTS={dict(sorted(resulting_status.items()))}")
+          print(f"DONE_COUNT={len(shards['PASS'])}")
+          print(f"TODO_COUNT={len(shards['TODO'])}")
+          print(f"WAITING_COUNT={len(shards['WAITING'])}")
+          print(f"BLOCKED_COUNT={len(shards['BLOCKED'])}")
+          PY
+
+      - name: Commit candidate artifacts to isolated branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add State/
+          git diff --cached --check
+          git commit -m "state: generate verified revision-50 split candidate"
+          git push origin HEAD:state-migration-rev50-20260908
