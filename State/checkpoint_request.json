@@ -1,7 +1,8 @@
 {
   "request_schema": "usesafeweb-checkpoint-storage-request-v1",
-  "operation": "build_compaction_candidate",
+  "operation": "promote_compaction",
   "expected_checkpoint_blob": "ae203f4b55864f6c0163669dcaf853bcf225a546",
   "expected_revision": 49,
-  "expected_baseline": 1
+  "expected_baseline": 1,
+  "expected_candidate_blob": "c65c4d6e8d9c565ad0bea2564dbf6cda06677ad8"
 }
