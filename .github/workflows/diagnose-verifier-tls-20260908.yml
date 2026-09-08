@@ -1,4 +1,4 @@
-# Diagnostic revision: 5
+# Diagnostic revision: 6
 name: Diagnose verifier TLS on AdGuard VM
 
 on:
@@ -19,7 +19,7 @@ jobs:
     runs-on: [self-hosted, linux, x64]
     timeout-minutes: 5
     steps:
-      - name: Inspect verifier TLS and DNS-01 capability
+      - name: Inspect verifier Nginx structure
         shell: bash
         env:
           CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -32,61 +32,15 @@ jobs:
           [[ "$(hostname -s)" == "adguardvm" ]]
           [[ "$(id -un)" == "azureusr" ]]
           sudo -n true
+          [[ "$(curl -fsS --max-time 5 https://api.ipify.org)" == "52.157.109.120" ]]
 
-          echo "HOST=$(hostname -s)"
-          echo "PUBLIC_IP=$(curl -fsS --max-time 5 https://api.ipify.org || true)"
-          echo '--- OS / PACKAGE AVAILABILITY ---'
-          grep -E '^(ID|VERSION_ID|VERSION_CODENAME)=' /etc/os-release || true
-          apt-cache policy python3-certbot-dns-cloudflare 2>/dev/null | head -n 40 || true
+          echo '--- NGINX MAIN CONFIG SANITIZED ---'
+          sudo sed -n '1,320p' /etc/nginx/nginx.conf \
+            | sed -E 's#(ssl_certificate_key[[:space:]]+).*#\1[REDACTED];#'
 
-          echo '--- DNS AUTHORITY ---'
-          dig +short NS usesafeweb.com || true
-
-          echo '--- NGINX STATUS / INCLUDE PATHS ---'
-          systemctl is-active nginx || true
+          echo '--- DEPLOYMENT PREREQUISITES ---'
+          printf 'CF_SECRET='; [[ -n "${CF_API_TOKEN:-}" ]] && echo YES || echo NO
+          printf 'CF_PLUGIN_PACKAGE='; apt-cache show python3-certbot-dns-cloudflare >/dev/null 2>&1 && echo YES || echo NO
+          printf 'CERTBOT_TIMER='; systemctl is-active certbot.timer 2>/dev/null || true
           sudo nginx -t
-          sudo nginx -T 2>&1 \
-            | grep -E '^# configuration file|^[[:space:]]*include[[:space:]]' \
-            | head -n 180 || true
-          echo '--- NGINX CONFIG FILE LOCATIONS ---'
-          sudo grep -RIlE 'server_name[[:space:]]+dns\.usesafeweb\.com|ssl_reject_handshake[[:space:]]+on' /etc/nginx 2>/dev/null | sort | head -n 80 || true
-          echo '--- NGINX MAIN INCLUDE DIRECTIVES ---'
-          sudo grep -nE '^[[:space:]]*include[[:space:]]' /etc/nginx/nginx.conf 2>/dev/null || true
-          echo '--- NGINX RELEVANT DIRECTIVES ---'
-          sudo nginx -T 2>&1 \
-            | grep -E '^[[:space:]]*(listen|server_name|ssl_certificate|ssl_certificate_key|location|proxy_pass|proxy_set_header|proxy_ssl_server_name|proxy_ssl_name|ssl_reject_handshake|return)[[:space:]]' \
-            | sed -E 's#(ssl_certificate_key[[:space:]]+).*#\1[REDACTED];#' \
-            | head -n 280
-
-          echo '--- CERTBOT LINEAGES / PLUGINS / TIMER ---'
-          sudo certbot certificates 2>&1 \
-            | sed -E 's#(Private Key Path:).*#\1 [REDACTED]#' \
-            | head -n 160
-          sudo certbot plugins 2>&1 | head -n 200 || true
-          dpkg -l 2>/dev/null | grep -Ei 'certbot|cloudflare' | awk '{print $2" "$3}' | head -n 100 || true
-          systemctl is-enabled certbot.timer 2>/dev/null || true
-          systemctl is-active certbot.timer 2>/dev/null || true
-          systemctl list-timers certbot.timer --no-pager 2>/dev/null | head -n 20 || true
-          python3 - <<'PY'
-          import importlib.util
-          for name in ('certbot_dns_cloudflare','cloudflare'):
-              print(f'{name}_PYTHON_MODULE=' + ('YES' if importlib.util.find_spec(name) else 'NO'))
-          PY
-          command -v az >/dev/null && echo 'AZ_CLI=YES' || echo 'AZ_CLI=NO'
-          command -v cloudflared >/dev/null && echo 'CLOUDFLARED=YES' || echo 'CLOUDFLARED=NO'
-          [[ -n "${CF_API_TOKEN:-}" ]] && echo 'CLOUDFLARE_API_TOKEN_SECRET=YES' || echo 'CLOUDFLARE_API_TOKEN_SECRET=NO'
-          echo '--- POTENTIAL DNS CREDENTIAL FILE NAMES ONLY ---'
-          sudo find /root /etc/letsencrypt /home/azureusr -maxdepth 4 -type f \( -iname '*cloudflare*' -o -iname '*dns*.ini' \) -print 2>/dev/null | head -n 100 || true
-
-          echo '--- LOCAL TLS SNI ---'
-          for sni in dns.usesafeweb.com verify.usesafeweb.com 0123456789abcdef0123456789abcdef.verify.usesafeweb.com; do
-            echo "SNI=${sni}"
-            set +e
-            out=$(timeout 6 openssl s_client -connect 127.0.0.1:443 -servername "${sni}" -verify_return_error -brief </dev/null 2>&1)
-            rc=$?
-            set -e
-            echo "RC=${rc}"
-            printf '%s\n' "$out" | grep -E '^(Protocol version|Ciphersuite|Peer certificate|Verification:)|alert|unrecognized name' | head -n 12 || true
-          done
-
           echo 'DIAGNOSTIC=PASS'
