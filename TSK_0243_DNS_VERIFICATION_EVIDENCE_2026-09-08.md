@@ -3,7 +3,7 @@
 ## Authority and target
 
 - Task: `TSK-0243` — Implement privacy-safe DNS protection verification.
-- Frozen contract: `Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765`, WBS blob `357c5e1be3b4550e24caab05d6d02c84ed`, `ACC-0243` / `VER-0243` / `EVD-0243`.
+- Frozen contract: `Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765`, WBS blob `357c5e1be3b455e7efddd329d6a2468e3125b502`, `ACC-0243` / `VER-0243` / `EVD-0243`.
 - Deployed application release: `efe9d4d885d6057b18c5fddea5a0dd2d49d3ec25`.
 - Verifier edge: `52.157.109.120` (`adguardvm`). Main web host: `20.71.90.212`.
 - Verification date: 2026-09-08.
