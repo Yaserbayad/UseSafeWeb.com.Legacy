@@ -2,7 +2,7 @@
   "checkpoint_schema": "serial-light-checkpoint-v1",
   "project_id": "UseSafeWeb.com",
   "governance_mode": "SERIAL_LIGHT",
-  "checkpoint_revision": 52,
+  "checkpoint_revision": 53,
   "baseline": {
     "version": 2,
     "objectives": [
@@ -19466,12 +19466,7 @@
       },
       {
         "id": "TSK-0468",
-        "status": "WAITING",
-        "wait": {
-          "condition": "The owner-approved one-time sequencing override removes TSK-0151 and TSK-0472 as hard sequencing dependencies for TSK-0468 release 907d3880026ca73be949cfc7ecee14eff3efb60c. TSK-0468 remains WAITING only until a verified production-host execution path is available and the unchanged deployment preconditions can be checked.",
-          "resolution_check": "Reload the current checkpoint and approval evidence; verify a production-host execution path for release 907d3880026ca73be949cfc7ecee14eff3efb60c is available; confirm no new material safety, security or platform blocker exists; and verify the unchanged TSK-0468 deployment, health, smoke, security, accessibility and rollback requirements can be executed. Only then transition TSK-0468 from WAITING to TODO in one confirmed checkpoint mutation before deployment.",
-          "reference": "State/evidence/human/WEBSITE_DEPLOYMENT_SEQUENCING_OVERRIDE_2026-09-08.json; blob e500e169d709325ed04aacf978e99357a6af6591"
-        },
+        "status": "TODO",
         "acceptance_references": []
       },
       {
