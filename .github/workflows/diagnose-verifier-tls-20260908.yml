@@ -1,4 +1,4 @@
-# Diagnostic revision: 4
+# Diagnostic revision: 5
 name: Diagnose verifier TLS on AdGuard VM
 
 on:
@@ -48,6 +48,10 @@ jobs:
           sudo nginx -T 2>&1 \
             | grep -E '^# configuration file|^[[:space:]]*include[[:space:]]' \
             | head -n 180 || true
+          echo '--- NGINX CONFIG FILE LOCATIONS ---'
+          sudo grep -RIlE 'server_name[[:space:]]+dns\.usesafeweb\.com|ssl_reject_handshake[[:space:]]+on' /etc/nginx 2>/dev/null | sort | head -n 80 || true
+          echo '--- NGINX MAIN INCLUDE DIRECTIVES ---'
+          sudo grep -nE '^[[:space:]]*include[[:space:]]' /etc/nginx/nginx.conf 2>/dev/null || true
           echo '--- NGINX RELEVANT DIRECTIVES ---'
           sudo nginx -T 2>&1 \
             | grep -E '^[[:space:]]*(listen|server_name|ssl_certificate|ssl_certificate_key|location|proxy_pass|proxy_set_header|proxy_ssl_server_name|proxy_ssl_name|ssl_reject_handshake|return)[[:space:]]' \
