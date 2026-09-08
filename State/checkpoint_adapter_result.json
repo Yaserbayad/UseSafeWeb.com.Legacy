@@ -1,0 +1,22 @@
+{
+  "result_schema": "usesafeweb-checkpoint-storage-result-v1",
+  "operation": "build_compaction_candidate",
+  "result": "PASS",
+  "source_checkpoint_blob": "ae203f4b55864f6c0163669dcaf853bcf225a546",
+  "source_revision": 49,
+  "baseline_version": 1,
+  "candidate_path": "State/candidates/CURRENT_STATE_COMPACT_REV49.json",
+  "candidate_blob": "5d3df59d2f195b5264555d6da2fcac89e1bf2fa0",
+  "candidate_manifest": "State/candidates/CURRENT_STATE_COMPACT_REV49.manifest.json",
+  "candidate_manifest_blob": "4c3bb646f1cb9403f0b44589cdde720438e634a1",
+  "source_bytes": 1332114,
+  "candidate_bytes": 1176978,
+  "bytes_removed": 155136,
+  "shard_count": 10,
+  "status_counts": {
+    "BLOCKED": 0,
+    "PASS": 261,
+    "TODO": 0,
+    "WAITING": 380
+  }
+}

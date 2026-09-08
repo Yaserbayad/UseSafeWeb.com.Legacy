@@ -1,0 +1,354 @@
+{
+  "archive_schema": "usesafeweb-checkpoint-acceptance-evidence-v1",
+  "authoritative": false,
+  "source_checkpoint": {
+    "path": "CURRENT_STATE.md",
+    "git_blob": "ae203f4b55864f6c0163669dcaf853bcf225a546",
+    "checkpoint_revision": 49,
+    "baseline_version": 1
+  },
+  "order_range": {
+    "first": 385,
+    "last": 448
+  },
+  "items": [
+    {
+      "id": "TSK-0395",
+      "order": 395,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0395",
+          "evidence_type": "TEST_RESULT",
+          "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0395; - Canonical-main TSK-0395 target acceptance run/job `33801214869 / 100800898380`: terminal SUCCESS on exact `main` SHA `ccbed0d70ab0e7f17bdd3809183fef58d73f0d1e`; final marker `TSK0395_BROWSER_ACCEPTANCE=PASS`.",
+          "summary": "Current runtime PASS for TSK-0395 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0395; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0402",
+      "order": 402,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0402",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0402; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0402 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0402; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0405",
+      "order": 405,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0405",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0405; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0405 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0405; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0408",
+      "order": 408,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0408",
+          "evidence_type": "TEST_RESULT",
+          "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0408; - Independent verification: GitHub Actions run/job `33497169433 / 99821919358` — SUCCESS at verification head `3293a3fcae7e1258eab947bfb4218186b275d75a`.",
+          "summary": "Current runtime PASS for TSK-0408 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0408; created at execution or in this candidate for PASS planning tasks"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0409",
+      "order": 409,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0409",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com immutable blob bcccf7599dddd6e1665ba1207cafcadd6afe164d; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0409",
+          "summary": "Current runtime PASS for TSK-0409 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0409; created at execution or in this candidate for PASS planning tasks"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0410",
+      "order": 410,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0410",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com immutable blob f8fb1aee8504ff0c262ed7ff5c5b215572655cbe; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0410",
+          "summary": "Current runtime PASS for TSK-0410 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0410; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0411",
+      "order": 411,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0411",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com immutable blob e698ce6cfe7f629dd3d320581ce231ed08190257; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0411",
+          "summary": "Current runtime PASS for TSK-0411 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0411; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0412",
+      "order": 412,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0412",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com immutable blob 10eb6e246e3662cc977ea04e44d0d1fe10c72687; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0412",
+          "summary": "Current runtime PASS for TSK-0412 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0412; created at execution or in this candidate for PASS planning tasks"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0413",
+      "order": 413,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0413",
+          "evidence_type": "TEST_RESULT",
+          "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0413; - Independent verification: GitHub Actions run/job `33500597612 / 99832778403` — **SUCCESS**.",
+          "summary": "Current runtime PASS for TSK-0413 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0413; created at execution or in this candidate for PASS planning tasks"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0422",
+      "order": 422,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0422",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com immutable blob a947aea558804da9a06650a6ae2324a9ca81a1d8; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0422",
+          "summary": "Current runtime PASS for TSK-0422 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0422; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0423",
+      "order": 423,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0423",
+          "evidence_type": "TEST_RESULT",
+          "reference": "Yaserbayad/UseSafeWeb.com source commit 0f5d9695c259c4f66b0c47bf3752cc40d7a10dc0; verifier blob c50dd2b9b5a0e83cdc60fd7a962f018dee46d142; acceptance workflow blob 1098e86c84eb8973f96f4d51d23d3956fe4ba230; GitHub Actions run 33982540881 jobs 101350218278 and 101350218385",
+          "summary": "ACC-0423 satisfied: the automated regression rejects every seeded unsafe privacy/security configuration class and the reusable release/deployment/recovery acceptance workflow passed both hosted negative-matrix verification and read-only production-like AdGuard target verification.",
+          "verification_context": "Run 33982540881 on exact head 0f5d9695c259c4f66b0c47bf3752cc40d7a10dc0: negative-regression SUCCESS and deployed-runtime-readonly SUCCESS. Target checks are read-only and cover live AdGuard settings, public-admin exposure/firewall, filter behavior and service state; no target mutation is performed."
+        }
+      ]
+    },
+    {
+      "id": "TSK-0428",
+      "order": 428,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0428",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0428; acceptance ACC-0428",
+          "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
+          "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+        }
+      ]
+    },
+    {
+      "id": "TSK-0429",
+      "order": 429,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0429",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0429; acceptance ACC-0429",
+          "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
+          "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+        }
+      ]
+    },
+    {
+      "id": "TSK-0430",
+      "order": 430,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0430",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0430; acceptance ACC-0430",
+          "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
+          "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+        }
+      ]
+    },
+    {
+      "id": "TSK-0431",
+      "order": 431,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0431",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0431; acceptance ACC-0431",
+          "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
+          "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+        }
+      ]
+    },
+    {
+      "id": "TSK-0432",
+      "order": 432,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0432",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0432; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0432 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0432; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0433",
+      "order": 433,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0433",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0433; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0433 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0433; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0434",
+      "order": 434,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0434",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0434; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
+          "summary": "TSK-0434 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: Owner override 2026-08-27; DEC-0013; DEC-0043; CON-0004; REQ-0049"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0436",
+      "order": 436,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0436",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com Plans/Master/WBS/master-wbs.csv@20e2763c0be2124378e3158ac559aed826bc6765; blob 357c5e1be3b455e7efddd329d6a2468e3125b502#TSK-0436; legacy authority CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2",
+          "summary": "TSK-0436 is preserved as the current owner-frozen NOT_APPLICABLE + PASS exclusion record; this does not assert the superseded behavioral/user acceptance.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: Owner override 2026-08-27; DEC-0013; CON-0004; TSK-0435; TSK-0437; TSK-0483"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0437",
+      "order": 437,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0437",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0437; acceptance ACC-0437",
+          "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
+          "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+        }
+      ]
+    },
+    {
+      "id": "TSK-0441",
+      "order": 441,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0441",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0441; acceptance ACC-0441",
+          "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
+          "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+        }
+      ]
+    },
+    {
+      "id": "TSK-0442",
+      "order": 442,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0442",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0442; acceptance ACC-0442",
+          "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
+          "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+        }
+      ]
+    },
+    {
+      "id": "TSK-0443",
+      "order": 443,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0443",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com TSK_0010_RUNTIME_PRESERVATION_RECONCILIATION_EVIDENCE_2026-09-05.md; blob e87d1aaca75c155f88348f52adad2b6eb78e589a; evidence commit 2d20e5ef4b1f64b5df9b94bc1e7f2054a438c562; immutable legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; task TSK-0443; acceptance ACC-0443",
+          "summary": "Historical current PASS is preserved under POL-003 from immutable legacy runtime evidence; the current frozen acceptance identity is unchanged and no later owner deferral supersedes this task.",
+          "verification_context": "Source checkpoint revision 27 blob c2175c5b5e3a5797f38638e36503f76d6cafbd60; frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765 blob 357c5e1be3b455e7efddd329d6a2468e3125b502; exact failure-boundary trace run 33980615850 job 101345052785 artifact 9973633064; reconciliation evidence blob e87d1aaca75c155f88348f52adad2b6eb78e589a."
+        }
+      ]
+    },
+    {
+      "id": "TSK-0444",
+      "order": 444,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0444",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com immutable blob 04cdf8bffeeebde6fc4ee15ed67483b603de0cce; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0444",
+          "summary": "Current runtime PASS for TSK-0444 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0444; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0445",
+      "order": 445,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0445",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com immutable blob 87d1ad25461ca263ee6c5f07c4f040e7b9893017; recorded at CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0445",
+          "summary": "Current runtime PASS for TSK-0445 is preserved from immutable artifact proof recorded in the legacy checkpoint.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0445; created at execution or in this candidate for PASS planning tasks"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0446",
+      "order": 446,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0446",
+          "evidence_type": "TEST_RESULT",
+          "reference": "CURRENT_STATE.md@20e2763c0be2124378e3158ac559aed826bc6765; blob d45c7b1f98ceba6265944aabd970c250dc7be2d2#TSK-0446; - Independent verification: GitHub Actions run/job `33504115232 / 99843993787` — **SUCCESS**.",
+          "summary": "Current runtime PASS for TSK-0446 is preserved from the immutable legacy checkpoint, which records executed verification/run evidence.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0446; created at execution or in this candidate for PASS planning tasks"
+        }
+      ]
+    }
+  ]
+}

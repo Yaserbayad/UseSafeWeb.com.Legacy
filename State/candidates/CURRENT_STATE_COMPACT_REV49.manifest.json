@@ -1,0 +1,82 @@
+{
+  "manifest_schema": "usesafeweb-checkpoint-compaction-candidate-v1",
+  "authoritative": false,
+  "source": {
+    "path": "CURRENT_STATE.md",
+    "git_blob": "ae203f4b55864f6c0163669dcaf853bcf225a546",
+    "checkpoint_revision": 49,
+    "baseline_version": 1,
+    "bytes": 1332114
+  },
+  "candidate": {
+    "path": "State/candidates/CURRENT_STATE_COMPACT_REV49.json",
+    "git_blob": "5d3df59d2f195b5264555d6da2fcac89e1bf2fa0",
+    "checkpoint_revision": 49,
+    "baseline_version": 1,
+    "bytes": 1176978
+  },
+  "evidence_shards": [
+    {
+      "path": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0001_0064.json",
+      "git_blob": "1b1133a60a4f6b3da676caa64282dcdfc24806eb",
+      "bytes": 43597,
+      "items_with_evidence": 41
+    },
+    {
+      "path": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0065_0128.json",
+      "git_blob": "11845cabd49248fb0afc2403ee2278ee85ee038c",
+      "bytes": 37234,
+      "items_with_evidence": 35
+    },
+    {
+      "path": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0129_0192.json",
+      "git_blob": "1c43df60b9dab101e02edebc91e13f7bbfcca2d4",
+      "bytes": 49938,
+      "items_with_evidence": 48
+    },
+    {
+      "path": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0193_0256.json",
+      "git_blob": "62ad2c31f4ea019feb8744eb0dfa8212dc59aa79",
+      "bytes": 26158,
+      "items_with_evidence": 25
+    },
+    {
+      "path": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0257_0320.json",
+      "git_blob": "b0917cdc41481aac73467699cc9c03755b3060e3",
+      "bytes": 24615,
+      "items_with_evidence": 22
+    },
+    {
+      "path": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0321_0384.json",
+      "git_blob": "061edbba60cffab212a7c7ef27f72599a22f1bc9",
+      "bytes": 28782,
+      "items_with_evidence": 29
+    },
+    {
+      "path": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json",
+      "git_blob": "37453225529f77c04b83f8901050eb735449d9e2",
+      "bytes": 26319,
+      "items_with_evidence": 26
+    },
+    {
+      "path": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0449_0512.json",
+      "git_blob": "3e4c45a94ea66dfdaf7bed6cdf1a07e5f2bb0e00",
+      "bytes": 19453,
+      "items_with_evidence": 19
+    },
+    {
+      "path": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0513_0576.json",
+      "git_blob": "08087d804616e7aee1eb6c97e709575abddadc2b",
+      "bytes": 10813,
+      "items_with_evidence": 10
+    },
+    {
+      "path": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0577_0640.json",
+      "git_blob": "fc8361f8c4674f75c7179cc0c25f99bbd62dfe18",
+      "bytes": 6780,
+      "items_with_evidence": 6
+    }
+  ],
+  "semantic_result": "PASS",
+  "scope": "Acceptance-evidence payload storage only; baseline, task states, dependencies, waits/blockers, constraints, gates, and closure state are unchanged."
+}

@@ -1,0 +1,471 @@
+{
+  "archive_schema": "usesafeweb-checkpoint-acceptance-evidence-v1",
+  "authoritative": false,
+  "source_checkpoint": {
+    "path": "CURRENT_STATE.md",
+    "git_blob": "ae203f4b55864f6c0163669dcaf853bcf225a546",
+    "checkpoint_revision": 49,
+    "baseline_version": 1
+  },
+  "order_range": {
+    "first": 65,
+    "last": 128
+  },
+  "items": [
+    {
+      "id": "TSK-0094",
+      "order": 94,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0094",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0094; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0094 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0094; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0095",
+      "order": 95,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0095",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0095; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0095 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0095; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0096",
+      "order": 96,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0096",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0096; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0096 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0096; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0097",
+      "order": 97,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0097",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0097; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0097 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0097; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0098",
+      "order": 98,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0098",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0098; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0098 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0098; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0099",
+      "order": 99,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0099",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0099; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0099 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0099; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0100",
+      "order": 100,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0100",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0100; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0100 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0100; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0101",
+      "order": 101,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0101",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0101; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0101 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0101; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0102",
+      "order": 102,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0102",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0102; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0102 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0102; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0103",
+      "order": 103,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0103",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0103; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0103 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0103; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0104",
+      "order": 104,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0104",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0104; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0104 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0104; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0105",
+      "order": 105,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0105",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0105; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0105 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0105; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0106",
+      "order": 106,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0106",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0106; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0106 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0106; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0107",
+      "order": 107,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0107",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0107; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0107 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0107; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0108",
+      "order": 108,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0108",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0108; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0108 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0108; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0109",
+      "order": 109,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0109",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0109; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0109 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0109; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0110",
+      "order": 110,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0110",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0110; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0110 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0110; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0111",
+      "order": 111,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0111",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0111; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0111 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0111; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0112",
+      "order": 112,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0112",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0112; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0112 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0112; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0113",
+      "order": 113,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0113",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0113; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0113 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0113; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0114",
+      "order": 114,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0114",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0114; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0114 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0114; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0115",
+      "order": 115,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0115",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0115; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0115 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0115; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0116",
+      "order": 116,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0116",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0116; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0116 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0116; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0117",
+      "order": 117,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0117",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0117; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0117 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0117; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0118",
+      "order": 118,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0118",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0118; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0118 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0118; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0119",
+      "order": 119,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0119",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0119; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0119 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0119; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0120",
+      "order": 120,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0120",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0120; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0120 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0120; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0121",
+      "order": 121,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0121",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0121; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0121 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0121; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0122",
+      "order": 122,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0122",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0122; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0122 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0122; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0123",
+      "order": 123,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0123",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0123; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0123 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0123; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0124",
+      "order": 124,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0124",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0124; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0124 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0124; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0125",
+      "order": 125,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0125",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0125; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0125 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0125; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0126",
+      "order": 126,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0126",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0126; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0126 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0126; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0127",
+      "order": 127,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0127",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0127; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0127 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0127; historical source evidence as cited"
+        }
+      ]
+    },
+    {
+      "id": "TSK-0128",
+      "order": 128,
+      "acceptance_references": [
+        {
+          "ac_id": "ACC-0128",
+          "evidence_type": "GITHUB_BLOB",
+          "reference": "Yaserbayad/UseSafeWeb.com WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502 row TSK-0128; freeze-audit blob 25047283940ff4a02cbbdd640e262adf65ae033d; publication commit 4f72c66e23fefad0e83eb78f4bba81f6d76d428d",
+          "summary": "Historical PASS for TSK-0128 is preserved from the immutable owner-frozen pre-SERIAL-LIGHT acceptance record. The freeze audit explicitly states historical evidence gaps remained WAITING and candidate planning artifacts passed only deterministic/current-file criteria; migration does not fabricate a new execution result.",
+          "verification_context": "Migration source 20e2763c0be2124378e3158ac559aed826bc6765; legacy checkpoint blob d45c7b1f98ceba6265944aabd970c250dc7be2d2; WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502. WBS Evidence_Reference: EVD-0128; historical source evidence as cited"
+        }
+      ]
+    }
+  ]
+}
