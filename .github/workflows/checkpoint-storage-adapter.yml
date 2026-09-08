@@ -47,7 +47,7 @@ jobs:
           git diff --check
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CURRENT_STATE.md State/CURRENT_STATE_SUMMARY.json State/checkpoint_adapter_result.json State/candidates State/evidence
+          git add -A CURRENT_STATE.md State
           if git diff --cached --quiet; then
             echo "CHECKPOINT_ADAPTER_NO_CHANGES"
             exit 0
