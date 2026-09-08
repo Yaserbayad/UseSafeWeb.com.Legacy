@@ -1,0 +1,20 @@
+{
+  "evidence_schema": "usesafeweb-human-approval-v1",
+  "project_id": "UseSafeWeb.com",
+  "approved_at": "2026-09-08T21:42:06Z",
+  "approval_text": "next",
+  "approval_context": "Continue the already-selected UseSafeWeb website production deployment workflow. Earlier on 2026-09-08 the Project Owner explicitly directed that the first exact fix is to implement the website and deploy it fully.",
+  "scope": {
+    "work_item_id": "TSK-0468",
+    "release_commit": "907d3880026ca73be949cfc7ecee14eff3efb60c",
+    "action": "Initial production website/application/content deployment and the bounded host bootstrap required to execute it",
+    "one_time": true
+  },
+  "preserved_boundaries": [
+    "All TSK-0468 acceptance, verification, security, privacy, accessibility, health, smoke and rollback requirements remain unchanged.",
+    "Deployment must fail closed on an unresolved material prerequisite or acceptance failure.",
+    "No task is marked PASS by this approval alone.",
+    "No unrelated task, dependency, gate, acceptance criterion, or runtime state is changed by this approval.",
+    "No master-plan repair, normalization, restructuring, or reconciliation is authorized by this approval."
+  ]
+}
