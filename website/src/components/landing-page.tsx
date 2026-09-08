@@ -12,17 +12,7 @@ type LandingSection = {
   noteBody?: string;
 };
 
-function actionClassName(action: Action) {
-  return action.secondary ? 'sw-button sw-button--secondary' : 'sw-button';
-}
-
-export function LandingPage({
-  section,
-  actions = [],
-}: {
-  section: LandingSection;
-  actions?: Action[];
-}) {
+export function LandingPage({ section, actions = [] }: { section: LandingSection; actions?: Action[] }) {
   return (
     <article className="sw-page sw-landing">
       <section className="sw-landing-hero">
@@ -35,7 +25,7 @@ export function LandingPage({
               {actions.map((action) => (
                 <Link
                   key={action.href}
-                  className={actionClassName(action)}
+                  className={action.secondary ? 'sw-button sw-button--secondary' : 'sw-button'}
                   href={action.href}
                 >
                   {action.label}
