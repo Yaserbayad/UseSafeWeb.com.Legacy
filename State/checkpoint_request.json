@@ -1,7 +1,14 @@
 {
   "request_schema": "usesafeweb-checkpoint-storage-request-v1",
-  "operation": "apply_tsk0243_pass",
-  "expected_checkpoint_blob": "95e8b2ace7598ada968e4ccd294f93966c3c1839",
-  "expected_revision": 50,
-  "expected_baseline": 1
+  "operation": "apply_website_deployment_sequencing_override",
+  "request_id": "website-sequencing-override-red-20260908",
+  "expected_checkpoint_blob": "c336bdfd6ab6e6fb74f6c3fc5bef8fee6de5efb9",
+  "expected_revision": 51,
+  "expected_baseline": 1,
+  "approval_reference": "State/evidence/human/WEBSITE_DEPLOYMENT_SEQUENCING_OVERRIDE_2026-09-08.json; blob e500e169d709325ed04aacf978e99357a6af6591",
+  "release_commit": "907d3880026ca73be949cfc7ecee14eff3efb60c",
+  "bypassed_dependencies": [
+    "TSK-0151",
+    "TSK-0472"
+  ]
 }
