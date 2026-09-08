@@ -1,4 +1,4 @@
-# Diagnostic revision: 3
+# Diagnostic revision: 4
 name: Diagnose verifier TLS on AdGuard VM
 
 on:
@@ -35,23 +35,34 @@ jobs:
 
           echo "HOST=$(hostname -s)"
           echo "PUBLIC_IP=$(curl -fsS --max-time 5 https://api.ipify.org || true)"
+          echo '--- OS / PACKAGE AVAILABILITY ---'
+          grep -E '^(ID|VERSION_ID|VERSION_CODENAME)=' /etc/os-release || true
+          apt-cache policy python3-certbot-dns-cloudflare 2>/dev/null | head -n 40 || true
+
           echo '--- DNS AUTHORITY ---'
           dig +short NS usesafeweb.com || true
 
-          echo '--- NGINX STATUS ---'
+          echo '--- NGINX STATUS / INCLUDE PATHS ---'
           systemctl is-active nginx || true
           sudo nginx -t
           sudo nginx -T 2>&1 \
-            | grep -E '^[[:space:]]*(listen|server_name|ssl_certificate|ssl_certificate_key|location|proxy_pass|proxy_set_header|proxy_ssl_server_name|proxy_ssl_name|return)[[:space:]]' \
+            | grep -E '^# configuration file|^[[:space:]]*include[[:space:]]' \
+            | head -n 180 || true
+          echo '--- NGINX RELEVANT DIRECTIVES ---'
+          sudo nginx -T 2>&1 \
+            | grep -E '^[[:space:]]*(listen|server_name|ssl_certificate|ssl_certificate_key|location|proxy_pass|proxy_set_header|proxy_ssl_server_name|proxy_ssl_name|ssl_reject_handshake|return)[[:space:]]' \
             | sed -E 's#(ssl_certificate_key[[:space:]]+).*#\1[REDACTED];#' \
-            | head -n 260
+            | head -n 280
 
-          echo '--- CERTBOT LINEAGES/PLUGINS ---'
+          echo '--- CERTBOT LINEAGES / PLUGINS / TIMER ---'
           sudo certbot certificates 2>&1 \
             | sed -E 's#(Private Key Path:).*#\1 [REDACTED]#' \
             | head -n 160
           sudo certbot plugins 2>&1 | head -n 200 || true
           dpkg -l 2>/dev/null | grep -Ei 'certbot|cloudflare' | awk '{print $2" "$3}' | head -n 100 || true
+          systemctl is-enabled certbot.timer 2>/dev/null || true
+          systemctl is-active certbot.timer 2>/dev/null || true
+          systemctl list-timers certbot.timer --no-pager 2>/dev/null | head -n 20 || true
           python3 - <<'PY'
           import importlib.util
           for name in ('certbot_dns_cloudflare','cloudflare'):
