@@ -3,8 +3,8 @@
   "authoritative": false,
   "authority": {
     "path": "CURRENT_STATE.md",
-    "git_blob": "7f9a7cfccd8933e451a169599c253da8cccfe037",
-    "checkpoint_revision": 54,
+    "git_blob": "f1163f86acccf9875f7c3b2629f758e7d3895493",
+    "checkpoint_revision": 55,
     "baseline_version": 2,
     "project_id": "UseSafeWeb.com",
     "governance_mode": "SERIAL_LIGHT",
@@ -12,8 +12,8 @@
   },
   "storage_mode": "externalized-acceptance-evidence-v1",
   "status_counts": {
-    "TODO": 0,
-    "WAITING": 379,
+    "TODO": 1,
+    "WAITING": 378,
     "BLOCKED": 0,
     "PASS": 262
   },
@@ -956,7 +956,7 @@
     },
     {
       "id": "TSK-0468",
-      "status": "WAITING"
+      "status": "TODO"
     },
     {
       "id": "TSK-0469",

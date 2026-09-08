@@ -2,7 +2,7 @@
   "checkpoint_schema": "serial-light-checkpoint-v1",
   "project_id": "UseSafeWeb.com",
   "governance_mode": "SERIAL_LIGHT",
-  "checkpoint_revision": 54,
+  "checkpoint_revision": 55,
   "baseline": {
     "version": 2,
     "objectives": [
@@ -19466,13 +19466,8 @@
       },
       {
         "id": "TSK-0468",
-        "status": "WAITING",
-        "acceptance_references": [],
-        "wait": {
-          "condition": "An authenticated production control path to the actual root website host at 20.71.90.212 is not currently available to the governed executor.",
-          "resolution_check": "Revalidate CURRENT_STATE.md, then prove an authenticated read-only control path to the host serving 20.71.90.212 (for example restored ssh-mcp profile webtest or an existing authorized Azure control path). Confirm target identity before any mutation. If confirmed and no new blocker exists, transition TSK-0468 from WAITING to TODO and resume deployment of release 907d3880026ca73be949cfc7ecee14eff3efb60c with all existing acceptance and rollback requirements unchanged.",
-          "reference": "State/evidence/deployment/TSK0468_WEBHOST_CONTROL_WAIT_2026-09-08.json; blob 438af4194ec535314c4e6b8fe1214817c13d9f84"
-        }
+        "status": "TODO",
+        "acceptance_references": []
       },
       {
         "id": "TSK-0469",

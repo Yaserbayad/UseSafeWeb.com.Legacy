@@ -1,23 +1,25 @@
 {
   "result_schema": "usesafeweb-checkpoint-storage-result-v1",
-  "operation": "transition_tsk0468_todo_to_waiting_webhost_control",
-  "request_id": "tsk0468-webhost-control-wait-20260908",
+  "operation": "transition_tsk0468_waiting_to_todo_github_webhost",
+  "request_id": "tsk0468-github-webhost-ready-20260909",
   "result": "PASS",
-  "old_checkpoint_blob": "f11330e6d7b00814cc921825dd7d77a2be9d7d71",
-  "old_revision": 53,
-  "new_checkpoint_blob": "7f9a7cfccd8933e451a169599c253da8cccfe037",
-  "new_revision": 54,
+  "old_checkpoint_blob": "7f9a7cfccd8933e451a169599c253da8cccfe037",
+  "old_revision": 54,
+  "new_checkpoint_blob": "f1163f86acccf9875f7c3b2629f758e7d3895493",
+  "new_revision": 55,
   "baseline_version": 2,
   "target_work_item": "TSK-0468",
   "release_commit": "907d3880026ca73be949cfc7ecee14eff3efb60c",
-  "wait_evidence_reference": "State/evidence/deployment/TSK0468_WEBHOST_CONTROL_WAIT_2026-09-08.json; blob 438af4194ec535314c4e6b8fe1214817c13d9f84",
-  "stable_mutation": "TSK-0468 transitioned from TODO to WAITING because no authenticated governed control path is currently available to the confirmed root website host 20.71.90.212; no production deployment occurred; baseline and all unrelated runtime state remain unchanged.",
-  "old_bytes": 917842,
-  "new_bytes": 918690,
+  "ready_evidence_reference": "State/evidence/deployment/TSK0468_GITHUB_WEBHOST_CONTROL_READY_2026-09-09.json; blob 16a355da8963570753e31971b6efef5e9250dd95",
+  "run_id": 34288429214,
+  "job_id": 102269283365,
+  "stable_mutation": "TSK-0468 transitioned from WAITING to TODO after exact GitHub self-hosted runner evidence proved authenticated control of hmgweb/20.71.90.212 and healthy upgrade prerequisites; baseline and all unrelated runtime state remain unchanged.",
+  "old_bytes": 918690,
+  "new_bytes": 917842,
   "status_counts": {
     "BLOCKED": 0,
     "PASS": 262,
-    "TODO": 0,
-    "WAITING": 379
+    "TODO": 1,
+    "WAITING": 378
   }
 }
