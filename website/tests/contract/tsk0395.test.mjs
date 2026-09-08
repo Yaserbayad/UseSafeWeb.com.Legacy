@@ -25,6 +25,7 @@ test('TSK-0395 landing page renders canonical locale content and routes the prim
   const page = read('src/app/[locale]/page.tsx');
 
   assert.match(page, /publicMetadata\(locale, '', content\.home\.title, content\.home\.summary\)/);
+  assert.match(page, /LandingPage/);
   assert.match(page, /section=\{content\.home\}/);
   assert.match(page, /href: `\/\$\{locale\}\/start`/);
   assert.match(page, /href: `\/\$\{locale\}\/how-it-works`/);
@@ -38,17 +39,29 @@ test('TSK-0395 landing exposes trust/support navigation', () => {
   assert.match(shell, /\['help', common\.nav\.help\]/);
 });
 
-test('TSK-0395 public landing retains semantic heading, keyboard-native links, and shared responsive design-system classes', () => {
-  const page = read('src/components/content-page.tsx');
+test('TSK-0395 public landing has a dedicated semantic composition and shared responsive design-system classes', () => {
+  const landing = read('src/components/landing-page.tsx');
   const css = read('src/app/globals.css');
 
-  assert.match(page, /<h1 className="sw-title">/);
-  assert.match(page, /<Link[\s\S]*className=\{action\.secondary/);
-  assert.match(css, /\.sw-actions/);
+  assert.match(landing, /<article className="sw-page sw-landing">/);
+  assert.match(landing, /<h1 className="sw-title">/);
+  assert.match(landing, /className="sw-landing-hero"/);
+  assert.match(landing, /className="sw-actions"/);
+  assert.match(landing, /className="sw-card-grid sw-landing-grid"/);
+  assert.match(css, /\.sw-landing-hero/);
   assert.match(css, /@media\s*\(min-width:/);
   assert.doesNotMatch(
     css,
     /#[0-9a-fA-F]{6}/,
     'landing must consume shared brand tokens rather than a parallel raw palette',
   );
+});
+
+test('TSK-0395 public header uses the canonical approved SafeWeb wordmark without forking its geometry', () => {
+  const shell = read('src/components/site-shell.tsx');
+  const publicWordmark = read('public/safeweb-wordmark-primary.svg');
+  const canonicalWordmark = read('../brand/identity/TSK-0301/safeweb-wordmark-primary.svg');
+
+  assert.match(shell, /src="\/safeweb-wordmark-primary\.svg"/);
+  assert.equal(publicWordmark, canonicalWordmark);
 });

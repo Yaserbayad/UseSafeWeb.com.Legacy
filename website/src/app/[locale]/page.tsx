@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { ContentPage } from '@/components/content-page';
+import { LandingPage } from '@/components/landing-page';
 import { getContent, isLocale } from '@/lib/i18n';
 import { publicMetadata } from '@/lib/metadata';
 
@@ -16,7 +16,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   if (!isLocale(locale)) notFound();
   const content = getContent(locale);
   return (
-    <ContentPage
+    <LandingPage
       section={content.home}
       actions={[
         { href: `/${locale}/start`, label: content.home.primaryLabel },
