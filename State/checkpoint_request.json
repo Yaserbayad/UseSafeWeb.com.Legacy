@@ -1,13 +1,10 @@
 {
   "request_schema": "usesafeweb-checkpoint-storage-request-v1",
-  "operation": "transition_tsk0468_waiting_to_todo",
-  "request_id": "tsk0468-production-ready-20260908",
-  "expected_checkpoint_blob": "c6bdc2babedb0f63e77d945c04c698736478f971",
-  "expected_revision": 52,
+  "operation": "transition_tsk0468_todo_to_waiting_webhost_control",
+  "request_id": "tsk0468-webhost-control-wait-20260908",
+  "expected_checkpoint_blob": "f11330e6d7b00814cc921825dd7d77a2be9d7d71",
+  "expected_revision": 53,
   "expected_baseline": 2,
-  "approval_reference": "State/evidence/human/WEBSITE_DEPLOYMENT_SEQUENCING_OVERRIDE_2026-09-08.json; blob e500e169d709325ed04aacf978e99357a6af6591",
   "release_commit": "907d3880026ca73be949cfc7ecee14eff3efb60c",
-  "readiness_run_id": 34281607760,
-  "readiness_job_id": 102247438816,
-  "readiness_reference": "GitHub Actions run 34281607760; job 102247438816; workflow website-production-readonly-preflight-20260908.yml"
+  "wait_evidence_reference": "State/evidence/deployment/TSK0468_WEBHOST_CONTROL_WAIT_2026-09-08.json; blob 438af4194ec535314c4e6b8fe1214817c13d9f84"
 }
