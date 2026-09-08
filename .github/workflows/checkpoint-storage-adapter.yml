@@ -1,0 +1,44 @@
+name: Checkpoint storage adapter
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - State/checkpoint_request.json
+  workflow_dispatch:
+
+concurrency:
+  group: usesafeweb-checkpoint-storage
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  checkpoint-storage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact request commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Execute stateless checkpoint adapter
+        run: python3 State/tools/checkpoint_storage_adapter.py
+
+      - name: Verify and commit adapter outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CURRENT_STATE.md State/CURRENT_STATE_SUMMARY.json State/checkpoint_adapter_result.json State/candidates State/evidence
+          if git diff --cached --quiet; then
+            echo "CHECKPOINT_ADAPTER_NO_CHANGES"
+            exit 0
+          fi
+          git commit -m "state: apply checkpoint storage request"
+          git push origin HEAD:main
