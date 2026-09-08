@@ -2,9 +2,9 @@
   "checkpoint_schema": "serial-light-checkpoint-v1",
   "project_id": "UseSafeWeb.com",
   "governance_mode": "SERIAL_LIGHT",
-  "checkpoint_revision": 51,
+  "checkpoint_revision": 52,
   "baseline": {
-    "version": 1,
+    "version": 2,
     "objectives": [
       {
         "id": "OBJ-USESAFEWEB-V1",
@@ -72,6 +72,10 @@
       {
         "id": "POL-015",
         "text": "Legacy automation that assumes CURRENT_STATE.md is Markdown is not checkpoint authority. Any such automation must be treated as incompatible until independently verified or updated; checkpoint mutation must use the qualified SERIAL LIGHT read/write/reread-confirm procedure and may not reconstruct authority from a parser assumption."
+      },
+      {
+        "id": "POL-016",
+        "text": "Owner-approved one-time website deployment sequencing override for TSK-0468 release 907d3880026ca73be949cfc7ecee14eff3efb60c: TSK-0151 and TSK-0472 are not hard sequencing dependencies for this release only. This does not mark those tasks PASS, change their runtime states, waive any TSK-0468 acceptance, security, health, accessibility or rollback requirement, alter any unrelated task, or authorize master-plan repair. Approval proof: State/evidence/human/WEBSITE_DEPLOYMENT_SEQUENCING_OVERRIDE_2026-09-08.json; blob e500e169d709325ed04aacf978e99357a6af6591."
       }
     ],
     "gates": [],
@@ -10475,10 +10479,7 @@
           "TSK-0468"
         ],
         "order": 468,
-        "depends_on": [
-          "TSK-0151",
-          "TSK-0472"
-        ],
+        "depends_on": [],
         "acceptance_criteria": [
           {
             "id": "ACC-0468",
@@ -19467,9 +19468,9 @@
         "id": "TSK-0468",
         "status": "WAITING",
         "wait": {
-          "condition": "See immutable wait reference for the exact condition.",
-          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
-          "reference": "State/waits/rev49/WAIT_PAYLOAD_0449_0512.json; blob ea2e034b19d1256d18ff722d46e90d9c50b29485#TSK-0468/wait"
+          "condition": "The owner-approved one-time sequencing override removes TSK-0151 and TSK-0472 as hard sequencing dependencies for TSK-0468 release 907d3880026ca73be949cfc7ecee14eff3efb60c. TSK-0468 remains WAITING only until a verified production-host execution path is available and the unchanged deployment preconditions can be checked.",
+          "resolution_check": "Reload the current checkpoint and approval evidence; verify a production-host execution path for release 907d3880026ca73be949cfc7ecee14eff3efb60c is available; confirm no new material safety, security or platform blocker exists; and verify the unchanged TSK-0468 deployment, health, smoke, security, accessibility and rollback requirements can be executed. Only then transition TSK-0468 from WAITING to TODO in one confirmed checkpoint mutation before deployment.",
+          "reference": "State/evidence/human/WEBSITE_DEPLOYMENT_SEQUENCING_OVERRIDE_2026-09-08.json; blob e500e169d709325ed04aacf978e99357a6af6591"
         },
         "acceptance_references": []
       },
