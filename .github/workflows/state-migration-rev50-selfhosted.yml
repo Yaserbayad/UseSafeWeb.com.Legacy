@@ -1,0 +1,54 @@
+name: Generate isolated state migration candidate self-hosted
+
+on:
+  push:
+    branches:
+      - state-migration-rev50-20260908
+    paths:
+      - .github/workflows/state-migration-rev50-selfhosted.yml
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on:
+      - self-hosted
+      - Linux
+      - X64
+    timeout-minutes: 10
+    steps:
+      - name: Checkout isolated migration branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Assert runner and branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(hostname)" = "adguardvm"
+          test "${GITHUB_REF_NAME}" = "state-migration-rev50-20260908"
+          test "${GITHUB_REPOSITORY}" = "Yaserbayad/UseSafeWeb.com"
+
+      - name: Generate and validate split candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/state_migration_rev50.py
+
+      - name: Commit generated candidate artifacts only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add State/
+          git diff --cached --check
+          git diff --cached --name-only | grep -q '^State/'
+          if git diff --cached --name-only | grep -v '^State/' ; then
+            echo "Unexpected staged path" >&2
+            exit 1
+          fi
+          git commit -m "state: generate verified revision-50 split candidate"
+          git push origin HEAD:state-migration-rev50-20260908
