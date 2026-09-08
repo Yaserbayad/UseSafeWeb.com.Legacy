@@ -1,0 +1,77 @@
+{
+  "format": "usesafeweb-state-migration-manifest-v1",
+  "project_id": "UseSafeWeb.com",
+  "authorization": "Owner authorized splitting the oversized project state into a large done archive and smaller active/read-only state files on 2026-09-08; Master Plan/WBS scope and semantics remain unchanged.",
+  "source": {
+    "checkpoint_revision": 49,
+    "baseline_version": 1,
+    "git_blob": "ae203f4b55864f6c0163669dcaf853bcf225a546",
+    "bytes": 1332114,
+    "status_counts": {
+      "PASS": 261,
+      "WAITING": 380
+    }
+  },
+  "candidate": {
+    "checkpoint_revision": 50,
+    "baseline_version": 2,
+    "bytes": 999144,
+    "sha256": "8d6aed5e5ce4558c3556d609f5af38226da8c3e9560358c32da4230107a1dfe5",
+    "status_counts": {
+      "PASS": 262,
+      "WAITING": 379
+    },
+    "only_status_change": {
+      "TSK-0243": [
+        "WAITING",
+        "PASS"
+      ]
+    },
+    "work_item_count": 641,
+    "runtime_item_count": 641
+  },
+  "representation_delta": {
+    "pass_work_items": "optional spec_reference omitted from active checkpoint only",
+    "waiting_blocked_runtime": "optional historical reference omitted; condition/resolution text preserved exactly",
+    "acceptance_proof": "full original proof preserved in immutable revision-49 archive; active binding reduced to immutable blob reference and compact summary",
+    "master_plan_wbs": "unchanged"
+  },
+  "files": {
+    "archive_full_rev49": {
+      "path": "State/archive/CURRENT_STATE_REV49_FULL.json",
+      "git_blob": "ae203f4b55864f6c0163669dcaf853bcf225a546",
+      "sha256": "27fb147127002c286725c5f2df6b59f091d6445a5d7dac9dcd2bf5520536c394"
+    },
+    "done_archive": {
+      "path": "State/archive/DONE_ARCHIVE_REV50.json",
+      "count": 262,
+      "sha256": "968f9a850e32d093442d4100a980e5b08623d325eb7445df484e5c4f0b3e8083"
+    },
+    "todo": {
+      "path": "State/open/TODO_REV50.json",
+      "count": 0
+    },
+    "waiting": {
+      "path": "State/open/WAITING_REV50.json",
+      "count": 379
+    },
+    "blocked": {
+      "path": "State/open/BLOCKED_REV50.json",
+      "count": 0
+    },
+    "candidate": {
+      "path": "State/candidate/CURRENT_STATE_REV50_COMPACT.json"
+    }
+  },
+  "preservation_checks": {
+    "source_blob_exact": true,
+    "identity_and_mode_unchanged": true,
+    "all_641_ids_preserved_in_order": true,
+    "non_pass_baseline_records_exact": true,
+    "pass_baseline_semantics_unchanged_except_optional_reference_omission": true,
+    "waiting_conditions_and_resolution_checks_exact": true,
+    "pass_ac_coverage_complete": true,
+    "full_removed_detail_archived": true,
+    "master_plan_or_wbs_modified": false
+  }
+}
