@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - State/checkpoint_request.json
+      - .github/workflows/checkpoint-storage-adapter.yml
   workflow_dispatch:
 
 concurrency:
@@ -17,9 +18,20 @@ permissions:
 
 jobs:
   checkpoint-storage:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 5
     steps:
+      - name: Verify bounded runner identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "${GITHUB_EVENT_NAME}" == "push" || "${GITHUB_EVENT_NAME}" == "workflow_dispatch" ]]
+          [[ "${GITHUB_REF}" == "refs/heads/main" ]]
+          [[ "${RUNNER_OS}" == "Linux" ]]
+          [[ "${RUNNER_ARCH}" == "X64" ]]
+          [[ "$(hostname -s)" == "adguardvm" ]]
+          [[ "$(id -un)" == "azureusr" ]]
+
       - name: Checkout exact request commit
         uses: actions/checkout@v4
         with:
