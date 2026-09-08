@@ -1,0 +1,33 @@
+{
+  "evidence_schema": "usesafeweb-deployment-control-wait-v1",
+  "project_id": "UseSafeWeb.com",
+  "work_item_id": "TSK-0468",
+  "recorded_at": "2026-09-08T22:00:35Z",
+  "release_commit": "907d3880026ca73be949cfc7ecee14eff3efb60c",
+  "confirmed_topology": {
+    "public_website_host_ip": "20.71.90.212",
+    "dns_verifier_host_ip": "52.157.109.120",
+    "dns_verifier_runner": "adguardvm",
+    "reference": "GitHub Actions run 34282844724 job 102251459337"
+  },
+  "control_path_checks": [
+    {
+      "path": "ssh-mcp profile webtest",
+      "result": "UNAVAILABLE",
+      "detail": "Direct read-command attempts returned connector HTTP 502. This does not prove the target host is down."
+    },
+    {
+      "path": "existing azure-automation OIDC via GitHub-hosted runners",
+      "result": "UNAVAILABLE",
+      "detail": "Read-only discovery run 34283233080 failed before workflow steps started; no Azure action was executed."
+    },
+    {
+      "path": "adguardvm managed identity via Azure IMDS/ARM REST",
+      "result": "UNAVAILABLE",
+      "detail": "Read-only run 34283638233 reached IMDS but token acquisition returned HTTP 400; no Azure or host mutation was executed."
+    }
+  ],
+  "safe_state": "No production website deployment was performed. The DNS/verifier host was not repurposed or modified for the root website.",
+  "wait_condition": "An authenticated production control path to the actual root website host at 20.71.90.212 is not currently available to the governed executor.",
+  "resolution_check": "Revalidate CURRENT_STATE.md, then prove an authenticated read-only control path to the host serving 20.71.90.212 (for example restored ssh-mcp profile webtest or an existing authorized Azure control path). Confirm target identity before any mutation. If confirmed and no new blocker exists, transition TSK-0468 from WAITING to TODO and resume deployment of release 907d3880026ca73be949cfc7ecee14eff3efb60c with all existing acceptance and rollback requirements unchanged."
+}
