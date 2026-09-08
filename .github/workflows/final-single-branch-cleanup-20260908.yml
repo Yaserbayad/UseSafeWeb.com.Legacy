@@ -24,13 +24,14 @@ jobs:
         run: |
           set -euo pipefail
           expected_main='96681c6173f2afb1b28da5fba15c682144c17ce8'
-          expected_tsk0452='9d56d92989c1643363409ae6cc92c02973fae638'
+          original_tsk0452='9d56d92989c1643363409ae6cc92c02973fae638'
           expected_tsk0417='2ee17206f668efd61334da101e063bb092563d3a'
           git ls-remote --heads origin | sort > before.txt
           test "$(wc -l < before.txt | tr -d ' ')" = '3'
           test "$(grep -F $'\trefs/heads/main' before.txt | cut -f1)" = "$expected_main"
-          test "$(grep -F $'\trefs/heads/tsk0452-isolated-node-runtime' before.txt | cut -f1)" = "$expected_tsk0452"
           test "$(grep -F $'\trefs/heads/feature/tsk-0417-removal-ordering-20260903' before.txt | cut -f1)" = "$expected_tsk0417"
+          test "$(grep -F $'\trefs/heads/tsk0452-isolated-node-runtime' before.txt | cut -f1)" = "$GITHUB_SHA"
+          git merge-base --is-ancestor "$original_tsk0452" "$GITHUB_SHA"
 
       - name: Atomically delete both non-main branches
         shell: bash
