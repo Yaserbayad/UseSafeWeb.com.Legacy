@@ -15,90 +15,123 @@ jobs:
     runs-on: [self-hosted, linux, x64]
     timeout-minutes: 6
     steps:
-      - name: Verify runner and probe Azure managed-identity visibility
+      - name: Probe Azure control plane without host mutation
         shell: bash
         env:
           TARGET_IP: 20.71.90.212
         run: |
           set -Eeuo pipefail
           [[ "$(hostname -s)" == "adguardvm" ]]
+          command -v curl >/dev/null
+          command -v python3 >/dev/null
           echo 'MODE=READ_ONLY'
+          echo 'CONTROL_PATH=AZURE_IMDS_ARM_REST'
 
-          if ! command -v az >/dev/null 2>&1; then
-            echo 'AZ_CLI=NOT_INSTALLED'
-            exit 3
+          token_json="$(curl --fail --silent --show-error --max-time 8 \
+            -H 'Metadata:true' \
+            'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F')" || {
+              echo 'MANAGED_IDENTITY_TOKEN=UNAVAILABLE'
+              exit 4
+            }
+          token="$(python3 -c 'import json,sys; print(json.load(sys.stdin).get("access_token", ""))' <<<"$token_json")"
+          unset token_json
+          [[ -n "$token" ]] || { echo 'MANAGED_IDENTITY_TOKEN=EMPTY'; exit 5; }
+          echo 'MANAGED_IDENTITY_TOKEN=PASS'
+
+          compute_json="$(curl --fail --silent --show-error --max-time 8 \
+            -H 'Metadata:true' \
+            'http://169.254.169.254/metadata/instance/compute?api-version=2021-02-01')"
+          current_sub="$(python3 -c 'import json,sys; print(json.load(sys.stdin).get("subscriptionId", ""))' <<<"$compute_json")"
+          unset compute_json
+          [[ -n "$current_sub" ]] || { echo 'CURRENT_SUBSCRIPTION=UNAVAILABLE'; exit 6; }
+          echo 'CURRENT_SUBSCRIPTION=RESOLVED'
+
+          arm_get() {
+            curl --fail --silent --show-error --max-time 20 \
+              -H "Authorization: Bearer ${token}" \
+              -H 'Accept: application/json' \
+              "$1"
+          }
+
+          tmp="$(mktemp -d)"
+          trap 'rm -rf "$tmp"' EXIT
+          printf '%s\n' "$current_sub" >"$tmp/subscriptions"
+
+          if subscriptions_json="$(arm_get 'https://management.azure.com/subscriptions?api-version=2022-12-01' 2>/dev/null)"; then
+            python3 - "$tmp/subscriptions" <<'PY' <<<"$subscriptions_json"
+import json, sys
+path = sys.argv[1]
+data = json.load(sys.stdin)
+ids = [x.get('subscriptionId') for x in data.get('value', []) if x.get('subscriptionId')]
+with open(path, 'a', encoding='utf-8') as f:
+    for value in ids:
+        f.write(value + '\n')
+PY
+            echo 'SUBSCRIPTION_ENUMERATION=PASS'
+          else
+            echo 'SUBSCRIPTION_ENUMERATION=UNAVAILABLE_USING_CURRENT'
           fi
-          echo 'AZ_CLI=AVAILABLE'
-
-          config_dir="$(mktemp -d)"
-          trap 'rm -rf "$config_dir"' EXIT
-          export AZURE_CONFIG_DIR="$config_dir"
-
-          if ! az login --identity --allow-no-subscriptions --output none >/dev/null 2>&1; then
-            echo 'MANAGED_IDENTITY_LOGIN=UNAVAILABLE'
-            exit 4
-          fi
-          echo 'MANAGED_IDENTITY_LOGIN=PASS'
-
-          mapfile -t subscriptions < <(az account list --query '[?state==`Enabled`].id' -o tsv)
-          echo "VISIBLE_SUBSCRIPTIONS=${#subscriptions[@]}"
-          [[ "${#subscriptions[@]}" -gt 0 ]] || exit 5
+          sort -u "$tmp/subscriptions" -o "$tmp/subscriptions"
+          sub_count="$(wc -l <"$tmp/subscriptions" | tr -d ' ')"
+          echo "VISIBLE_SUBSCRIPTIONS_COUNT=${sub_count}"
 
           found=0
-          query_denied=0
-          for subscription in "${subscriptions[@]}"; do
-            az account set --subscription "$subscription" >/dev/null
-            if ! match_tsv="$(az network public-ip list --query "[?ipAddress=='${TARGET_IP}'].[name,resourceGroup,ipConfiguration.id]" -o tsv 2>/dev/null)"; then
-              query_denied=$((query_denied + 1))
-              continue
-            fi
-            [[ -n "$match_tsv" ]] || continue
+          denied=0
+          while IFS= read -r sub; do
+            [[ -n "$sub" ]] || continue
+            url="https://management.azure.com/subscriptions/${sub}/providers/Microsoft.Network/publicIPAddresses?api-version=2025-07-01"
+            while [[ -n "$url" ]]; do
+              if ! page_json="$(arm_get "$url" 2>/dev/null)"; then
+                denied=$((denied + 1))
+                break
+              fi
 
-            matches="$(printf '%s\n' "$match_tsv" | sed '/^[[:space:]]*$/d' | wc -l)"
-            if [[ "$matches" != "1" ]]; then
-              echo "MATCH=AMBIGUOUS count=${matches}"
-              exit 6
-            fi
+              match_count="$(python3 -c 'import json,sys; d=json.load(sys.stdin); print(sum(1 for x in d.get("value",[]) if x.get("properties",{}).get("ipAddress")==sys.argv[1]))' "$TARGET_IP" <<<"$page_json")"
+              if [[ "$match_count" -gt 1 ]]; then
+                echo "MATCH=AMBIGUOUS count=${match_count}"
+                exit 7
+              fi
+              if [[ "$match_count" == "1" ]]; then
+                match_json="$(python3 -c 'import json,sys; d=json.load(sys.stdin); m=[x for x in d.get("value",[]) if x.get("properties",{}).get("ipAddress")==sys.argv[1]][0]; print(json.dumps(m,separators=(",",":")))' "$TARGET_IP" <<<"$page_json")"
+                found=1
+                break 2
+              fi
+              url="$(python3 -c 'import json,sys; print(json.load(sys.stdin).get("nextLink", ""))' <<<"$page_json")"
+            done
+          done <"$tmp/subscriptions"
 
-            IFS=$'\t' read -r pip_name pip_rg ipconfig_id <<<"$match_tsv"
-            echo 'MATCH=YES'
-            echo "PUBLIC_IP=${TARGET_IP}"
-            echo "PUBLIC_IP_RESOURCE=${pip_name}"
-            echo "PUBLIC_IP_RESOURCE_GROUP=${pip_rg}"
-            found=1
+          echo "SUBSCRIPTION_QUERY_DENIED_COUNT=${denied}"
+          [[ "$found" == "1" ]] || { echo 'MATCH=NO_OR_NOT_VISIBLE'; exit 8; }
 
-            if [[ -z "${ipconfig_id:-}" ]]; then
-              echo 'ATTACHMENT=UNRESOLVED'
-              break
-            fi
+          pip_name="$(python3 -c 'import json,sys; print(json.load(sys.stdin).get("name", ""))' <<<"$match_json")"
+          pip_id="$(python3 -c 'import json,sys; print(json.load(sys.stdin).get("id", ""))' <<<"$match_json")"
+          ipconfig_id="$(python3 -c 'import json,sys; print(json.load(sys.stdin).get("properties",{}).get("ipConfiguration",{}).get("id", ""))' <<<"$match_json")"
+          pip_rg="$(python3 -c 'import sys; p=[x for x in sys.argv[1].split("/") if x]; print(p[p.index("resourceGroups")+1] if "resourceGroups" in p else "")' "$pip_id")"
+          echo 'MATCH=YES'
+          echo "PUBLIC_IP=${TARGET_IP}"
+          echo "PUBLIC_IP_RESOURCE=${pip_name}"
+          echo "PUBLIC_IP_RESOURCE_GROUP=${pip_rg}"
+          [[ -n "$ipconfig_id" ]] || { echo 'ATTACHMENT=UNRESOLVED'; exit 9; }
 
-            nic_name="$(awk -F/ '{for(i=1;i<=NF;i++) if(tolower($i)=="networkinterfaces") {print $(i+1); exit}}' <<<"$ipconfig_id")"
-            nic_rg="$(awk -F/ '{for(i=1;i<=NF;i++) if(tolower($i)=="resourcegroups") {print $(i+1); exit}}' <<<"$ipconfig_id")"
-            [[ -n "$nic_name" && -n "$nic_rg" ]]
-            echo "NIC=${nic_name}"
-            echo "NIC_RESOURCE_GROUP=${nic_rg}"
+          nic_id="${ipconfig_id%/ipConfigurations/*}"
+          nic_name="$(python3 -c 'import sys; print([x for x in sys.argv[1].split("/") if x][-1])' "$nic_id")"
+          nic_rg="$(python3 -c 'import sys; p=[x for x in sys.argv[1].split("/") if x]; print(p[p.index("resourceGroups")+1] if "resourceGroups" in p else "")' "$nic_id")"
+          echo "NIC=${nic_name}"
+          echo "NIC_RESOURCE_GROUP=${nic_rg}"
 
-            vm_id="$(az network nic show -g "$nic_rg" -n "$nic_name" --query 'virtualMachine.id' -o tsv)"
-            if [[ -z "$vm_id" ]]; then
-              echo 'VM=UNRESOLVED'
-              break
-            fi
+          nic_json="$(arm_get "https://management.azure.com${nic_id}?api-version=2025-05-01")"
+          vm_id="$(python3 -c 'import json,sys; print(json.load(sys.stdin).get("properties",{}).get("virtualMachine",{}).get("id", ""))' <<<"$nic_json")"
+          [[ -n "$vm_id" ]] || { echo 'VM=UNRESOLVED'; exit 10; }
+          vm_name="$(python3 -c 'import sys; print([x for x in sys.argv[1].split("/") if x][-1])' "$vm_id")"
+          vm_rg="$(python3 -c 'import sys; p=[x for x in sys.argv[1].split("/") if x]; print(p[p.index("resourceGroups")+1] if "resourceGroups" in p else "")' "$vm_id")"
 
-            vm_name="$(awk -F/ '{for(i=1;i<=NF;i++) if(tolower($i)=="virtualmachines") {print $(i+1); exit}}' <<<"$vm_id")"
-            vm_rg="$(awk -F/ '{for(i=1;i<=NF;i++) if(tolower($i)=="resourcegroups") {print $(i+1); exit}}' <<<"$vm_id")"
-            [[ -n "$vm_name" && -n "$vm_rg" ]]
-            os_type="$(az vm show -g "$vm_rg" -n "$vm_name" --query 'storageProfile.osDisk.osType' -o tsv)"
-            power_state="$(az vm get-instance-view -g "$vm_rg" -n "$vm_name" --query "instanceView.statuses[?starts_with(code, 'PowerState/')].displayStatus | [0]" -o tsv)"
-            echo "VM=${vm_name}"
-            echo "VM_RESOURCE_GROUP=${vm_rg}"
-            echo "VM_OS_TYPE=${os_type}"
-            echo "VM_POWER_STATE=${power_state:-unknown}"
-            echo 'DISCOVERY=PASS'
-            break
-          done
+          vm_json="$(arm_get "https://management.azure.com${vm_id}?api-version=2024-07-01")"
+          os_type="$(python3 -c 'import json,sys; print(json.load(sys.stdin).get("properties",{}).get("storageProfile",{}).get("osDisk",{}).get("osType", "unknown"))' <<<"$vm_json")"
+          instance_json="$(arm_get "https://management.azure.com${vm_id}/instanceView?api-version=2024-07-01")"
+          power_state="$(python3 -c 'import json,sys; d=json.load(sys.stdin); s=[x.get("displayStatus","") for x in d.get("statuses",[]) if x.get("code","").startswith("PowerState/")]; print(s[0] if s else "unknown")' <<<"$instance_json")"
 
-          echo "SUBSCRIPTION_QUERY_DENIED_COUNT=${query_denied}"
-          if [[ "$found" != "1" ]]; then
-            echo 'MATCH=NO'
-            exit 7
-          fi
+          echo "VM=${vm_name}"
+          echo "VM_RESOURCE_GROUP=${vm_rg}"
+          echo "VM_OS_TYPE=${os_type}"
+          echo "VM_POWER_STATE=${power_state}"
+          echo 'DISCOVERY=PASS'
