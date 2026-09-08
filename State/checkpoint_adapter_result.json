@@ -1,22 +1,19 @@
 {
   "result_schema": "usesafeweb-checkpoint-storage-result-v1",
-  "operation": "promote_compaction",
+  "operation": "apply_tsk0243_pass",
   "result": "PASS",
-  "compaction": "aggressive-runtime-v1",
-  "old_checkpoint_blob": "ae203f4b55864f6c0163669dcaf853bcf225a546",
-  "old_revision": 49,
-  "new_checkpoint_blob": "95e8b2ace7598ada968e4ccd294f93966c3c1839",
-  "new_revision": 50,
+  "old_checkpoint_blob": "95e8b2ace7598ada968e4ccd294f93966c3c1839",
+  "old_revision": 50,
+  "new_checkpoint_blob": "c336bdfd6ab6e6fb74f6c3fc5bef8fee6de5efb9",
+  "new_revision": 51,
   "baseline_version": 1,
-  "old_bytes": 1332114,
-  "new_bytes": 917100,
-  "evidence_shards": 10,
-  "wait_shards": 11,
+  "stable_mutation": "TSK-0243 WAITING -> PASS; ACC-0243 receives one corrected durable evidence reference.",
+  "old_bytes": 917100,
+  "new_bytes": 917621,
   "status_counts": {
     "BLOCKED": 0,
-    "PASS": 261,
+    "PASS": 262,
     "TODO": 0,
-    "WAITING": 380
-  },
-  "semantic_result": "PASS"
+    "WAITING": 379
+  }
 }

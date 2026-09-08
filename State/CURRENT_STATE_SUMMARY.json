@@ -3,19 +3,19 @@
   "authoritative": false,
   "authority": {
     "path": "CURRENT_STATE.md",
-    "git_blob": "95e8b2ace7598ada968e4ccd294f93966c3c1839",
-    "checkpoint_revision": 50,
+    "git_blob": "c336bdfd6ab6e6fb74f6c3fc5bef8fee6de5efb9",
+    "checkpoint_revision": 51,
     "baseline_version": 1,
     "project_id": "UseSafeWeb.com",
     "governance_mode": "SERIAL_LIGHT",
     "project_status": "ACTIVE"
   },
-  "storage_mode": "aggressive-runtime-shards-v1",
+  "storage_mode": "externalized-acceptance-evidence-v1",
   "status_counts": {
     "TODO": 0,
-    "WAITING": 380,
+    "WAITING": 379,
     "BLOCKED": 0,
-    "PASS": 261
+    "PASS": 262
   },
   "nonpass_items": [
     {
@@ -388,10 +388,6 @@
     },
     {
       "id": "TSK-0242",
-      "status": "WAITING"
-    },
-    {
-      "id": "TSK-0243",
       "status": "WAITING"
     },
     {

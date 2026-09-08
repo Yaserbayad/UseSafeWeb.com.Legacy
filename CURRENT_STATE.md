@@ -2,7 +2,7 @@
   "checkpoint_schema": "serial-light-checkpoint-v1",
   "project_id": "UseSafeWeb.com",
   "governance_mode": "SERIAL_LIGHT",
-  "checkpoint_revision": 50,
+  "checkpoint_revision": 51,
   "baseline": {
     "version": 1,
     "objectives": [
@@ -17046,13 +17046,16 @@
       },
       {
         "id": "TSK-0243",
-        "status": "WAITING",
-        "wait": {
-          "condition": "See immutable wait reference for the exact condition.",
-          "resolution_check": "Execute the exact stored resolution_check before any state transition.",
-          "reference": "State/waits/rev49/WAIT_PAYLOAD_0193_0256.json; blob 30a9d0072e7e0beed9a1cf25f3f6149488658e26#TSK-0243/wait"
-        },
-        "acceptance_references": []
+        "status": "PASS",
+        "acceptance_references": [
+          {
+            "ac_id": "ACC-0243",
+            "evidence_type": "GITHUB_BLOB",
+            "reference": "TSK_0243_DNS_VERIFICATION_EVIDENCE_2026-09-08.md; blob a204a2f2aa4ea8463a539c740e58aa72f31ef9d6; commit 3ab5137f7b7a67a47a670223b7adb7a7cb2ddf7d; deployment run/job 34262711990/102184395502; release efe9d4d885d6057b18c5fddea5a0dd2d49d3ec25",
+            "summary": "ACC-0243 passed: deterministic signed DNS verification, privacy-safe approved event data, bounded failure/conflict handling, Protection Map mapping, and regression checks are durably evidenced.",
+            "verification_context": "Frozen WBS commit 20e2763c0be2124378e3158ac559aed826bc6765, WBS blob 357c5e1be3b455e7efddd329d6a2468e3125b502, corrected evidence blob a204a2f2aa4ea8463a539c740e58aa72f31ef9d6, and production verifier proof 34262711990/102184395502."
+          }
+        ]
       },
       {
         "id": "TSK-0244",
