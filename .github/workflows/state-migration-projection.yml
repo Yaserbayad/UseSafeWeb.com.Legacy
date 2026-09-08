@@ -1,0 +1,64 @@
+name: Project safe compact checkpoint size
+
+on:
+  push:
+    branches:
+      - state-migration-rev50-20260908
+    paths:
+      - .github/workflows/state-migration-projection.yml
+
+permissions:
+  contents: read
+
+jobs:
+  project:
+    runs-on:
+      - self-hosted
+      - Linux
+      - X64
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Project representation-only variants
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(hostname)" = "adguardvm"
+          python3 - <<'PY'
+          import copy, json
+          from pathlib import Path
+          src = json.loads(Path('CURRENT_STATE.md').read_text(encoding='utf-8'))
+          S = 'ae203f4b55864f6c0163669dcaf853bcf225a546'
+          E = 'a204a2f2aa4ea8463a539c740e58aa72f31ef9d6'
+          bm0 = {x['id']: x for x in src['baseline']['work_items']}
+          def build(drop_priority=False):
+              c = copy.deepcopy(src)
+              c['checkpoint_revision'] = 50
+              c['baseline']['version'] = 2
+              status0 = {x['id']: x['status'] for x in src['runtime']['items']}
+              for b in c['baseline']['work_items']:
+                  if status0[b['id']] == 'PASS':
+                      b.pop('spec_reference', None)
+                      if drop_priority:
+                          b.pop('plan_priority', None)
+                          b.pop('executor_constraint', None)
+              out=[]
+              for r0 in src['runtime']['items']:
+                  i=r0['id']
+                  if i == 'TSK-0243':
+                      acs=[a['id'] for a in bm0[i]['acceptance_criteria']]
+                      out.append({'id':i,'status':'PASS','acceptance_references':[{'ac_id':a,'evidence_type':'GITHUB_BLOB','reference':f'Yaserbayad/UseSafeWeb.com@{E}:TSK_0243_DNS_VERIFICATION_EVIDENCE_2026-09-08.md','summary':'Verified production DNS acceptance proof.'} for a in acs]})
+                      continue
+                  r=copy.deepcopy(r0)
+                  if r.get('acceptance_references'):
+                      r['acceptance_references']=[{'ac_id':a['ac_id'],'evidence_type':'GITHUB_BLOB','reference':f'Yaserbayad/UseSafeWeb.com@{S}#{i}/{a["ac_id"]}','summary':'Proof preserved in immutable rev49 archive.'} for a in r['acceptance_references']]
+                  if r.get('wait',{}).get('reference'):
+                      r['wait']['reference']=f'UseSafeWeb.com@{S}#{i}/wait'
+                  if r.get('blocker',{}).get('reference'):
+                      r['blocker']['reference']=f'UseSafeWeb.com@{S}#{i}/blocker'
+                  out.append(r)
+              c['runtime']['items']=out
+              return len((json.dumps(c,ensure_ascii=False,indent=2)+'\n').encode('utf-8'))
+          print('DROP_PASS_SPEC_BYTES=' + str(build(False)))
+          print('DROP_PASS_SPEC_PRIORITY_BYTES=' + str(build(True)))
+          PY
