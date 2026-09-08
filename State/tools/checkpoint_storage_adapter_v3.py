@@ -6,6 +6,7 @@ import checkpoint_storage_adapter as v1
 import checkpoint_storage_adapter_v2 as v2
 
 OPERATION = "apply_website_deployment_sequencing_override"
+READY_OPERATION = "transition_tsk0468_waiting_to_todo"
 TARGET_ID = "TSK-0468"
 RELEASE_COMMIT = "907d3880026ca73be949cfc7ecee14eff3efb60c"
 BYPASSED_DEPENDENCIES = ["TSK-0151", "TSK-0472"]
@@ -13,6 +14,9 @@ APPROVAL_PATH = Path("State/evidence/human/WEBSITE_DEPLOYMENT_SEQUENCING_OVERRID
 APPROVAL_BLOB = "e500e169d709325ed04aacf978e99357a6af6591"
 APPROVAL_REFERENCE = f"{APPROVAL_PATH}; blob {APPROVAL_BLOB}"
 POLICY_ID = "POL-016"
+READINESS_RUN_ID = 34281607760
+READINESS_JOB_ID = 102247438816
+READINESS_REFERENCE = f"GitHub Actions run {READINESS_RUN_ID}; job {READINESS_JOB_ID}; workflow website-production-readonly-preflight-20260908.yml"
 
 
 def validate_override_request(request):
@@ -25,6 +29,20 @@ def validate_override_request(request):
     v1.require(request.get("approval_reference") == APPROVAL_REFERENCE, "approval reference mismatch")
     v1.require(request.get("release_commit") == RELEASE_COMMIT, "release commit mismatch")
     v1.require(request.get("bypassed_dependencies") == BYPASSED_DEPENDENCIES, "bypassed dependency set mismatch")
+
+
+def validate_ready_request(request):
+    v1.require(request.get("request_schema") == "usesafeweb-checkpoint-storage-request-v1", "request schema mismatch")
+    v1.require(request.get("operation") == READY_OPERATION, "operation mismatch")
+    v1.require(isinstance(request.get("request_id"), str) and request["request_id"], "request id missing")
+    v1.require(isinstance(request.get("expected_checkpoint_blob"), str), "expected checkpoint blob missing")
+    v1.require(isinstance(request.get("expected_revision"), int), "expected revision missing")
+    v1.require(isinstance(request.get("expected_baseline"), int), "expected baseline missing")
+    v1.require(request.get("approval_reference") == APPROVAL_REFERENCE, "approval reference mismatch")
+    v1.require(request.get("release_commit") == RELEASE_COMMIT, "release commit mismatch")
+    v1.require(request.get("readiness_run_id") == READINESS_RUN_ID, "readiness run mismatch")
+    v1.require(request.get("readiness_job_id") == READINESS_JOB_ID, "readiness job mismatch")
+    v1.require(request.get("readiness_reference") == READINESS_REFERENCE, "readiness reference mismatch")
 
 
 def validate_approval_evidence():
@@ -90,7 +108,6 @@ def apply_website_deployment_sequencing_override(request, source, source_raw, so
             }
             break
 
-    # Normalize the intended delta back to the source and prove that every other field is byte-semantically unchanged.
     normalized = copy.deepcopy(updated)
     normalized["checkpoint_revision"] = source["checkpoint_revision"]
     normalized["baseline"]["version"] = source["baseline"]["version"]
@@ -142,15 +159,86 @@ def apply_website_deployment_sequencing_override(request, source, source_raw, so
     v1.write_json(v1.RESULT, result)
 
 
+def transition_tsk0468_waiting_to_todo(request, source, source_raw, source_blob, stats):
+    validate_approval_evidence()
+    target_work = next((wi for wi in source["baseline"]["work_items"] if wi["id"] == TARGET_ID), None)
+    target_runtime = next((item for item in source["runtime"]["items"] if item["id"] == TARGET_ID), None)
+    v1.require(target_work is not None and target_runtime is not None, f"{TARGET_ID} missing")
+    v1.require(source["runtime"].get("project_status") == "ACTIVE", "project is not ACTIVE")
+    v1.require(source["runtime"].get("governance_blocker") is None, "project governance blocker present")
+    v1.require(target_work.get("title") == "Deploy production web/application/content release candidate", "target title mismatch")
+    v1.require(target_work.get("depends_on") == [], "sequencing override dependency state drift")
+    v1.require(any(rule.get("id") == POLICY_ID for rule in source["baseline"].get("policy_rules", [])), f"{POLICY_ID} missing")
+    v1.require(target_runtime.get("status") == "WAITING", "target is not WAITING")
+    wait = target_runtime.get("wait")
+    v1.require(isinstance(wait, dict), "target wait payload missing")
+    v1.require(wait.get("reference") == APPROVAL_REFERENCE, "target wait approval reference mismatch")
+    v1.require("transition TSK-0468 from WAITING to TODO" in wait.get("resolution_check", ""), "target wait resolution semantics drift")
+    for constraint in source["runtime"].get("human_constraints", []):
+        scoped = constraint.get("scope") == "PROJECT" or TARGET_ID in constraint.get("work_item_ids", [])
+        v1.require(not scoped, f"human constraint blocks {TARGET_ID}: {constraint.get('id')}")
+
+    updated = copy.deepcopy(source)
+    updated["checkpoint_revision"] = source["checkpoint_revision"] + 1
+    for item in updated["runtime"]["items"]:
+        if item["id"] == TARGET_ID:
+            item["status"] = "TODO"
+            item.pop("wait", None)
+            break
+
+    normalized = copy.deepcopy(updated)
+    normalized["checkpoint_revision"] = source["checkpoint_revision"]
+    for item in normalized["runtime"]["items"]:
+        if item["id"] == TARGET_ID:
+            item["status"] = target_runtime["status"]
+            item["wait"] = copy.deepcopy(target_runtime["wait"])
+            break
+    v1.require(normalized == source, "ready transition attempted an unrelated checkpoint mutation")
+
+    new_stats = v1.validate_checkpoint(updated, source["checkpoint_revision"] + 1, source["baseline"]["version"])
+    updated_raw = v1.canonical_bytes(updated)
+    updated_blob = v1.git_blob_sha(updated_raw)
+    v1.ROOT.write_bytes(updated_raw)
+    v1.write_summary(updated, updated_blob, "externalized-acceptance-evidence-v1")
+    result = {
+        "result_schema": "usesafeweb-checkpoint-storage-result-v1",
+        "operation": request["operation"],
+        "request_id": request["request_id"],
+        "result": "PASS",
+        "old_checkpoint_blob": source_blob,
+        "old_revision": source["checkpoint_revision"],
+        "new_checkpoint_blob": updated_blob,
+        "new_revision": updated["checkpoint_revision"],
+        "baseline_version": updated["baseline"]["version"],
+        "target_work_item": TARGET_ID,
+        "release_commit": RELEASE_COMMIT,
+        "approval_reference": APPROVAL_REFERENCE,
+        "readiness_reference": READINESS_REFERENCE,
+        "stable_mutation": (
+            "TSK-0468 transitioned from WAITING to TODO after verified production-host execution-path/read-only "
+            "preflight evidence; baseline and all unrelated runtime state remain unchanged."
+        ),
+        "old_bytes": len(source_raw),
+        "new_bytes": len(updated_raw),
+        "status_counts": new_stats["status_counts"],
+    }
+    v1.write_json(v1.RESULT, result)
+
+
 def main():
     request, _ = v1.read_json(v1.REQUEST)
-    if request.get("operation") != OPERATION:
+    if request.get("operation") == OPERATION:
+        validate_override_request(request)
+        source, source_raw, source_blob, stats = v1.load_authority(request)
+        apply_website_deployment_sequencing_override(request, source, source_raw, source_blob, stats)
+    elif request.get("operation") == READY_OPERATION:
+        validate_ready_request(request)
+        source, source_raw, source_blob, stats = v1.load_authority(request)
+        transition_tsk0468_waiting_to_todo(request, source, source_raw, source_blob, stats)
+    else:
         v2.main()
         return
 
-    validate_override_request(request)
-    source, source_raw, source_blob, stats = v1.load_authority(request)
-    apply_website_deployment_sequencing_override(request, source, source_raw, source_blob, stats)
     print(
         f"CHECKPOINT_ADAPTER_V3_PASS operation={request['operation']} source_blob={source_blob} "
         f"revision={source['checkpoint_revision']} baseline={source['baseline']['version']}"
