@@ -19,6 +19,7 @@ jobs:
       SERVICE: usesafeweb-web.service
       INSTALL_ROOT: /opt/usesafeweb-web
       ENV_FILE: /etc/usesafeweb/website.env
+      TLS_ENV_FILE: /etc/usesafeweb/verifier-tls.env
     steps:
       - name: Checkout exact approved website release
         uses: actions/checkout@v4
@@ -32,7 +33,6 @@ jobs:
           set -Eeuo pipefail
           fail=0
           mark(){ printf '%s=%s\n' "$1" "$2"; }
-          require(){ if "$@"; then return 0; else fail=1; return 1; fi; }
 
           mark PREFLIGHT_MODE READ_ONLY
           mark HOSTNAME "$(hostname -s 2>/dev/null || hostname)"
@@ -54,6 +54,27 @@ jobs:
           [[ "$(npm --version 2>/dev/null || true)" == "10.9.8" ]] || { mark NPM_VERSION_MATCH FAIL; fail=1; }
 
           if sudo -n true 2>/dev/null; then mark PASSWORDLESS_SUDO YES; else mark PASSWORDLESS_SUDO NO; fail=1; fi
+
+          if getent passwd usesafeweb-web >/dev/null 2>&1 && getent group usesafeweb-web >/dev/null 2>&1; then
+            mark SERVICE_IDENTITY PRESENT
+          else
+            mark SERVICE_IDENTITY MISSING
+            fail=1
+          fi
+
+          unit_path="/etc/systemd/system/$SERVICE"
+          if [[ -f "$unit_path" ]]; then
+            mark SERVICE_UNIT PRESENT
+            if sudo -n cmp -s infrastructure/web-server/usesafeweb-web.service "$unit_path"; then
+              mark SERVICE_UNIT_BINDING EXACT_RELEASE
+            else
+              mark SERVICE_UNIT_BINDING MISMATCH
+              fail=1
+            fi
+          else
+            mark SERVICE_UNIT MISSING
+            fail=1
+          fi
 
           service_state="$(systemctl is-active "$SERVICE" 2>/dev/null || true)"
           mark SERVICE_STATE "${service_state:-unknown}"
@@ -89,25 +110,40 @@ jobs:
             [[ "$(stat -c '%a %U:%G' "$ENV_FILE" 2>/dev/null || true)" == "600 root:root" ]] || { mark ENV_PERMISSIONS_MATCH FAIL; fail=1; }
             env_release="$(sudo -n awk -F= '$1=="USESAFEWEB_RELEASE_SHA" {sub(/^[^=]*=/,""); print; exit}' "$ENV_FILE" 2>/dev/null || true)"
             mark ENV_RELEASE_SHA "${env_release:-missing}"
-            [[ "$env_release" == "$RELEASE_SHA" ]] && mark ENV_RELEASE_BINDING READY || mark ENV_RELEASE_BINDING NEEDS_CONTROLLED_UPDATE
+            [[ "$env_release" == "$RELEASE_SHA" ]] && mark ENV_RELEASE_BINDING READY || { mark ENV_RELEASE_BINDING NEEDS_CONTROLLED_UPDATE; fail=1; }
             for key in NODE_ENV HOSTNAME PORT NEXT_TELEMETRY_DISABLED USESAFEWEB_PUBLIC_ORIGIN USESAFEWEB_DNS_VERIFICATION_SIGNING_SECRET USESAFEWEB_RELEASE_SHA; do
               if sudo -n grep -q "^${key}=" "$ENV_FILE" 2>/dev/null; then mark "ENV_KEY_${key}" PRESENT; else mark "ENV_KEY_${key}" MISSING; fail=1; fi
             done
+            if sudo -n bash -c 'set -a; source "$1"; set +a; [[ "$NODE_ENV" == production && "$HOSTNAME" == 127.0.0.1 && "$PORT" == 3100 && "$NEXT_TELEMETRY_DISABLED" == 1 && "$USESAFEWEB_PUBLIC_ORIGIN" == https://usesafeweb.com && ${#USESAFEWEB_DNS_VERIFICATION_SIGNING_SECRET} -ge 32 && "$USESAFEWEB_RELEASE_SHA" == "$2" ]]' _ "$ENV_FILE" "$RELEASE_SHA"; then
+              mark ENV_VALUES VALID
+            else
+              mark ENV_VALUES INVALID
+              fail=1
+            fi
           else
             mark ENV_FILE MISSING
             fail=1
           fi
 
+          if [[ -f "$TLS_ENV_FILE" ]]; then
+            mark TLS_ENV_FILE PRESENT
+            mark TLS_ENV_METADATA "$(stat -c '%a %U:%G' "$TLS_ENV_FILE" 2>/dev/null || echo unreadable)"
+          else
+            mark TLS_ENV_FILE MISSING
+          fi
+
           if command -v nginx >/dev/null 2>&1; then
             mark NGINX_BINARY PRESENT
-            if sudo -n nginx -t >/tmp/usesafeweb-nginx-preflight.out 2>&1; then
+            nginx_dump="$(mktemp)"
+            if sudo -n nginx -T >"$nginx_dump" 2>&1; then
               mark NGINX_CONFIG_TEST PASS
+              if grep -Eq 'server_name[[:space:]]+usesafeweb\.com[[:space:]]*;' "$nginx_dump"; then mark NGINX_PUBLIC_HOST PRESENT; else mark NGINX_PUBLIC_HOST MISSING; fail=1; fi
+              if grep -Eq 'proxy_pass[[:space:]]+http://127\.0\.0\.1:3100[[:space:]]*;' "$nginx_dump"; then mark NGINX_PUBLIC_PROXY_3100 PRESENT; else mark NGINX_PUBLIC_PROXY_3100 MISSING; fail=1; fi
             else
               mark NGINX_CONFIG_TEST FAIL
-              sed -E 's/(key|secret|token|password)[^ ]*/[REDACTED]/Ig' /tmp/usesafeweb-nginx-preflight.out | tail -n 10
               fail=1
             fi
-            rm -f /tmp/usesafeweb-nginx-preflight.out
+            rm -f "$nginx_dump"
           else
             mark NGINX_BINARY MISSING
             fail=1
