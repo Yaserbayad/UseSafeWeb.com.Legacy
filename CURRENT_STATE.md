@@ -2,14 +2,14 @@
   "checkpoint_schema": "serial-light-checkpoint-v1",
   "project_id": "UseSafeWeb.com",
   "governance_mode": "SERIAL_LIGHT",
-  "checkpoint_revision": 49,
+  "checkpoint_revision": 50,
   "baseline": {
     "version": 1,
     "objectives": [
       {
         "id": "OBJ-USESAFEWEB-V1",
         "summary": "Execute the current owner-frozen UseSafeWeb.com Master Plan through the current Version-1 and controlled Release-1 scope without weakening its requirements, evidence, authority, gates, risks, interfaces, or material-action boundaries.",
-        "reference": "Plans/Master/MANIFEST.yaml@20e2763c0be2124378e3158ac559aed826bc6765; blob da35db0fe16009dfb5ce0e24caab05d6d02c84ed; Plans/Master/MASTER_PLAN.md@20e2763c0be2124378e3158ac559aed826bc6765; blob 5010ac13c7cbb41817d0b3753633c742d777e241"
+        "reference": "Plans/Master/MANIFEST.yaml@5ce01591e12d5e259141f664b9469f5cc59a5443; blob 3329bfb7d6ec66e40e448cbdbf05255726822d60; Plans/Master/MASTER_PLAN.md@20e2763c0be2124378e3158ac559aed826bc6765; blob 5010ac13c7cbb41817d0b3753633c742d777e241"
       }
     ],
     "policy_rules": [
@@ -19,7 +19,7 @@
       },
       {
         "id": "POL-002",
-        "text": "The owner-frozen modular planning authority remains external and unchanged at Plans/Master/MANIFEST.yaml@20e2763c0be2124378e3158ac559aed826bc6765; blob da35db0fe16009dfb5ce0e24caab05d6d02c84ed. This checkpoint mirrors the 641 canonical WBS task identities, titles, hard dependencies, priorities, acceptance criteria and runtime states; the external plan remains controlling for full task semantics, lifecycle gates, verification/evidence contracts, risks, interfaces and action authority."
+        "text": "The owner-frozen modular planning authority remains external and unchanged at Plans/Master/MANIFEST.yaml@5ce01591e12d5e259141f664b9469f5cc59a5443; blob 3329bfb7d6ec66e40e448cbdbf05255726822d60. This checkpoint mirrors the 641 canonical WBS task identities, titles, hard dependencies, priorities, acceptance criteria and runtime states; the external plan remains controlling for full task semantics, lifecycle gates, verification/evidence contracts, risks, interfaces and action authority."
       },
       {
         "id": "POL-003",
