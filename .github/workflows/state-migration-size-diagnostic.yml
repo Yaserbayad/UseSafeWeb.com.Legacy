@@ -1,0 +1,42 @@
+name: Measure checkpoint size components
+
+on:
+  push:
+    branches:
+      - state-migration-rev50-20260908
+    paths:
+      - .github/workflows/state-migration-size-diagnostic.yml
+
+permissions:
+  contents: read
+
+jobs:
+  measure:
+    runs-on:
+      - self-hosted
+      - Linux
+      - X64
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Measure canonical JSON components
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(hostname)" = "adguardvm"
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('CURRENT_STATE.md').read_text(encoding='utf-8'))
+          def n(x):
+              return len((json.dumps(x, ensure_ascii=False, indent=2) + '\n').encode('utf-8'))
+          print('FULL_BYTES=' + str(n(p)))
+          print('BASELINE_BYTES=' + str(n(p['baseline'])))
+          print('BASELINE_WORK_ITEMS_BYTES=' + str(n(p['baseline']['work_items'])))
+          print('RUNTIME_BYTES=' + str(n(p['runtime'])))
+          print('RUNTIME_ITEMS_BYTES=' + str(n(p['runtime']['items'])))
+          print('PASS_COUNT=' + str(sum(1 for x in p['runtime']['items'] if x['status'] == 'PASS')))
+          print('TODO_COUNT=' + str(sum(1 for x in p['runtime']['items'] if x['status'] == 'TODO')))
+          print('WAITING_COUNT=' + str(sum(1 for x in p['runtime']['items'] if x['status'] == 'WAITING')))
+          print('BLOCKED_COUNT=' + str(sum(1 for x in p['runtime']['items'] if x['status'] == 'BLOCKED')))
+          PY
