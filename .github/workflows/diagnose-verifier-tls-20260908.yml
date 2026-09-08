@@ -1,0 +1,72 @@
+name: Diagnose verifier TLS on AdGuard VM
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/diagnose-verifier-tls-20260908.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: usesafeweb-adguard-server
+  cancel-in-progress: false
+
+jobs:
+  diagnose:
+    runs-on: [self-hosted, linux, x64]
+    timeout-minutes: 5
+    steps:
+      - name: Inspect verifier TLS and proxy configuration
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          [[ "${GITHUB_EVENT_NAME}" == "push" ]]
+          [[ "${GITHUB_REF}" == "refs/heads/main" ]]
+          [[ "${RUNNER_OS}" == "Linux" ]]
+          [[ "${RUNNER_ARCH}" == "X64" ]]
+          [[ "$(hostname -s)" == "adguardvm" ]]
+          [[ "$(id -un)" == "azureusr" ]]
+          sudo -n true
+
+          echo "HOST=$(hostname -s)"
+          echo "PUBLIC_IP=$(curl -fsS --max-time 5 https://api.ipify.org || true)"
+          echo '--- NGINX VERSION/STATUS ---'
+          nginx -v 2>&1 || true
+          systemctl is-active nginx || true
+          sudo nginx -t
+
+          echo '--- NGINX RELEVANT DIRECTIVES ---'
+          sudo nginx -T 2>&1 \
+            | grep -E '^[[:space:]]*(listen|server_name|ssl_certificate|ssl_certificate_key|location|proxy_pass|return)[[:space:]]' \
+            | sed -E 's#(ssl_certificate_key[[:space:]]+).*#\1[REDACTED];#' \
+            | head -n 240
+
+          echo '--- CERTBOT LINEAGES ---'
+          sudo certbot certificates 2>&1 \
+            | sed -E 's#(Private Key Path:).*#\1 [REDACTED]#' \
+            | head -n 160
+
+          echo '--- RENEWAL CONFIG SAFE FIELDS ---'
+          sudo grep -RHE '^(authenticator|installer|webroot_path|server|renew_hook|deploy_hook|pre_hook|post_hook)[[:space:]]*=' /etc/letsencrypt/renewal 2>/dev/null \
+            | head -n 120 || true
+
+          echo '--- LOCAL TLS SNI ---'
+          for sni in dns.usesafeweb.com verify.usesafeweb.com 0123456789abcdef0123456789abcdef.verify.usesafeweb.com; do
+            echo "SNI=${sni}"
+            set +e
+            out=$(timeout 6 openssl s_client -connect 127.0.0.1:443 -servername "${sni}" -verify_return_error -brief </dev/null 2>&1)
+            rc=$?
+            set -e
+            echo "RC=${rc}"
+            printf '%s\n' "$out" | grep -E '^(Protocol version|Ciphersuite|Peer certificate|Verification:)|alert|unrecognized name' | head -n 12 || true
+          done
+
+          echo '--- LOCAL HTTP ROUTING ---'
+          for host in dns.usesafeweb.com verify.usesafeweb.com 0123456789abcdef0123456789abcdef.verify.usesafeweb.com; do
+            code=$(curl -ksS --resolve "${host}:443:127.0.0.1" --max-time 6 -o /dev/null -w '%{http_code}' "https://${host}/api/dns-verification/probes" || true)
+            echo "${host} probes=${code:-000}"
+          done
+
+          echo 'DIAGNOSTIC=PASS'
