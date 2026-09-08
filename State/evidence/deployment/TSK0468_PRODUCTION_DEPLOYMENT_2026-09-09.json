@@ -65,7 +65,11 @@
       "wordmark": "PASS",
       "start_route": "PASS",
       "setup_route": "PASS",
-      "locales": ["en-GB", "tr-TR", "ar"],
+      "locales": [
+        "en-GB",
+        "tr-TR",
+        "ar"
+      ],
       "fail_closed_runtime_negative_test": "PASS",
       "system_node_npm_unchanged": true
     }
