@@ -1,0 +1,68 @@
+name: Final single-branch cleanup 20260908
+
+on:
+  push:
+    branches:
+      - tsk0452-isolated-node-runtime
+    paths:
+      - .github/workflows/final-single-branch-cleanup-20260908.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout cleanup source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify exact refs before deletion
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected_main='96681c6173f2afb1b28da5fba15c682144c17ce8'
+          expected_tsk0452='9d56d92989c1643363409ae6cc92c02973fae638'
+          expected_tsk0417='2ee17206f668efd61334da101e063bb092563d3a'
+          git ls-remote --heads origin | sort > before.txt
+          test "$(wc -l < before.txt | tr -d ' ')" = '3'
+          test "$(grep -F $'\trefs/heads/main' before.txt | cut -f1)" = "$expected_main"
+          test "$(grep -F $'\trefs/heads/tsk0452-isolated-node-runtime' before.txt | cut -f1)" = "$expected_tsk0452"
+          test "$(grep -F $'\trefs/heads/feature/tsk-0417-removal-ordering-20260903' before.txt | cut -f1)" = "$expected_tsk0417"
+
+      - name: Atomically delete both non-main branches
+        shell: bash
+        run: |
+          set -euo pipefail
+          git push --atomic origin --delete \
+            'tsk0452-isolated-node-runtime' \
+            'feature/tsk-0417-removal-ordering-20260903'
+
+      - name: Verify main is the only remaining branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git ls-remote --heads origin | sort > after.txt
+          printf '%s\t%s\n' \
+            '96681c6173f2afb1b28da5fba15c682144c17ce8' \
+            'refs/heads/main' > expected.txt
+          diff -u expected.txt after.txt
+          test "$(wc -l < after.txt | tr -d ' ')" = '1'
+          echo 'FINAL_BRANCH_CLEANUP=PASS' > result.txt
+          echo 'FINAL_BRANCH=main' >> result.txt
+          echo 'MAIN_UNCHANGED=96681c6173f2afb1b28da5fba15c682144c17ce8' >> result.txt
+
+      - name: Upload verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: usesafeweb-final-single-branch-cleanup-20260908
+          path: |
+            before.txt
+            after.txt
+            expected.txt
+            result.txt
+          retention-days: 90
+          if-no-files-found: warn
