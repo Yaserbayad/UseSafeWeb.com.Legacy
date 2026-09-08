@@ -1,0 +1,132 @@
+name: Website production read-only preflight 20260908
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/website-production-readonly-preflight-20260908.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  production_preflight:
+    runs-on: [self-hosted, linux, x64]
+    timeout-minutes: 8
+    env:
+      RELEASE_SHA: 907d3880026ca73be949cfc7ecee14eff3efb60c
+      SERVICE: usesafeweb-web.service
+      INSTALL_ROOT: /opt/usesafeweb-web
+      ENV_FILE: /etc/usesafeweb/website.env
+    steps:
+      - name: Checkout exact approved website release
+        uses: actions/checkout@v4
+        with:
+          ref: 907d3880026ca73be949cfc7ecee14eff3efb60c
+          fetch-depth: 1
+
+      - name: Verify production host and rollback readiness without mutation
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          fail=0
+          mark(){ printf '%s=%s\n' "$1" "$2"; }
+          require(){ if "$@"; then return 0; else fail=1; return 1; fi; }
+
+          mark PREFLIGHT_MODE READ_ONLY
+          mark HOSTNAME "$(hostname -s 2>/dev/null || hostname)"
+          mark RUNNER_USER "$(id -un)"
+          . /etc/os-release
+          mark OS "${ID:-unknown}-${VERSION_ID:-unknown}"
+          mark RELEASE_SHA "$RELEASE_SHA"
+          mark CHECKOUT_SHA "$(git rev-parse HEAD)"
+          [[ "$(git rev-parse HEAD)" == "$RELEASE_SHA" ]] || { mark CHECKOUT_BINDING FAIL; fail=1; }
+          [[ -d website ]] && mark WEBSITE_SOURCE PRESENT || { mark WEBSITE_SOURCE MISSING; fail=1; }
+          [[ -x infrastructure/web-server/deploy-release.sh ]] && mark DEPLOY_SCRIPT PRESENT || { mark DEPLOY_SCRIPT MISSING_OR_NOT_EXECUTABLE; fail=1; }
+          [[ -f infrastructure/web-server/validate-runtime.mjs ]] && mark RUNTIME_VALIDATOR PRESENT || { mark RUNTIME_VALIDATOR MISSING; fail=1; }
+          [[ -f infrastructure/web-server/usesafeweb-web.service ]] && mark SERVICE_TEMPLATE PRESENT || { mark SERVICE_TEMPLATE MISSING; fail=1; }
+          mark DEPLOY_SCRIPT_SHA256 "$(sha256sum infrastructure/web-server/deploy-release.sh 2>/dev/null | awk '{print $1}' || true)"
+
+          mark NODE_VERSION "$(node --version 2>/dev/null || echo missing)"
+          mark NPM_VERSION "$(npm --version 2>/dev/null || echo missing)"
+          [[ "$(node --version 2>/dev/null || true)" == "v22.23.2" ]] || { mark NODE_VERSION_MATCH FAIL; fail=1; }
+          [[ "$(npm --version 2>/dev/null || true)" == "10.9.8" ]] || { mark NPM_VERSION_MATCH FAIL; fail=1; }
+
+          if sudo -n true 2>/dev/null; then mark PASSWORDLESS_SUDO YES; else mark PASSWORDLESS_SUDO NO; fail=1; fi
+
+          service_state="$(systemctl is-active "$SERVICE" 2>/dev/null || true)"
+          mark SERVICE_STATE "${service_state:-unknown}"
+          systemctl show "$SERVICE" -p FragmentPath -p User -p Group -p WorkingDirectory -p ExecStart --no-pager 2>/dev/null || true
+
+          if [[ -e "$INSTALL_ROOT/current" && ! -L "$INSTALL_ROOT/current" ]]; then
+            mark CURRENT_LAYOUT INVALID_NON_SYMLINK
+            fail=1
+          elif [[ -L "$INSTALL_ROOT/current" ]]; then
+            current="$(readlink -f "$INSTALL_ROOT/current" 2>/dev/null || true)"
+            current_sha="${current##*/}"
+            mark CURRENT_TARGET "$current"
+            mark CURRENT_RELEASE_SHA "$current_sha"
+            [[ "$current" == "$INSTALL_ROOT/releases/$current_sha" && "$current_sha" =~ ^[0-9a-f]{40}$ && -d "$current" ]] \
+              && mark ROLLBACK_BASE VALID \
+              || { mark ROLLBACK_BASE INVALID; fail=1; }
+            if [[ -f "$current/.release-sha" ]]; then
+              marker="$(tr -d '\r\n' < "$current/.release-sha")"
+              mark CURRENT_MARKER_SHA "$marker"
+              [[ "$marker" == "$current_sha" ]] || { mark CURRENT_MARKER_MATCH FAIL; fail=1; }
+            else
+              mark CURRENT_MARKER MISSING
+              fail=1
+            fi
+          else
+            mark CURRENT_TARGET NONE_FIRST_DEPLOY
+            mark ROLLBACK_BASE FIRST_DEPLOY_CLEANUP_AVAILABLE
+          fi
+
+          if [[ -f "$ENV_FILE" ]]; then
+            mark ENV_FILE PRESENT
+            mark ENV_METADATA "$(stat -c '%a %U:%G' "$ENV_FILE" 2>/dev/null || echo unreadable)"
+            [[ "$(stat -c '%a %U:%G' "$ENV_FILE" 2>/dev/null || true)" == "600 root:root" ]] || { mark ENV_PERMISSIONS_MATCH FAIL; fail=1; }
+            env_release="$(sudo -n awk -F= '$1=="USESAFEWEB_RELEASE_SHA" {sub(/^[^=]*=/,""); print; exit}' "$ENV_FILE" 2>/dev/null || true)"
+            mark ENV_RELEASE_SHA "${env_release:-missing}"
+            [[ "$env_release" == "$RELEASE_SHA" ]] && mark ENV_RELEASE_BINDING READY || mark ENV_RELEASE_BINDING NEEDS_CONTROLLED_UPDATE
+            for key in NODE_ENV HOSTNAME PORT NEXT_TELEMETRY_DISABLED USESAFEWEB_PUBLIC_ORIGIN USESAFEWEB_DNS_VERIFICATION_SIGNING_SECRET USESAFEWEB_RELEASE_SHA; do
+              if sudo -n grep -q "^${key}=" "$ENV_FILE" 2>/dev/null; then mark "ENV_KEY_${key}" PRESENT; else mark "ENV_KEY_${key}" MISSING; fail=1; fi
+            done
+          else
+            mark ENV_FILE MISSING
+            fail=1
+          fi
+
+          if command -v nginx >/dev/null 2>&1; then
+            mark NGINX_BINARY PRESENT
+            if sudo -n nginx -t >/tmp/usesafeweb-nginx-preflight.out 2>&1; then
+              mark NGINX_CONFIG_TEST PASS
+            else
+              mark NGINX_CONFIG_TEST FAIL
+              sed -E 's/(key|secret|token|password)[^ ]*/[REDACTED]/Ig' /tmp/usesafeweb-nginx-preflight.out | tail -n 10
+              fail=1
+            fi
+            rm -f /tmp/usesafeweb-nginx-preflight.out
+          else
+            mark NGINX_BINARY MISSING
+            fail=1
+          fi
+
+          if curl --silent --show-error --fail --max-time 3 http://127.0.0.1:3100/api/health/ready >/dev/null 2>&1; then
+            mark LOCAL_READINESS PASS
+          else
+            mark LOCAL_READINESS NOT_READY
+          fi
+
+          if curl --silent --show-error --fail --max-time 8 --output /dev/null https://usesafeweb.com/; then
+            mark PUBLIC_HTTPS_REACHABLE YES
+          else
+            mark PUBLIC_HTTPS_REACHABLE NO
+          fi
+
+          if (( fail != 0 )); then
+            mark WEBSITE_PRODUCTION_PREFLIGHT FAIL
+            exit 1
+          fi
+          mark WEBSITE_PRODUCTION_PREFLIGHT PASS
