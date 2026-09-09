@@ -119,7 +119,10 @@ body {
   margin-block-start: var(--sw-space-2);
 }
 .sw-landing-visual {
+  box-sizing: border-box;
+  inline-size: 100%;
   min-width: 0;
+  min-inline-size: 0;
   display: grid;
   gap: var(--sw-space-7);
   align-content: space-between;
@@ -129,12 +132,14 @@ body {
   color: var(--sw-color-inverse);
 }
 .sw-landing-visual-mark {
+  min-inline-size: 0;
   display: grid;
   gap: var(--sw-space-3);
   align-content: start;
 }
 .sw-landing-visual-mark span {
   display: block;
+  max-inline-size: 100%;
   block-size: var(--sw-space-5);
   border: var(--sw-border-width) solid var(--sw-brand-sage);
   border-radius: var(--sw-radius-sm);
@@ -149,6 +154,7 @@ body {
   inline-size: 100%;
 }
 .sw-landing-visual-copy {
+  min-inline-size: 0;
   border-inline-start: var(--sw-focus-width) solid var(--sw-brand-sage);
   padding-inline-start: var(--sw-space-4);
 }
@@ -157,10 +163,12 @@ body {
   color: var(--sw-color-inverse);
   font-size: var(--sw-font-size-lg);
   line-height: var(--sw-line-height-tight);
+  overflow-wrap: anywhere;
 }
 .sw-landing-visual-copy p {
   max-width: 34rem;
   margin-block: var(--sw-space-3) 0;
+  overflow-wrap: anywhere;
 }
 .sw-landing-trust {
   display: grid;
