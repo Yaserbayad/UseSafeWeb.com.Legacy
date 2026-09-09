@@ -109,17 +109,48 @@ for (const locale of locales) {
         ['privacy', bundle.common.nav.privacy],
         ['help', bundle.common.nav.help],
       ]) {
-        const link = page.locator('header').getByRole('link', { name: label, exact: true });
-        assert.equal(await link.getAttribute('href'), `/${locale.id}/${path}`);
+        const headerLink = page.locator('header').getByRole('link', { name: label, exact: true });
+        assert.equal(await headerLink.getAttribute('href'), `/${locale.id}/${path}`);
+        const landingLink = article.locator('.sw-landing-trust').getByRole('link', { name: label, exact: true });
+        assert.equal(await landingLink.getAttribute('href'), `/${locale.id}/${path}`);
+      }
+
+      const landingCopy = article.locator('.sw-landing-copy');
+      const landingVisual = article.locator('.sw-landing-visual');
+      const trust = article.locator('.sw-landing-trust');
+      const features = article.locator('.sw-landing-feature');
+      assert.equal(await landingVisual.count(), 1, 'landing evidence field is missing');
+      assert.equal(await trust.count(), 1, 'landing trust navigation is missing');
+      assert.equal(await features.count(), bundle.home.cards.length, 'landing feature count does not match approved content');
+
+      const visualColors = await landingVisual.evaluate((element) => {
+        const style = getComputedStyle(element);
+        const bodyStyle = getComputedStyle(document.body);
+        return { visual: style.backgroundColor, page: bodyStyle.backgroundColor };
+      });
+      assert.notEqual(visualColors.visual, 'rgba(0, 0, 0, 0)', 'landing evidence field has no rendered background');
+      assert.notEqual(visualColors.visual, visualColors.page, 'landing evidence field does not create visual hierarchy');
+
+      const copyBox = await landingCopy.boundingBox();
+      const visualBox = await landingVisual.boundingBox();
+      assert.ok(copyBox && visualBox, 'landing hero regions have no rendered boxes');
+      if (viewport.width === 320) {
+        assert.ok(
+          visualBox.y >= copyBox.y + copyBox.height - 1,
+          'mobile landing evidence field must stack below the hero copy',
+        );
+      }
+      if (viewport.width >= 1024) {
+        const verticalOverlap = Math.min(copyBox.y + copyBox.height, visualBox.y + visualBox.height) - Math.max(copyBox.y, visualBox.y);
+        assert.ok(verticalOverlap > 0, 'desktop landing hero regions must sit side-by-side');
+        assert.ok(copyBox.width > viewport.width * 0.3, 'desktop hero copy is too narrow');
+        assert.ok(visualBox.width > viewport.width * 0.2, 'desktop evidence field is too narrow');
       }
 
       for (const action of [primary, secondary]) {
         const box = await action.boundingBox();
         assert.ok(box, 'CTA has no rendered box');
-        assert.ok(
-          box.width >= 24 && box.height >= 24,
-          `CTA target is ${box.width}x${box.height}, below WCAG AA minimum`,
-        );
+        assert.ok(box.width >= 24 && box.height >= 24, `CTA target is ${box.width}x${box.height}, below WCAG AA minimum`);
       }
 
       const overflow = await page.evaluate(
@@ -179,20 +210,12 @@ for (const locale of locales) {
         );
       }
 
-      assert.equal(
-        await page.locator('form, input, textarea, select').count(),
-        0,
-        'public landing collects user input',
-      );
+      assert.equal(await page.locator('form, input, textarea, select').count(), 0, 'public landing collects user input');
       const storage = await page.evaluate(() => ({
         local: Object.keys(localStorage),
         session: Object.keys(sessionStorage),
       }));
-      assert.deepEqual(
-        storage,
-        { local: [], session: [] },
-        'landing creates persistent or journey storage before setup',
-      );
+      assert.deepEqual(storage, { local: [], session: [] }, 'landing creates persistent or journey storage before setup');
       assert.deepEqual(await context.cookies(), [], 'landing creates cookies before setup');
       assert.deepEqual(pageErrors, [], 'landing emitted page errors');
       assert.deepEqual(consoleErrors, [], 'landing emitted console errors');
@@ -216,10 +239,7 @@ for (const locale of locales) {
       });
       assert.ok(timing, 'navigation performance entry is missing');
       assert.ok(Number.isFinite(timing.duration) && timing.duration >= 0, 'invalid navigation duration');
-      assert.ok(
-        Number.isFinite(timing.domContentLoaded) && timing.domContentLoaded >= 0,
-        'invalid DOMContentLoaded timing',
-      );
+      assert.ok(Number.isFinite(timing.domContentLoaded) && timing.domContentLoaded >= 0, 'invalid DOMContentLoaded timing');
       assert.ok(Number.isFinite(timing.transferSize) && timing.transferSize >= 0, 'invalid navigation transfer size');
       performanceObservations.push({ locale: locale.id, width: viewport.width, ...timing });
 
