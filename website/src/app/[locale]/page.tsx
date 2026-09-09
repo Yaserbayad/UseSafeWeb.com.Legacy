@@ -22,6 +22,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         { href: `/${locale}/start`, label: content.home.primaryLabel },
         { href: `/${locale}/how-it-works`, label: content.home.secondaryLabel, secondary: true },
       ]}
+      utilityLinks={[
+        { href: `/${locale}/protection-and-limits`, label: content.common.nav.limits },
+        { href: `/${locale}/privacy`, label: content.common.nav.privacy },
+        { href: `/${locale}/help`, label: content.common.nav.help },
+      ]}
     />
   );
 }
