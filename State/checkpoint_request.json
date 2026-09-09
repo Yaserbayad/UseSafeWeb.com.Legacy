@@ -1,16 +1,9 @@
 {
   "request_schema": "usesafeweb-checkpoint-storage-request-v1",
-  "operation": "mark_tsk0468_pass_production_deployment",
-  "request_id": "tsk0468-production-pass-20260909-canonical",
-  "expected_checkpoint_blob": "f1163f86acccf9875f7c3b2629f758e7d3895493",
-  "expected_revision": 55,
+  "operation": "reopen_tsk0395_insufficient_landing",
+  "request_id": "tsk0395-reopen-insufficient-landing-20260909",
+  "expected_checkpoint_blob": "fb7a63daa7be26fb480ae0d39ae20fed21e72a5f",
+  "expected_revision": 56,
   "expected_baseline": 2,
-  "release_commit": "907d3880026ca73be949cfc7ecee14eff3efb60c",
-  "evidence_reference": "State/evidence/deployment/TSK0468_PRODUCTION_DEPLOYMENT_2026-09-09.json; blob 64414cb49dc5e2674de0de374bfec9c400666133",
-  "deployment_run_id": 34288791722,
-  "deployment_job_id": 102270432495,
-  "verification_run_id": 34289013271,
-  "verification_job_id": 102271111149,
-  "browser_run_id": 34277106920,
-  "browser_job_id": 102232725342
+  "evidence_reference": "State/evidence/reconciliation/TSK0395_LANDING_REOPEN_2026-09-09.json; blob a51ac979496ed1b8521231dba117f9891144a6be"
 }
