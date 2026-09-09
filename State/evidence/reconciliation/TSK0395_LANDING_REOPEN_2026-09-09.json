@@ -1,0 +1,41 @@
+{
+  "evidence_schema": "usesafeweb-acceptance-reassessment-v1",
+  "project_id": "UseSafeWeb.com",
+  "work_item_id": "TSK-0395",
+  "acceptance_id": "ACC-0395",
+  "recorded_at": "2026-09-09T06:45:00Z",
+  "human_observation": "The owner reported that no meaningful website changes were visible and challenged whether the website was really done.",
+  "fresh_production_verification": {
+    "result": "PASS",
+    "repository": "Yaserbayad/erp.hmg.test",
+    "run_id": 34289013271,
+    "job_id": 102365116430,
+    "runner": "hmgweb",
+    "public_ip": "20.71.90.212",
+    "release_commit": "907d3880026ca73be949cfc7ecee14eff3efb60c",
+    "conclusion": "The intended release is genuinely live; the issue is not stale deployment or the old release still serving."
+  },
+  "source_reassessment": {
+    "previous_release": "efe9d4d885d6057b18c5fddea5a0dd2d49d3ec25",
+    "current_release": "907d3880026ca73be949cfc7ecee14eff3efb60c",
+    "previous_home_component": "ContentPage",
+    "current_home_component": "LandingPage",
+    "material_finding": "The deployed change preserved the same landing content and primary/secondary CTA semantics and mainly changed the presentation wrapper, added modest landing layout CSS, and replaced the text brand with the canonical wordmark. This is insufficient evidence that the task title's intended public landing-page implementation was materially achieved."
+  },
+  "frozen_task_semantics": {
+    "title": "Implement public landing page and primary first-phone CTA",
+    "acceptance_condition": "Copy matches approved claims; primary CTA is clear; no DNS-led positioning; privacy/limits/support links are present; responsive/accessibility/performance checks pass."
+  },
+  "decision": {
+    "result": "INVALIDATE_ACCEPTANCE_AND_REOPEN",
+    "reason": "New human-facing evidence contradicts the prior completion interpretation. The prior automated proof established technical correctness of a modest presentation change, but did not establish that the existing generic public surface had become the meaningful landing-page implementation required by the task title and current owner direction.",
+    "required_state": "TODO",
+    "required_acceptance_references": []
+  },
+  "preserved_boundaries": [
+    "The Master Plan and WBS are not modified, repaired, normalized, reconciled, or restructured.",
+    "TSK-0468 remains PASS because the recorded production deployment of release 907d3880026ca73be949cfc7ecee14eff3efb60c genuinely occurred and was independently reverified.",
+    "TSK-0322 and TSK-0324 remain PASS and continue to supply the approved content and UI contracts for the landing implementation.",
+    "No unrelated runtime state or baseline semantics are changed by this reassessment."
+  ]
+}
