@@ -2,7 +2,7 @@
   "checkpoint_schema": "serial-light-checkpoint-v1",
   "project_id": "UseSafeWeb.com",
   "governance_mode": "SERIAL_LIGHT",
-  "checkpoint_revision": 57,
+  "checkpoint_revision": 58,
   "baseline": {
     "version": 2,
     "objectives": [
@@ -18672,8 +18672,13 @@
       },
       {
         "id": "TSK-0395",
-        "status": "TODO",
-        "acceptance_references": []
+        "status": "WAITING",
+        "acceptance_references": [],
+        "wait": {
+          "condition": "PR #120 cannot be promoted while the repository-wide TSK-0489 gate is red unless the owner explicitly authorizes a bypass scoped to PR #120, or the same gate independently becomes green without weakening its semantics.",
+          "resolution_check": "Reread and validate CURRENT_STATE.md. Confirm PR #120 still targets the visually reviewed head commit c95829e0d9e6101120327981e0ef65f81ab2964c or re-run all affected acceptance if the head changed. Then require either explicit owner authorization to bypass TSK-0489 for PR #120 only, or a green TSK-0489 result under unchanged semantics. If satisfied and no new blocker exists, transition TSK-0395 from WAITING to TODO before merge/promotion.",
+          "reference": "State/evidence/reconciliation/TSK0395_PR120_PROMOTION_WAIT_2026-09-09.json; blob 4db15fb1d05fb64af7ebbf0a548d80d6777be2e0"
+        }
       },
       {
         "id": "TSK-0396",
