@@ -38,7 +38,7 @@ jobs:
           fetch-depth: 0
 
       - name: Execute stateless checkpoint adapter
-        run: python3 State/tools/checkpoint_storage_adapter_v6.py
+        run: python3 State/tools/checkpoint_storage_adapter_v7.py
 
       - name: Verify and commit adapter outputs
         shell: bash
