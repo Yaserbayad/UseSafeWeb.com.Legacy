@@ -1,0 +1,48 @@
+{
+  "evidence_schema": "usesafeweb-work-wait-v1",
+  "project_id": "UseSafeWeb.com",
+  "work_item_id": "TSK-0395",
+  "recorded_at": "2026-09-09T07:12:00Z",
+  "source": {
+    "pull_request": 120,
+    "branch": "fix/real-public-landing",
+    "head_commit": "c95829e0d9e6101120327981e0ef65f81ab2964c"
+  },
+  "verified_partial_outcome": {
+    "landing_acceptance": {
+      "result": "PASS",
+      "run_id": 34322321170,
+      "job_id": 102371540068,
+      "coverage": "Repository structure, frozen-plan validator, exact formatting, 118/118 contract tests, lint with zero errors, typecheck, production build, dependency audit, strengthened Chromium layout acceptance across en-GB/tr-TR/ar and 320/768/1024/1440, 200% text resize, RTL, axe WCAG checks, and screenshot capture."
+    },
+    "visual_artifact": {
+      "artifact_id": 10092378186,
+      "name": "tsk0395-landing-screenshots",
+      "digest": "sha256:99571cc32bdda022f80407b071ff3c70ea79a6cf1e2c8640434271161e6143cf",
+      "screenshots": [
+        "en-GB-desktop.png",
+        "en-GB-mobile.png",
+        "ar-mobile-rtl.png"
+      ],
+      "review": "PASS: desktop shows a clearly distinct split hero with a substantial deep-green evidence field; mobile stacks cleanly; Arabic mirrors RTL; landing-level trust links and editorial feature rows are visible; no clipping, horizontal overflow, or generic-card-grid presentation was observed."
+    },
+    "other_pr_checks": "Seven of eight expected PR checks pass on the same head commit."
+  },
+  "pending_condition": {
+    "type": "HUMAN_AUTHORITY",
+    "condition": "PR #120 cannot be promoted while the repository-wide TSK-0489 gate is red unless the owner explicitly authorizes a bypass scoped to PR #120, or the same gate independently becomes green without weakening its semantics.",
+    "promotion_gate": {
+      "run_id": 34322321186,
+      "job_id": 102371540467,
+      "result": "FAIL",
+      "landing_code_failure": false,
+      "violations": [
+        ".github/workflows/checkpoint-storage-adapter.yml retains checkout credentials instead of persist-credentials: false",
+        ".github/workflows/checkpoint-storage-adapter.yml directly pushes checkpoint output to main"
+      ]
+    },
+    "prior_bypass_scope": "The earlier owner bypass applied to PR #119 only and is not authority for PR #120."
+  },
+  "resolution_check": "Reread and validate CURRENT_STATE.md. Confirm PR #120 still targets the visually reviewed head commit c95829e0d9e6101120327981e0ef65f81ab2964c or re-run all affected acceptance if the head changed. Then require either explicit owner authorization to bypass TSK-0489 for PR #120 only, or a green TSK-0489 result under unchanged semantics. If satisfied and no new blocker exists, transition TSK-0395 from WAITING to TODO before merge/promotion.",
+  "safe_state": "PR #120 remains open and unmerged. Production remains on release 907d3880026ca73be949cfc7ecee14eff3efb60c. TSK-0395 is not accepted as PASS. No Master Plan/WBS repair or restructuring is authorized or performed."
+}
