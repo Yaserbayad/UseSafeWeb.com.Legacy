@@ -1,9 +1,15 @@
 {
   "request_schema": "usesafeweb-checkpoint-storage-request-v1",
-  "operation": "reopen_tsk0395_insufficient_landing",
-  "request_id": "tsk0395-reopen-insufficient-landing-20260909",
-  "expected_checkpoint_blob": "fb7a63daa7be26fb480ae0d39ae20fed21e72a5f",
-  "expected_revision": 56,
+  "operation": "wait_tsk0395_pr120_promotion_authority",
+  "request_id": "tsk0395-pr120-promotion-wait-20260909",
+  "expected_checkpoint_blob": "aa4c66da791d2e3de6e351a1ce5c559d38e995b0",
+  "expected_revision": 57,
   "expected_baseline": 2,
-  "evidence_reference": "State/evidence/reconciliation/TSK0395_LANDING_REOPEN_2026-09-09.json; blob a51ac979496ed1b8521231dba117f9891144a6be"
+  "evidence_reference": "State/evidence/reconciliation/TSK0395_PR120_PROMOTION_WAIT_2026-09-09.json; blob 4db15fb1d05fb64af7ebbf0a548d80d6777be2e0",
+  "pr_number": 120,
+  "pr_head": "c95829e0d9e6101120327981e0ef65f81ab2964c",
+  "landing_run_id": 34322321170,
+  "landing_job_id": 102371540068,
+  "promotion_run_id": 34322321186,
+  "promotion_job_id": 102371540467
 }
