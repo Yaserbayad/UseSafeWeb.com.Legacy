@@ -2,7 +2,7 @@
   "checkpoint_schema": "serial-light-checkpoint-v1",
   "project_id": "UseSafeWeb.com",
   "governance_mode": "SERIAL_LIGHT",
-  "checkpoint_revision": 56,
+  "checkpoint_revision": 57,
   "baseline": {
     "version": 2,
     "objectives": [
@@ -18672,15 +18672,8 @@
       },
       {
         "id": "TSK-0395",
-        "status": "PASS",
-        "acceptance_references": [
-          {
-            "ac_id": "ACC-0395",
-            "evidence_type": "GITHUB_BLOB",
-            "reference": "State/evidence/rev49/ACCEPTANCE_EVIDENCE_0385_0448.json; blob 37453225529f77c04b83f8901050eb735449d9e2#TSK-0395/ACC-0395",
-            "summary": "Full proof preserved in immutable evidence shard."
-          }
-        ]
+        "status": "TODO",
+        "acceptance_references": []
       },
       {
         "id": "TSK-0396",
