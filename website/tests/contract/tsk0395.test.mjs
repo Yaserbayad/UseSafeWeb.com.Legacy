@@ -71,7 +71,11 @@ test('TSK-0395 public landing is a materially distinct editorial composition rat
     assert.ok(css.includes(selector), `missing landing style ${selector}`);
   }
   assert.match(css, /@media\s*\(min-width:\s*64rem\)/);
-  assert.doesNotMatch(css, /#[0-9a-fA-F]{6}/, 'landing must consume shared brand tokens rather than a parallel raw palette');
+  assert.doesNotMatch(
+    css,
+    /#[0-9a-fA-F]{6}/,
+    'landing must consume shared brand tokens rather than a parallel raw palette',
+  );
 });
 
 test('TSK-0395 public header uses the canonical approved SafeWeb wordmark without forking its geometry', () => {

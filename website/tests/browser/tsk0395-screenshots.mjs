@@ -18,7 +18,9 @@ try {
     const page = await context.newPage();
     const response = await page.goto(`${base}/${item.locale}`, { waitUntil: 'networkidle' });
     if (!response || response.status() !== 200) {
-      throw new Error(`screenshot target failed: ${item.locale} ${item.width}px status=${response?.status() ?? 'none'}`);
+      throw new Error(
+        `screenshot target failed: ${item.locale} ${item.width}px status=${response?.status() ?? 'none'}`,
+      );
     }
     await page.screenshot({ path: new URL(item.name, output).pathname, fullPage: true });
     await context.close();
