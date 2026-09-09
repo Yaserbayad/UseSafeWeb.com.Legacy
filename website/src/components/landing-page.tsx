@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 type Card = { title: string; body: string };
 type Action = { href: string; label: string; secondary?: boolean };
+type UtilityLink = { href: string; label: string };
 
 type LandingSection = {
   kicker: string;
@@ -12,7 +13,15 @@ type LandingSection = {
   noteBody?: string;
 };
 
-export function LandingPage({ section, actions = [] }: { section: LandingSection; actions?: Action[] }) {
+export function LandingPage({
+  section,
+  actions = [],
+  utilityLinks = [],
+}: {
+  section: LandingSection;
+  actions?: Action[];
+  utilityLinks?: UtilityLink[];
+}) {
   return (
     <article className="sw-page sw-landing">
       <section className="sw-landing-hero">
@@ -36,17 +45,34 @@ export function LandingPage({ section, actions = [] }: { section: LandingSection
         </div>
 
         {section.noteTitle && section.noteBody && (
-          <aside className="sw-callout sw-landing-proof">
-            <strong>{section.noteTitle}</strong>
-            <p>{section.noteBody}</p>
+          <aside className="sw-landing-visual" aria-labelledby="landing-evidence-title">
+            <div className="sw-landing-visual-mark" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </div>
+            <div className="sw-landing-visual-copy">
+              <strong id="landing-evidence-title">{section.noteTitle}</strong>
+              <p>{section.noteBody}</p>
+            </div>
           </aside>
         )}
       </section>
 
+      {utilityLinks.length > 0 && (
+        <div className="sw-landing-trust">
+          {utilityLinks.map((link) => (
+            <Link key={link.href} href={link.href}>
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      )}
+
       {section.cards && (
-        <div className="sw-card-grid sw-landing-grid">
+        <div className="sw-landing-feature-list">
           {section.cards.map((card) => (
-            <section className="sw-card" key={card.title}>
+            <section className="sw-landing-feature" key={card.title}>
               <h2>{card.title}</h2>
               <p>{card.body}</p>
             </section>
